@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="#F6F2E8" name="theme-color" />
+    <meta content="noindex" name="robots" />
+    <title>Fintrack AI sedang offline</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "IBM Plex Sans", Arial, sans-serif;
+        background: #f6f2e8;
+        color: #0b1220;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        min-height: 100svh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px 16px;
+        background: #f6f2e8;
+      }
+
+      main {
+        width: min(100%, 560px);
+      }
+
+      .brand {
+        display: block;
+        width: 184px;
+        height: auto;
+        margin-bottom: 32px;
+      }
+
+      .card {
+        border: 1px solid #d9d6cc;
+        border-radius: 20px;
+        padding: 28px 24px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgb(11 18 32 / 6%);
+      }
+
+      .badge {
+        display: inline-flex;
+        min-width: 128px;
+        min-height: 28px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        padding: 4px 10px;
+        background: #dceaf0;
+        color: #285a73;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        font-family: "Space Grotesk", Arial, sans-serif;
+        font-size: clamp(28px, 8vw, 36px);
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+      }
+
+      p {
+        margin: 14px 0 0;
+        color: #53606c;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        display: inline-flex;
+        min-height: 48px;
+        margin-top: 28px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 0 20px;
+        background: #285a73;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background: #1f465a;
+      }
+
+      a:focus-visible {
+        outline: 2px solid #285a73;
+        outline-offset: 3px;
+      }
+
+      .note {
+        margin-top: 20px;
+        border-top: 1px solid #e7e3da;
+        padding-top: 16px;
+        color: #6b665e;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        alt="Fintrack AI"
+        class="brand"
+        height="72"
+        src="/brand/fintrack-ai-lockup-primary.svg"
+        width="492"
+      />
+      <section aria-labelledby="offline-title" class="card">
+        <span class="badge">Offline · Cache</span>
+        <h1 id="offline-title">Koneksi belum tersedia.</h1>
+        <p>
+          Fintrack AI tidak dapat mengambil halaman terbaru. Sambungkan
+          perangkat ke internet, lalu coba kembali.
+        </p>
+        <a href="/">Coba lagi</a>
+        <p class="note">
+          Data finansial dan respons API tidak disimpan oleh offline fallback
+          ini.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

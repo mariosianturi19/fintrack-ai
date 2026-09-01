@@ -1,0 +1,52 @@
+{
+  "track": "Fintrack AI Logo",
+  "round": "LOGO-R0 Typographic Alignment Study",
+  "status": "pass",
+  "verdict": {
+    "winningSymbol": "Baseline A — Signal Frame F",
+    "winningLockupRelationship": "T2 — Separate Icon",
+    "combinedRecommendation": "Baseline A symbol with T2 lockup proportions",
+    "rejected": "T1 — Integrated F; scan frame reads as punctuation"
+  },
+  "checkedManifestFiles": 66,
+  "svgCount": 12,
+  "pngCount": 54,
+  "checks": [
+    {
+      "name": "manifest files",
+      "status": "pass",
+      "evidence": "66/66 exist and are non-empty"
+    },
+    {
+      "name": "SVG renderability",
+      "status": "pass",
+      "evidence": "12/12 SVG files parsed"
+    },
+    {
+      "name": "PNG metadata",
+      "status": "pass",
+      "evidence": "54/54 PNG files parsed"
+    },
+    {
+      "name": "mark exact size",
+      "status": "pass",
+      "evidence": "all 16, 24, 32, and 48 px mark files match"
+    },
+    {
+      "name": "mark zoom size",
+      "status": "pass",
+      "evidence": "all mark zooms are exact 8x dimensions"
+    },
+    {
+      "name": "lockup exact height",
+      "status": "pass",
+      "evidence": "all 24, 32, and 48 px lockups match"
+    },
+    {
+      "name": "lockup zoom height",
+      "status": "pass",
+      "evidence": "all lockup zooms are exact 4x dimensions"
+    }
+  ],
+  "failures": []
+}

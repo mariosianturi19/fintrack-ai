@@ -1,0 +1,42 @@
+{
+  "checkpoint": "CP3-R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "viewport": {
+    "primary": {
+      "width": 1440,
+      "height": 1024
+    },
+    "spotcheck": {
+      "width": 1280,
+      "height": 1024
+    },
+    "sidebarWidth": 240,
+    "desktopPadding": 32,
+    "widePadding": 40,
+    "gridColumns": 12,
+    "gutter": 24,
+    "minimumControlHeight": 44
+  },
+  "composition": {
+    "primary": "Editorial Ledger",
+    "contextual": "Split Workspace",
+    "rejected": "Analytics Grid"
+  },
+  "dashboard": {
+    "topRatio": "64/36",
+    "lowerRatio": "64/36",
+    "metricCardWall": false
+  },
+  "responsive": {
+    "desktop": "Full sidebar and controlled multi-column layout",
+    "compactDesktop": "Preserve 240px sidebar at 1280; adjust column ratios",
+    "tablet": "Compact rail; stack receipt preview and form when needed",
+    "prohibition": "Never show full sidebar and bottom navigation together"
+  },
+  "inheritedFrom": "../local-cp2/cp2-ui-tokens.json",
+  "logo": {
+    "revision": "LOGO-R1",
+    "sidebarAsset": "../logo-r1/assets/lockups/fintrack-ai-lockup-compact-reverse.svg"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP2",
+  "revision": "R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "generatedAt": "2026-07-29",
+  "sourceHierarchy": "../local-cp1/CONTENT_HIERARCHY.md",
+  "designSystem": "../../DESIGN_SYSTEM.md",
+  "logo": "../logo-r1/LOGO_R1_FINAL_LOCK.md",
+  "finalLock": "CP2_R0_FINAL_LOCK.md",
+  "viewports": {
+    "primary": "390x844",
+    "spotcheck": "360x844"
+  },
+  "fonts": {
+    "display": "Space Grotesk variable, embedded",
+    "body": "IBM Plex Sans 400/500/600, embedded"
+  },
+  "icons": "Phosphor Icons 2.1.1",
+  "frames": [
+    {
+      "number": "01",
+      "title": "Dashboard — default",
+      "svg": "mobile/mobile-dashboard-default-cp2-r0.svg",
+      "png": "mobile/mobile-dashboard-default-cp2-r0.png"
+    },
+    {
+      "number": "02",
+      "title": "Dashboard — loading / empty / offline",
+      "svg": "mobile/mobile-dashboard-states-cp2-r0.svg",
+      "png": "mobile/mobile-dashboard-states-cp2-r0.png"
+    },
+    {
+      "number": "03",
+      "title": "Daftar transaksi",
+      "svg": "mobile/mobile-transactions-list-cp2-r0.svg",
+      "png": "mobile/mobile-transactions-list-cp2-r0.png"
+    },
+    {
+      "number": "04",
+      "title": "Detail & edit transaksi",
+      "svg": "mobile/mobile-transaction-detail-edit-cp2-r0.svg",
+      "png": "mobile/mobile-transaction-detail-edit-cp2-r0.png"
+    },
+    {
+      "number": "05",
+      "title": "Scan — pilih foto",
+      "svg": "mobile/mobile-scan-start-cp2-r0.svg",
+      "png": "mobile/mobile-scan-start-cp2-r0.png"
+    },
+    {
+      "number": "06",
+      "title": "Kompresi & upload",
+      "svg": "mobile/mobile-scan-upload-cp2-r0.svg",
+      "png": "mobile/mobile-scan-upload-cp2-r0.png"
+    },
+    {
+      "number": "07",
+      "title": "Focused inspection",
+      "svg": "mobile/mobile-scan-processing-cp2-r0.svg",
+      "png": "mobile/mobile-scan-processing-cp2-r0.png"
+    },
+    {
+      "number": "08",
+      "title": "Review hasil AI",
+      "svg": "mobile/mobile-scan-review-cp2-r0.svg",
+      "png": "mobile/mobile-scan-review-cp2-r0.png"
+    },
+    {
+      "number": "09",
+      "title": "AI quota / fallback",
+      "svg": "mobile/mobile-scan-quota-error-cp2-r0.svg",
+      "png": "mobile/mobile-scan-quota-error-cp2-r0.png"
+    },
+    {
+      "number": "10",
+      "title": "Destructive confirmation",
+      "svg": "mobile/mobile-destructive-confirmation-cp2-r0.svg",
+      "png": "mobile/mobile-destructive-confirmation-cp2-r0.png"
+    }
+  ],
+  "reviewBoards": [
+    "CP2_R0_MOBILE_CONTACT_SHEET.svg",
+    "CP2_R0_MOBILE_CONTACT_SHEET.png",
+    "CP2_R0_VISUAL_FOUNDATION.svg",
+    "CP2_R0_VISUAL_FOUNDATION.png",
+    "CP2_R0_360_SPOTCHECK.svg",
+    "CP2_R0_360_SPOTCHECK.png"
+  ],
+  "generatedFiles": [
+    "mobile/mobile-dashboard-default-cp2-r0.svg",
+    "mobile/mobile-dashboard-default-cp2-r0.png",
+    "mobile/mobile-dashboard-states-cp2-r0.svg",
+    "mobile/mobile-dashboard-states-cp2-r0.png",
+    "mobile/mobile-transactions-list-cp2-r0.svg",
+    "mobile/mobile-transactions-list-cp2-r0.png",
+    "mobile/mobile-transaction-detail-edit-cp2-r0.svg",
+    "mobile/mobile-transaction-detail-edit-cp2-r0.png",
+    "mobile/mobile-scan-start-cp2-r0.svg",
+    "mobile/mobile-scan-start-cp2-r0.png",
+    "mobile/mobile-scan-upload-cp2-r0.svg",
+    "mobile/mobile-scan-upload-cp2-r0.png",
+    "mobile/mobile-scan-processing-cp2-r0.svg",
+    "mobile/mobile-scan-processing-cp2-r0.png",
+    "mobile/mobile-scan-review-cp2-r0.svg",
+    "mobile/mobile-scan-review-cp2-r0.png",
+    "mobile/mobile-scan-quota-error-cp2-r0.svg",
+    "mobile/mobile-scan-quota-error-cp2-r0.png",
+    "mobile/mobile-destructive-confirmation-cp2-r0.svg",
+    "mobile/mobile-destructive-confirmation-cp2-r0.png",
+    "CP2_R0_MOBILE_CONTACT_SHEET.svg",
+    "CP2_R0_MOBILE_CONTACT_SHEET.png",
+    "CP2_R0_VISUAL_FOUNDATION.svg",
+    "CP2_R0_VISUAL_FOUNDATION.png",
+    "CP2_R0_360_SPOTCHECK.svg",
+    "CP2_R0_360_SPOTCHECK.png",
+    "tests/dashboard-360-px-cp2-r0.svg",
+    "tests/dashboard-360-px-cp2-r0.png",
+    "tests/transactions-360-px-cp2-r0.svg",
+    "tests/transactions-360-px-cp2-r0.png",
+    "tests/review-360-px-cp2-r0.svg",
+    "tests/review-360-px-cp2-r0.png",
+    "cp2-ui-tokens.json"
+  ]
+}

@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../../logo-r0/assets/fonts/SpaceGrotesk-Variable.ttf")
+    format("truetype");
+  font-display: swap;
+}
+
+:root {
+  color: #0b1220;
+  background: #f6f2e8;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  align-items: flex-start;
+  background: #0b1220;
+  color: #fff;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 2rem clamp(1rem, 4vw, 4rem);
+}
+
+h1,
+h2 {
+  font-family: "Space Grotesk", Arial, sans-serif;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  margin: 0.25rem 0;
+}
+
+header p {
+  color: #dceaf0;
+  margin: 0;
+}
+
+header > span {
+  background: #dceaf0;
+  border-radius: 0.5rem;
+  color: #285a73;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.6rem 0.8rem;
+  white-space: nowrap;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  border: 1px solid #285a73;
+  border-radius: 0.75rem;
+  color: #285a73;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+section {
+  margin: 0 0 3rem;
+}
+
+section > img {
+  border: 1px solid #d9d6cc;
+  border-radius: 1rem;
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.frame {
+  width: min(100%, 1024px);
+}
+
+@media (max-width: 640px) {
+  header {
+    display: block;
+  }
+
+  header > span {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

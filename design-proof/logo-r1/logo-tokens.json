@@ -1,0 +1,38 @@
+{
+  "direction": "Baseline A — Refined Lockup",
+  "status": "LOGO-R1 final and locked for design proof; provisional production system for CP2–CP4",
+  "colors": {
+    "primaryMark": "#285A73",
+    "primaryWordmark": "#0B1220",
+    "primaryBackground": "#F6F2E8",
+    "reverse": "#F6F2E8",
+    "reverseBackground": "#0B1220"
+  },
+  "geometry": {
+    "viewBox": "0 0 160 160",
+    "lockupViewBox": "0 0 492 72",
+    "masterMainStroke": 17,
+    "masterCornerStroke": 12.5,
+    "microMainStroke": 20,
+    "microCornerStroke": 14,
+    "clearSpace": "1x; x equals master vertical stem thickness"
+  },
+  "sizing": {
+    "microMark": "16–23 px",
+    "masterMark": "24 px and above",
+    "compactLockup": "24–27 px high",
+    "masterLockup": "28 px high and above",
+    "minimumLockupHeight": 24,
+    "recommendedInterfaceLockupHeight": "28–32 px",
+    "pwaExports": [
+      192,
+      512
+    ],
+    "maskableSafeZone": "centered circle; radius 40% of icon size"
+  },
+  "wordmark": {
+    "family": "Space Grotesk",
+    "weight": 600,
+    "assetForm": "outlined SVG path"
+  }
+}

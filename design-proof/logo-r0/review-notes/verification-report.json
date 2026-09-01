@@ -1,0 +1,41 @@
+{
+  "track": "Fintrack AI Logo",
+  "revision": "LOGO-R0",
+  "status": "pass",
+  "checkedManifestFiles": 50,
+  "svgCount": 13,
+  "pngCount": 37,
+  "checks": [
+    {
+      "name": "manifest files",
+      "status": "pass",
+      "evidence": "50/50 exist and are non-empty"
+    },
+    {
+      "name": "SVG renderability",
+      "status": "pass",
+      "evidence": "13/13 SVG files parsed by Sharp"
+    },
+    {
+      "name": "PNG metadata",
+      "status": "pass",
+      "evidence": "37/37 PNG files parsed"
+    },
+    {
+      "name": "exact-size raster",
+      "status": "pass",
+      "evidence": "all 16, 24, 32, and 48 px files match their declared dimensions"
+    },
+    {
+      "name": "8x raster inspection",
+      "status": "pass",
+      "evidence": "all zoom previews are exact nearest-neighbor 8x dimensions"
+    },
+    {
+      "name": "font asset",
+      "status": "pass",
+      "evidence": "Space Grotesk and its OFL license are stored locally"
+    }
+  ],
+  "failures": []
+}

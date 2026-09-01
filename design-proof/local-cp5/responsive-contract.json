@@ -1,0 +1,79 @@
+{
+  "checkpoint": "CP5-R0",
+  "modes": [
+    {
+      "width": 360,
+      "name": "mobile-narrow",
+      "navigation": "bottom",
+      "padding": 16,
+      "rules": [
+        "labels-remain-visible",
+        "actions-fit-or-stack",
+        "no-font-reduction"
+      ]
+    },
+    {
+      "width": 390,
+      "name": "mobile-primary",
+      "navigation": "bottom",
+      "padding": 16,
+      "rules": [
+        "four-column-intent",
+        "safe-area-bottom",
+        "one-hand-primary-actions"
+      ]
+    },
+    {
+      "width": 768,
+      "name": "tablet-entry",
+      "navigation": "contextual-single-mode",
+      "padding": 24,
+      "rules": [
+        "compact-rail-or-bottom-nav-never-both",
+        "stack-before-shrink"
+      ]
+    },
+    {
+      "width": 1024,
+      "name": "compact-desktop",
+      "navigation": "compact-rail",
+      "navigationWidth": 72,
+      "padding": 24,
+      "rules": [
+        "twelve-column-capable",
+        "type-scale-retained",
+        "weekly-correction-applied"
+      ]
+    },
+    {
+      "width": 1280,
+      "name": "desktop",
+      "navigation": "sidebar",
+      "navigationWidth": 240,
+      "padding": 32,
+      "rules": [
+        "ratios-adjust-before-type",
+        "split-workspace-when-contextual"
+      ]
+    },
+    {
+      "width": 1440,
+      "name": "wide",
+      "navigation": "sidebar",
+      "navigationWidth": 240,
+      "padding": 40,
+      "rules": [
+        "content-bounded",
+        "whitespace-grows",
+        "no-metric-card-wall"
+      ]
+    }
+  ],
+  "overflowContract": {
+    "flexGridChildMinWidth": 0,
+    "criticalLabelEllipsis": false,
+    "badgeSizing": "intrinsic",
+    "textContainerHeight": "min-height",
+    "stackWhenMinimumUnavailable": true
+  }
+}

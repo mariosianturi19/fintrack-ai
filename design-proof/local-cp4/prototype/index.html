@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fintrack AI — CP4-R0 Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="prototype-header">
+      <div>
+        <p class="eyebrow">FINTRACK AI · DESIGN PROOF</p>
+        <h1>CP4-R0 States &amp; Prototype</h1>
+        <p class="subtitle">
+          Dua alur utama, recovery branch, focus order, dan reduced motion.
+        </p>
+      </div>
+      <span class="review-badge">FINAL / LOCKED</span>
+    </header>
+
+    <main class="prototype-layout">
+      <aside class="prototype-controls" aria-label="Kontrol prototype">
+        <section>
+          <h2>Alur</h2>
+          <div class="segmented" role="group" aria-label="Pilih alur">
+            <button type="button" data-flow="scan" aria-pressed="true">
+              Scan struk
+            </button>
+            <button type="button" data-flow="correction" aria-pressed="false">
+              Koreksi transaksi
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <h2>Viewport</h2>
+          <div class="segmented" role="group" aria-label="Pilih viewport">
+            <button type="button" data-viewport="mobile" aria-pressed="true">
+              Mobile
+            </button>
+            <button type="button" data-viewport="desktop" aria-pressed="false">
+              Desktop
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <h2>Recovery test</h2>
+          <div class="recovery-grid">
+            <button type="button" data-recovery="offline">Offline</button>
+            <button type="button" data-recovery="upload-error">
+              Upload gagal
+            </button>
+            <button type="button" data-recovery="quota">AI quota</button>
+            <button type="button" data-recovery="save-error">
+              Simpan gagal
+            </button>
+            <button type="button" data-recovery="destructive">
+              Destructive
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <h2>Simulator</h2>
+          <button type="button" id="event-button" class="primary-control" hidden>
+            Kirim event berhasil
+          </button>
+          <button type="button" id="back-button">Kembali satu langkah</button>
+          <button type="button" id="reset-button">Ulangi alur</button>
+          <label class="toggle-row">
+            <input type="checkbox" id="hotspot-toggle" />
+            Tampilkan hotspot
+          </label>
+        </section>
+
+        <section class="prototype-note">
+          <h2>Aturan proof</h2>
+          <p>
+            Proses async tidak maju memakai timer. Tombol event di luar layar
+            mewakili respons backend/AI yang nyata.
+          </p>
+        </section>
+      </aside>
+
+      <section class="prototype-workspace" aria-labelledby="screen-title">
+        <div class="workspace-meta">
+          <div>
+            <p id="screen-step" class="eyebrow"></p>
+            <h2 id="screen-title"></h2>
+            <p id="screen-description"></p>
+          </div>
+          <div class="workspace-actions">
+            <span id="viewport-label"></span>
+            <span id="focus-label"></span>
+          </div>
+        </div>
+
+        <div id="device-shell" class="device-shell is-mobile">
+          <div id="screen-stage" class="screen-stage">
+            <img id="screen-image" alt="" />
+            <div id="screen-toast" class="screen-toast" hidden></div>
+            <div id="hotspot-layer" class="hotspot-layer"></div>
+          </div>
+        </div>
+
+        <div class="focus-handoff">
+          <strong>Keyboard:</strong>
+          <span>Tab mengikuti urutan visual</span>
+          <span>Enter/Space mengaktifkan hotspot</span>
+          <span>Escape kembali atau menutup dialog</span>
+        </div>
+
+        <div id="live-region" class="sr-only" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "project": "Fintrack AI",
+    "direction": "Quiet Signal — Refined",
+    "checkpoint": "CP5-R0",
+    "status": "Final / Locked"
+  },
+  "color": {
+    "canvas": "#F6F2E8",
+    "canvasSubtle": "#FCFBF7",
+    "surface": "#FFFFFF",
+    "ink": "#0B1220",
+    "inkSecondary": "#53606C",
+    "inkWarmMuted": "#6B665E",
+    "primary": "#285A73",
+    "primaryHover": "#1F465A",
+    "primarySoft": "#DCEAF0",
+    "signal": "#B9D86E",
+    "signalInk": "#526827",
+    "signalSoft": "#EDF5D5",
+    "expense": "#D96C52",
+    "expenseInk": "#A63D2A",
+    "expenseSoft": "#F8E2DB",
+    "warningInk": "#8A3C00",
+    "warningSoft": "#FFF1D6",
+    "error": "#B42318",
+    "errorSoft": "#FDE8E7",
+    "border": "#D9D6CC",
+    "divider": "#E7E3DA",
+    "disabledBackground": "#EEEAE1",
+    "disabledInk": "#6B665E"
+  },
+  "typography": {
+    "displayFamily": "Space Grotesk",
+    "bodyFamily": "IBM Plex Sans",
+    "weights": {
+      "display": [
+        500,
+        600,
+        700
+      ],
+      "body": [
+        400,
+        500,
+        600
+      ]
+    },
+    "numeric": "tabular-nums",
+    "runtimeFloor": {
+      "criticalMetadata": 12,
+      "navigationLabel": 11,
+      "body": 16
+    },
+    "scale": {
+      "display": {
+        "mobile": 32,
+        "desktop": 40,
+        "lineHeight": 1.1,
+        "weight": 600
+      },
+      "h1": {
+        "mobile": 28,
+        "desktop": 32,
+        "lineHeight": 1.2,
+        "weight": 600
+      },
+      "h2": {
+        "mobile": 22,
+        "desktop": 24,
+        "lineHeight": 1.25,
+        "weight": 600
+      },
+      "h3": {
+        "mobile": 18,
+        "desktop": 20,
+        "lineHeight": 1.35,
+        "weight": 600
+      },
+      "bodyLarge": {
+        "mobile": 17,
+        "desktop": 18,
+        "lineHeight": 1.55,
+        "weight": 400
+      },
+      "body": {
+        "mobile": 16,
+        "desktop": 16,
+        "lineHeight": 1.5,
+        "weight": 400
+      },
+      "bodySmall": {
+        "mobile": 14,
+        "desktop": 14,
+        "lineHeight": 1.45,
+        "weight": 400
+      },
+      "caption": {
+        "mobile": 12,
+        "desktop": 12,
+        "lineHeight": 1.4,
+        "weight": 500
+      },
+      "button": {
+        "mobile": 15,
+        "desktop": 15,
+        "lineHeight": 1.2,
+        "weight": 600
+      }
+    }
+  },
+  "spacing": {
+    "1": 4,
+    "2": 8,
+    "3": 12,
+    "4": 16,
+    "5": 20,
+    "6": 24,
+    "8": 32,
+    "10": 40,
+    "12": 48,
+    "16": 64,
+    "20": 80
+  },
+  "radius": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "full": 999
+  },
+  "elevation": {
+    "level1": "0 1px 2px rgba(11, 18, 32, 0.06)",
+    "level2": "0 8px 24px rgba(11, 18, 32, 0.10)",
+    "level3": "0 18px 48px rgba(11, 18, 32, 0.16)"
+  },
+  "motion": {
+    "fast": 120,
+    "base": 180,
+    "slow": 260,
+    "enter": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "exit": "cubic-bezier(0.4, 0, 1, 1)"
+  },
+  "layout": {
+    "breakpoints": {
+      "mobile": 0,
+      "tablet": 768,
+      "desktop": 1024,
+      "wide": 1440
+    },
+    "pagePadding": {
+      "mobile": 16,
+      "tablet": 24,
+      "desktop": 32,
+      "wide": 40
+    },
+    "columns": {
+      "mobile": 4,
+      "tablet": 8,
+      "desktop": 12
+    },
+    "gutter": {
+      "mobile": 16,
+      "tablet": 24,
+      "desktop": 24
+    },
+    "sidebar": {
+      "compact": 72,
+      "desktop": 240
+    },
+    "maximum": {
+      "dashboard": 1440,
+      "form": 640,
+      "reading": 720
+    }
+  },
+  "component": {
+    "minimumTouchTarget": 44,
+    "mobileMainControlHeight": 48,
+    "desktopControlHeight": 44,
+    "focusRingWidth": 2,
+    "focusRingOffset": 2,
+    "offlineCachedBadgeMinimumWidth": 128,
+    "statusBadgeHorizontalPadding": 10,
+    "dashboardWeeklyColumnMinimum": 176
+  },
+  "logo": {
+    "revision": "LOGO-R1",
+    "masterMarkMinimum": 24,
+    "microMarkRange": [
+      16,
+      23
+    ],
+    "compactLockupRange": [
+      24,
+      27
+    ],
+    "masterLockupMinimum": 28,
+    "sidebarWidthAuthority": 240,
+    "productionStatus": "Asset-ready; installed-PWA physical-device validation pending"
+  }
+}

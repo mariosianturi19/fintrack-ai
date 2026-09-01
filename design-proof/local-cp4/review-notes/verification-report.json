@@ -1,0 +1,1415 @@
+{
+  "checkpoint": "CP4-R0",
+  "status": "PASS",
+  "summary": {
+    "total": 221,
+    "passed": 221,
+    "failed": 0
+  },
+  "categories": {
+    "identity": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "inventory": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "files": {
+      "total": 52,
+      "passed": 52,
+      "failed": 0
+    },
+    "dimensions": {
+      "total": 38,
+      "passed": 38,
+      "failed": 0
+    },
+    "anti-generic": {
+      "total": 48,
+      "passed": 48,
+      "failed": 0
+    },
+    "ai-integrity": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "color": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "state-model": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0
+    },
+    "flows": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "focus": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "motion": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "prototype": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "manual-fallback": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "runtime-separation": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "contrast": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    }
+  },
+  "failures": [],
+  "checks": [
+    {
+      "name": "Checkpoint identity",
+      "category": "identity",
+      "passed": true,
+      "evidence": "CP4-R0; Final / Locked"
+    },
+    {
+      "name": "Direction remains locked",
+      "category": "identity",
+      "passed": true,
+      "evidence": "Quiet Signal — Refined"
+    },
+    {
+      "name": "State/runtime frame count",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "12 frames"
+    },
+    {
+      "name": "Review board count",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "14 SVG/PNG board files"
+    },
+    {
+      "name": "Prototype artifact count",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "4 prototype files"
+    },
+    {
+      "name": "Documentation count",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "6 documentation files"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-upload-error-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-upload-error-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-upload-error-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-upload-error-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-offline-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-offline-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-offline-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-offline-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-transaction-save-error-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-transaction-save-error-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-transaction-save-error-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-transaction-save-error-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-saved-success-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-saved-success-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-scan-saved-success-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-scan-saved-success-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-manual-entry-fallback-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-manual-entry-fallback-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/mobile/mobile-manual-entry-fallback-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/mobile/mobile-manual-entry-fallback-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-upload-ready-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-upload-ready-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-upload-ready-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-upload-ready-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-processing-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-processing-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-processing-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-processing-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-upload-error-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-upload-error-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-upload-error-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-upload-error-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-quota-fallback-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-quota-fallback-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-scan-quota-fallback-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-scan-quota-fallback-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-transaction-save-success-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-transaction-save-success-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-transaction-save-success-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-transaction-save-success-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-manual-entry-fallback-cp4-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-manual-entry-fallback-cp4-r0.svg"
+    },
+    {
+      "name": "Artifact exists: states/desktop/desktop-manual-entry-fallback-cp4-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "states/desktop/desktop-manual-entry-fallback-cp4-r0.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_INTERACTION_STRATEGY.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_INTERACTION_STRATEGY.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_INTERACTION_STRATEGY.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_INTERACTION_STRATEGY.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_STATE_INVENTORY.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_STATE_INVENTORY.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_STATE_INVENTORY.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_STATE_INVENTORY.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_SCAN_FLOW.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_SCAN_FLOW.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_SCAN_FLOW.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_SCAN_FLOW.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_CORRECTION_FLOW.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_CORRECTION_FLOW.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_CORRECTION_FLOW.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_CORRECTION_FLOW.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_FOCUS_MOTION.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_FOCUS_MOTION.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_FOCUS_MOTION.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_FOCUS_MOTION.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_RESPONSIVE_STATES.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_RESPONSIVE_STATES.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_RESPONSIVE_STATES.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_RESPONSIVE_STATES.png"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_STATE_CONTACT_SHEET.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_STATE_CONTACT_SHEET.svg"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_STATE_CONTACT_SHEET.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_STATE_CONTACT_SHEET.png"
+    },
+    {
+      "name": "Artifact exists: prototype/index.html",
+      "category": "files",
+      "passed": true,
+      "evidence": "prototype/index.html"
+    },
+    {
+      "name": "Artifact exists: prototype/styles.css",
+      "category": "files",
+      "passed": true,
+      "evidence": "prototype/styles.css"
+    },
+    {
+      "name": "Artifact exists: prototype/app.js",
+      "category": "files",
+      "passed": true,
+      "evidence": "prototype/app.js"
+    },
+    {
+      "name": "Artifact exists: prototype/README.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "prototype/README.md"
+    },
+    {
+      "name": "Artifact exists: README.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "README.md"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_SPEC.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_SPEC.md"
+    },
+    {
+      "name": "Artifact exists: CP4_R0_FINAL_LOCK.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "CP4_R0_FINAL_LOCK.md"
+    },
+    {
+      "name": "Artifact exists: cp4-interaction-model.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "cp4-interaction-model.json"
+    },
+    {
+      "name": "Artifact exists: review-notes/CP4_R0_BROWSER_QA.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "review-notes/CP4_R0_BROWSER_QA.md"
+    },
+    {
+      "name": "Artifact exists: review-notes/CP4_R0_SELF_CRITIQUE.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "review-notes/CP4_R0_SELF_CRITIQUE.md"
+    },
+    {
+      "name": "Artifact exists: manifest.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "manifest.json"
+    },
+    {
+      "name": "Artifact exists: tooling/generate-cp4.mjs",
+      "category": "files",
+      "passed": true,
+      "evidence": "tooling/generate-cp4.mjs"
+    },
+    {
+      "name": "Artifact exists: tooling/verify-cp4.mjs",
+      "category": "files",
+      "passed": true,
+      "evidence": "tooling/verify-cp4.mjs"
+    },
+    {
+      "name": "Artifact exists: tooling/serve-prototype.mjs",
+      "category": "files",
+      "passed": true,
+      "evidence": "tooling/serve-prototype.mjs"
+    },
+    {
+      "name": "Upload error — context preserved SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Upload error — context preserved PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Offline — manual fallback SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Offline — manual fallback PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Save error — edits preserved SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Save error — edits preserved PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Success — non-blocking confirmation SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Success — non-blocking confirmation PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Manual fallback — clean form SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Manual fallback — clean form PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "390x844"
+    },
+    {
+      "name": "Upload ready — runtime state SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Upload ready — runtime state PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Processing — event driven SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Processing — event driven PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Upload error — retry or return SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Upload error — retry or return PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "AI quota — graceful degradation SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "AI quota — graceful degradation PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Success — context remains visible SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Success — context remains visible PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Destructive — explicit confirmation SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Destructive — explicit confirmation PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Manual fallback — contextual form SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "Manual fallback — contextual form PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1440x1024"
+    },
+    {
+      "name": "CP4_R0_INTERACTION_STRATEGY SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1000"
+    },
+    {
+      "name": "CP4_R0_INTERACTION_STRATEGY PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1000"
+    },
+    {
+      "name": "CP4_R0_STATE_INVENTORY SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1260"
+    },
+    {
+      "name": "CP4_R0_STATE_INVENTORY PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1260"
+    },
+    {
+      "name": "CP4_R0_SCAN_FLOW SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1020"
+    },
+    {
+      "name": "CP4_R0_SCAN_FLOW PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1020"
+    },
+    {
+      "name": "CP4_R0_CORRECTION_FLOW SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1000"
+    },
+    {
+      "name": "CP4_R0_CORRECTION_FLOW PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1000"
+    },
+    {
+      "name": "CP4_R0_FOCUS_MOTION SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1120"
+    },
+    {
+      "name": "CP4_R0_FOCUS_MOTION PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1120"
+    },
+    {
+      "name": "CP4_R0_RESPONSIVE_STATES SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x900"
+    },
+    {
+      "name": "CP4_R0_RESPONSIVE_STATES PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x900"
+    },
+    {
+      "name": "CP4_R0_STATE_CONTACT_SHEET SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1900"
+    },
+    {
+      "name": "CP4_R0_STATE_CONTACT_SHEET PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1900"
+    },
+    {
+      "name": "Upload error — context preserved avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — context preserved avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — context preserved avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — context preserved avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — context preserved has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Offline — manual fallback avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Offline — manual fallback avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Offline — manual fallback avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Offline — manual fallback avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Offline — manual fallback has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Save error — edits preserved avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Save error — edits preserved avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Save error — edits preserved avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Save error — edits preserved avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Save error — edits preserved has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Success — non-blocking confirmation avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — non-blocking confirmation avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — non-blocking confirmation avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — non-blocking confirmation avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — non-blocking confirmation has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Manual fallback — clean form avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — clean form avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — clean form avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — clean form avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — clean form has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Upload ready — runtime state avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload ready — runtime state avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload ready — runtime state avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload ready — runtime state avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload ready — runtime state has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Processing — event driven avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Processing — event driven avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Processing — event driven avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Processing — event driven avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Processing — event driven has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Upload error — retry or return avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — retry or return avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — retry or return avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — retry or return avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Upload error — retry or return has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "AI quota — graceful degradation avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "AI quota — graceful degradation avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "AI quota — graceful degradation avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "AI quota — graceful degradation avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "AI quota — graceful degradation has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Success — context remains visible avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — context remains visible avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — context remains visible avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — context remains visible avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Success — context remains visible has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Destructive — explicit confirmation avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Destructive — explicit confirmation avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Destructive — explicit confirmation avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Destructive — explicit confirmation avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Destructive — explicit confirmation has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Manual fallback — contextual form avoids gradient",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — contextual form avoids filter",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — contextual form avoids foreignObject",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — contextual form avoids glass blur",
+      "category": "anti-generic",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "Manual fallback — contextual form has no numeric fake progress",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "No numeric percentage"
+    },
+    {
+      "name": "Upload error — context preserved Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Offline — manual fallback Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Save error — edits preserved Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Success — non-blocking confirmation Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.143% exact-color pixels"
+    },
+    {
+      "name": "Manual fallback — clean form Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Upload ready — runtime state Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "Processing — event driven Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.284% exact-color pixels"
+    },
+    {
+      "name": "Upload error — retry or return Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "AI quota — graceful degradation Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Success — context remains visible Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.036% exact-color pixels"
+    },
+    {
+      "name": "Destructive — explicit confirmation Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.000% exact-color pixels"
+    },
+    {
+      "name": "Manual fallback — contextual form Signal Leaf <= 5%",
+      "category": "color",
+      "passed": true,
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "State modeled: loading",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: empty",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: offline",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: error",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: quota",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: review",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: success",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State modeled: destructive",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success, destructive"
+    },
+    {
+      "name": "State inventory has no duplicates",
+      "category": "state-model",
+      "passed": true,
+      "evidence": "8 entries; 8 unique"
+    },
+    {
+      "name": "Scan happy path is complete",
+      "category": "flows",
+      "passed": true,
+      "evidence": "dashboard → scan-start → preparation → processing → review → save → dashboard-updated"
+    },
+    {
+      "name": "Correction happy path is complete",
+      "category": "flows",
+      "passed": true,
+      "evidence": "transactions → detail → edit-category → save → list-updated"
+    },
+    {
+      "name": "Scan recovery coverage",
+      "category": "flows",
+      "passed": true,
+      "evidence": "permission-denied, offline, upload-error, quota, validation, save-error"
+    },
+    {
+      "name": "Correction recovery coverage",
+      "category": "flows",
+      "passed": true,
+      "evidence": "save-error, delete-confirmation"
+    },
+    {
+      "name": "Recovery action modeled: retry",
+      "category": "flows",
+      "passed": true,
+      "evidence": "wait, use-cache-if-available, add-manual, scan-receipt, manual-entry, retry-connection, retry, back, manual-entry, try-later, edit-field, save-when-valid, dismiss-optional, cancel-default, confirm-delete"
+    },
+    {
+      "name": "Recovery action modeled: back",
+      "category": "flows",
+      "passed": true,
+      "evidence": "wait, use-cache-if-available, add-manual, scan-receipt, manual-entry, retry-connection, retry, back, manual-entry, try-later, edit-field, save-when-valid, dismiss-optional, cancel-default, confirm-delete"
+    },
+    {
+      "name": "Recovery action modeled: cancel",
+      "category": "flows",
+      "passed": true,
+      "evidence": "wait, use-cache-if-available, add-manual, scan-receipt, manual-entry, retry-connection, retry, back, manual-entry, try-later, edit-field, save-when-valid, dismiss-optional, cancel-default, confirm-delete"
+    },
+    {
+      "name": "Recovery action modeled: manual",
+      "category": "flows",
+      "passed": true,
+      "evidence": "wait, use-cache-if-available, add-manual, scan-receipt, manual-entry, retry-connection, retry, back, manual-entry, try-later, edit-field, save-when-valid, dismiss-optional, cancel-default, confirm-delete"
+    },
+    {
+      "name": "Destructive initial focus is Cancel",
+      "category": "focus",
+      "passed": true,
+      "evidence": "cancel"
+    },
+    {
+      "name": "Destructive focus trap specified",
+      "category": "focus",
+      "passed": true,
+      "evidence": "true"
+    },
+    {
+      "name": "Escape closes destructive dialog",
+      "category": "focus",
+      "passed": true,
+      "evidence": "true"
+    },
+    {
+      "name": "Focus returns to trigger",
+      "category": "focus",
+      "passed": true,
+      "evidence": "true"
+    },
+    {
+      "name": "Success toast does not take focus",
+      "category": "focus",
+      "passed": true,
+      "evidence": "false"
+    },
+    {
+      "name": "Motion tokens remain 120/180/260",
+      "category": "motion",
+      "passed": true,
+      "evidence": "120/180/260"
+    },
+    {
+      "name": "Async flow does not auto-advance",
+      "category": "motion",
+      "passed": true,
+      "evidence": "No timer-driven state transition"
+    },
+    {
+      "name": "Fake progress disabled",
+      "category": "ai-integrity",
+      "passed": true,
+      "evidence": "false"
+    },
+    {
+      "name": "Reduced motion rule exists",
+      "category": "motion",
+      "passed": true,
+      "evidence": "prefers-reduced-motion: reduce"
+    },
+    {
+      "name": "Reduced motion removes transform duration",
+      "category": "motion",
+      "passed": true,
+      "evidence": "0.01ms fallback"
+    },
+    {
+      "name": "Prototype has aria-live announcement",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "aria-live=polite"
+    },
+    {
+      "name": "Prototype has visible focus rule",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "2px Mineral Blue focus"
+    },
+    {
+      "name": "Prototype hotspot minimum is 44px",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "44x44 CSS minimum"
+    },
+    {
+      "name": "Prototype offers event simulator",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "External async event control"
+    },
+    {
+      "name": "Prototype offers recovery controls",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "5 recovery controls"
+    },
+    {
+      "name": "Prototype supports Escape",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "Escape key handler"
+    },
+    {
+      "name": "Prototype traps Tab in destructive state",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "Tab cycles destructive hotspots"
+    },
+    {
+      "name": "Prototype restores focus after back or cancel",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "Element or hotspot label focus restoration"
+    },
+    {
+      "name": "Prototype supports back navigation",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "History-backed control"
+    },
+    {
+      "name": "Prototype supports mobile and desktop",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "Two viewport controls"
+    },
+    {
+      "name": "Prototype has no external runtime dependency",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "No external URL in HTML"
+    },
+    {
+      "name": "Server guards project root",
+      "category": "prototype",
+      "passed": true,
+      "evidence": "Path containment check"
+    },
+    {
+      "name": "mobile manual fallback has Manual label",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "MANUAL label"
+    },
+    {
+      "name": "mobile manual fallback removes AI source badge",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "No AI · Struk"
+    },
+    {
+      "name": "mobile manual fallback explains no AI result",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "Explicit no-AI copy"
+    },
+    {
+      "name": "desktop manual fallback has Manual label",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "MANUAL label"
+    },
+    {
+      "name": "desktop manual fallback removes AI source badge",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "No AI · Struk"
+    },
+    {
+      "name": "desktop manual fallback explains no AI result",
+      "category": "manual-fallback",
+      "passed": true,
+      "evidence": "Explicit no-AI copy"
+    },
+    {
+      "name": "Desktop upload and processing are separate assets",
+      "category": "runtime-separation",
+      "passed": true,
+      "evidence": "Distinct runtime PNGs"
+    },
+    {
+      "name": "Desktop prototype maps upload and processing correctly",
+      "category": "runtime-separation",
+      "passed": true,
+      "evidence": "Upload uses upload-ready; processing uses focused inspection"
+    },
+    {
+      "name": "Desktop processing is contextual dark mode",
+      "category": "runtime-separation",
+      "passed": true,
+      "evidence": "Midnight focused panel"
+    },
+    {
+      "name": "Primary button contrast",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "7.50:1"
+    },
+    {
+      "name": "Error text contrast",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "5.60:1"
+    },
+    {
+      "name": "Warning text contrast",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "6.90:1"
+    },
+    {
+      "name": "Success text contrast",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "5.53:1"
+    },
+    {
+      "name": "Primary text contrast",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "6.10:1"
+    }
+  ]
+}

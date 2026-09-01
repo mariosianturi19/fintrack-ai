@@ -1,0 +1,1198 @@
+{
+  "project": "Fintrack AI",
+  "revision": "LOGO-R1",
+  "generatedAt": "2026-07-29T10:09:07.325Z",
+  "status": "PASS",
+  "summary": {
+    "total": 236,
+    "passed": 236,
+    "failed": 0
+  },
+  "limitations": [
+    "Automated checks validate file integrity, renderability, dimensions, contrast, and maskable safe-zone geometry.",
+    "Optical balance, distinctiveness, and interface presence require human visual review.",
+    "Trademark clearance and production lock are outside LOGO-R1 and remain pending."
+  ],
+  "checks": [
+    {
+      "name": "Manifest has no duplicate file paths",
+      "passed": true,
+      "detail": "79/79 unique"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-primary.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-primary.svg",
+      "passed": true,
+      "detail": "490 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-primary.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-primary.png",
+      "passed": true,
+      "detail": "5500 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-midnight.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-midnight.svg",
+      "passed": true,
+      "detail": "490 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-midnight.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-midnight.png",
+      "passed": true,
+      "detail": "5432 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-reverse.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-reverse.svg",
+      "passed": true,
+      "detail": "490 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-reverse.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-reverse.png",
+      "passed": true,
+      "detail": "4484 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "passed": true,
+      "detail": "487 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-primary.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-primary.png",
+      "passed": true,
+      "detail": "3509 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "passed": true,
+      "detail": "487 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-midnight.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-midnight.png",
+      "passed": true,
+      "detail": "3512 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "passed": true,
+      "detail": "487 bytes"
+    },
+    {
+      "name": "Path containment: assets/marks/fintrack-ai-mark-micro-reverse.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/marks/fintrack-ai-mark-micro-reverse.png",
+      "passed": true,
+      "detail": "3104 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-primary.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-primary.svg",
+      "passed": true,
+      "detail": "3802 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-primary.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-primary.png",
+      "passed": true,
+      "detail": "17611 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "passed": true,
+      "detail": "3802 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-reverse.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-reverse.png",
+      "passed": true,
+      "detail": "17276 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "passed": true,
+      "detail": "3802 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-monochrome-dark.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-monochrome-dark.png",
+      "passed": true,
+      "detail": "17211 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "passed": true,
+      "detail": "3802 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-monochrome-light.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-monochrome-light.png",
+      "passed": true,
+      "detail": "14364 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "passed": true,
+      "detail": "3799 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-primary.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-primary.png",
+      "passed": true,
+      "detail": "16433 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "passed": true,
+      "detail": "3799 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-reverse.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-reverse.png",
+      "passed": true,
+      "detail": "16358 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "passed": true,
+      "detail": "3799 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.png",
+      "passed": true,
+      "detail": "16287 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "passed": true,
+      "detail": "3799 bytes"
+    },
+    {
+      "name": "Path containment: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.png",
+      "passed": true,
+      "detail": "13640 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-192.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-192.svg",
+      "passed": true,
+      "detail": "549 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-192.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-192.png",
+      "passed": true,
+      "detail": "1488 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-512.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-512.svg",
+      "passed": true,
+      "detail": "573 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-512.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-512.png",
+      "passed": true,
+      "detail": "4717 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "passed": true,
+      "detail": "586 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "passed": true,
+      "detail": "1558 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "passed": true,
+      "detail": "586 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "passed": true,
+      "detail": "4898 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-favicon-16.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-favicon-16.png",
+      "passed": true,
+      "detail": "218 bytes"
+    },
+    {
+      "name": "Path containment: assets/app-icons/fintrack-ai-favicon-32.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: assets/app-icons/fintrack-ai-favicon-32.png",
+      "passed": true,
+      "detail": "254 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-16px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-16px.png",
+      "passed": true,
+      "detail": "275 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-16px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-16px-8x.png",
+      "passed": true,
+      "detail": "613 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-20px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-20px.png",
+      "passed": true,
+      "detail": "285 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-20px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-20px-8x.png",
+      "passed": true,
+      "detail": "747 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-24px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-24px.png",
+      "passed": true,
+      "detail": "328 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-24px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-24px-8x.png",
+      "passed": true,
+      "detail": "955 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-32px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-32px.png",
+      "passed": true,
+      "detail": "378 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-32px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-32px-8x.png",
+      "passed": true,
+      "detail": "1319 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-48px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-48px.png",
+      "passed": true,
+      "detail": "491 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-48px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-48px-8x.png",
+      "passed": true,
+      "detail": "2176 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-64px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-64px.png",
+      "passed": true,
+      "detail": "576 bytes"
+    },
+    {
+      "name": "Path containment: tests/master-64px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/master-64px-8x.png",
+      "passed": true,
+      "detail": "3267 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-16px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-16px.png",
+      "passed": true,
+      "detail": "226 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-16px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-16px-8x.png",
+      "passed": true,
+      "detail": "537 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-20px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-20px.png",
+      "passed": true,
+      "detail": "256 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-20px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-20px-8x.png",
+      "passed": true,
+      "detail": "686 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-24px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-24px.png",
+      "passed": true,
+      "detail": "283 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-24px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-24px-8x.png",
+      "passed": true,
+      "detail": "884 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-32px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-32px.png",
+      "passed": true,
+      "detail": "270 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-32px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-32px-8x.png",
+      "passed": true,
+      "detail": "1184 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-48px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-48px.png",
+      "passed": true,
+      "detail": "335 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-48px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-48px-8x.png",
+      "passed": true,
+      "detail": "2003 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-64px.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-64px.png",
+      "passed": true,
+      "detail": "364 bytes"
+    },
+    {
+      "name": "Path containment: tests/micro-64px-8x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/micro-64px-8x.png",
+      "passed": true,
+      "detail": "3079 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-24h.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-24h.png",
+      "passed": true,
+      "detail": "1939 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-24h-4x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-24h-4x.png",
+      "passed": true,
+      "detail": "3915 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-32h.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-32h.png",
+      "passed": true,
+      "detail": "2608 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-32h-4x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-32h-4x.png",
+      "passed": true,
+      "detail": "5603 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-48h.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-48h.png",
+      "passed": true,
+      "detail": "3776 bytes"
+    },
+    {
+      "name": "Path containment: tests/lockup-48h-4x.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: tests/lockup-48h-4x.png",
+      "passed": true,
+      "detail": "9660 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_MASTER_SHEET.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_MASTER_SHEET.svg",
+      "passed": true,
+      "detail": "190793 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_MASTER_SHEET.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_MASTER_SHEET.png",
+      "passed": true,
+      "detail": "93235 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_USAGE_RULES.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_USAGE_RULES.svg",
+      "passed": true,
+      "detail": "202160 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_USAGE_RULES.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_USAGE_RULES.png",
+      "passed": true,
+      "detail": "118370 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_SMALL_SIZE_TEST.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_SMALL_SIZE_TEST.svg",
+      "passed": true,
+      "detail": "200698 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_SMALL_SIZE_TEST.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_SMALL_SIZE_TEST.png",
+      "passed": true,
+      "detail": "59407 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_CONTEXT_TESTS.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_CONTEXT_TESTS.svg",
+      "passed": true,
+      "detail": "193345 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_CONTEXT_TESTS.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_CONTEXT_TESTS.png",
+      "passed": true,
+      "detail": "95445 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_PWA_SAFE_ZONE.svg",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_PWA_SAFE_ZONE.svg",
+      "passed": true,
+      "detail": "184661 bytes"
+    },
+    {
+      "name": "Path containment: LOGO_R1_PWA_SAFE_ZONE.png",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: LOGO_R1_PWA_SAFE_ZONE.png",
+      "passed": true,
+      "detail": "53546 bytes"
+    },
+    {
+      "name": "Path containment: logo-tokens.json",
+      "passed": true,
+      "detail": "inside LOGO-R1 root"
+    },
+    {
+      "name": "File exists and is non-empty: logo-tokens.json",
+      "passed": true,
+      "detail": "1078 bytes"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-primary.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-primary.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-midnight.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-midnight.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-reverse.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-reverse.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-primary.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-primary.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/app-icons/fintrack-ai-pwa-192.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/app-icons/fintrack-ai-pwa-192.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/app-icons/fintrack-ai-pwa-512.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/app-icons/fintrack-ai-pwa-512.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "Production SVG contains no live text: assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "passed": true,
+      "detail": "paths and strokes only"
+    },
+    {
+      "name": "Production SVG parses: assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "passed": true,
+      "detail": "renderable by Sharp"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-primary.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-midnight.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-reverse.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "passed": true,
+      "detail": "160×160; expected 160×160"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-primary.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "SVG render and dimensions: assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "passed": true,
+      "detail": "492×72; expected 492×72"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-pwa-192.png",
+      "passed": true,
+      "detail": "192×192; expected 192×192"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "passed": true,
+      "detail": "192×192; expected 192×192"
+    },
+    {
+      "name": "Maskable safe zone: assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "passed": true,
+      "detail": "3695 mark pixels checked; 0 outside centered 40% radius"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-pwa-512.png",
+      "passed": true,
+      "detail": "512×512; expected 512×512"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "passed": true,
+      "detail": "512×512; expected 512×512"
+    },
+    {
+      "name": "Maskable safe zone: assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "passed": true,
+      "detail": "24773 mark pixels checked; 0 outside centered 40% radius"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-favicon-16.png",
+      "passed": true,
+      "detail": "16×16; expected 16×16"
+    },
+    {
+      "name": "PNG dimensions: assets/app-icons/fintrack-ai-favicon-32.png",
+      "passed": true,
+      "detail": "32×32; expected 32×32"
+    },
+    {
+      "name": "PNG dimensions: tests/master-16px.png",
+      "passed": true,
+      "detail": "16×16; expected 16×16"
+    },
+    {
+      "name": "PNG dimensions: tests/master-20px.png",
+      "passed": true,
+      "detail": "20×20; expected 20×20"
+    },
+    {
+      "name": "PNG dimensions: tests/master-24px.png",
+      "passed": true,
+      "detail": "24×24; expected 24×24"
+    },
+    {
+      "name": "PNG dimensions: tests/master-32px.png",
+      "passed": true,
+      "detail": "32×32; expected 32×32"
+    },
+    {
+      "name": "PNG dimensions: tests/master-48px.png",
+      "passed": true,
+      "detail": "48×48; expected 48×48"
+    },
+    {
+      "name": "PNG dimensions: tests/master-64px.png",
+      "passed": true,
+      "detail": "64×64; expected 64×64"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-16px.png",
+      "passed": true,
+      "detail": "16×16; expected 16×16"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-20px.png",
+      "passed": true,
+      "detail": "20×20; expected 20×20"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-24px.png",
+      "passed": true,
+      "detail": "24×24; expected 24×24"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-32px.png",
+      "passed": true,
+      "detail": "32×32; expected 32×32"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-48px.png",
+      "passed": true,
+      "detail": "48×48; expected 48×48"
+    },
+    {
+      "name": "PNG dimensions: tests/micro-64px.png",
+      "passed": true,
+      "detail": "64×64; expected 64×64"
+    },
+    {
+      "name": "PNG dimensions: tests/lockup-24h.png",
+      "passed": true,
+      "detail": "164×24; expected 164×24"
+    },
+    {
+      "name": "PNG dimensions: tests/lockup-32h.png",
+      "passed": true,
+      "detail": "219×32; expected 219×32"
+    },
+    {
+      "name": "PNG dimensions: tests/lockup-48h.png",
+      "passed": true,
+      "detail": "328×48; expected 328×48"
+    },
+    {
+      "name": "Contrast: Midnight / Rice Paper",
+      "passed": true,
+      "detail": "16.75:1; threshold 4.5:1"
+    },
+    {
+      "name": "Contrast: Mineral Blue / Rice Paper",
+      "passed": true,
+      "detail": "6.71:1; threshold 4.5:1"
+    },
+    {
+      "name": "Contrast: Rice Paper / Midnight",
+      "passed": true,
+      "detail": "16.75:1; threshold 4.5:1"
+    },
+    {
+      "name": "Contrast: White / Midnight",
+      "passed": true,
+      "detail": "18.72:1; threshold 4.5:1"
+    }
+  ]
+}

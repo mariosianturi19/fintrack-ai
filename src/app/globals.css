@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-canvas: var(--ft-color-canvas);
+  --color-canvas-subtle: var(--ft-color-canvas-subtle);
+  --color-surface: var(--ft-color-surface);
+  --color-ink: var(--ft-color-ink);
+  --color-ink-secondary: var(--ft-color-ink-secondary);
+  --color-ink-warm-muted: var(--ft-color-ink-warm-muted);
+  --color-primary: var(--ft-color-primary);
+  --color-primary-hover: var(--ft-color-primary-hover);
+  --color-primary-soft: var(--ft-color-primary-soft);
+  --color-signal: var(--ft-color-signal);
+  --color-signal-ink: var(--ft-color-signal-ink);
+  --color-signal-soft: var(--ft-color-signal-soft);
+  --color-expense: var(--ft-color-expense);
+  --color-expense-ink: var(--ft-color-expense-ink);
+  --color-expense-soft: var(--ft-color-expense-soft);
+  --color-warning-ink: var(--ft-color-warning-ink);
+  --color-warning-soft: var(--ft-color-warning-soft);
+  --color-error: var(--ft-color-error);
+  --color-error-soft: var(--ft-color-error-soft);
+  --color-border: var(--ft-color-border);
+  --color-divider: var(--ft-color-divider);
+  --color-disabled-bg: var(--ft-color-disabled-bg);
+  --color-disabled-ink: var(--ft-color-disabled-ink);
+
+  --font-display: var(--ft-font-display);
+  --font-body: var(--ft-font-body);
+
+  --radius-xs: var(--ft-radius-xs);
+  --radius-sm: var(--ft-radius-sm);
+  --radius-md: var(--ft-radius-md);
+  --radius-lg: var(--ft-radius-lg);
+  --radius-xl: var(--ft-radius-xl);
+
+  --shadow-level-1: var(--ft-shadow-1);
+  --shadow-level-2: var(--ft-shadow-2);
+  --shadow-level-3: var(--ft-shadow-3);
+
+  --default-transition-duration: var(--ft-motion-fast);
+}
+
+html {
+  min-width: 320px;
+  background: var(--ft-color-canvas);
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  background: var(--ft-color-canvas);
+  color: var(--ft-color-ink);
+  font-family: var(--ft-font-body);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--ft-color-primary-soft);
+  color: var(--ft-color-ink);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.numeric {
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile-bottom-navigation {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}

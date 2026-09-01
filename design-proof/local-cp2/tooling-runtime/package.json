@@ -1,0 +1,11 @@
+{
+  "name": "fintrack-ai-cp2-renderer",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Local-only rendering dependencies for Fintrack AI CP2 design proof.",
+  "dependencies": {
+    "@ibm/plex": "6.4.1",
+    "@phosphor-icons/core": "2.1.1",
+    "sharp": "0.35.3"
+  }
+}

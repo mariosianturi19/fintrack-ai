@@ -1,0 +1,86 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP5",
+  "revision": "R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "generatedAt": "2026-07-29",
+  "sourceLocks": {
+    "content": "../local-cp1/review-notes/CP1_FINAL_LOCK.md",
+    "logo": "../logo-r1/LOGO_R1_FINAL_LOCK.md",
+    "mobile": "../local-cp2/CP2_R0_FINAL_LOCK.md",
+    "desktop": "../local-cp3/CP3_R0_FINAL_LOCK.md",
+    "interaction": "../local-cp4/CP4_R0_FINAL_LOCK.md"
+  },
+  "finalLock": "CP5_R0_FINAL_LOCK.md",
+  "upstreamVerification": {
+    "cp2": "98/98",
+    "cp3": "106/106",
+    "cp4": "221/221",
+    "logo": "236/236",
+    "combined": "661/661"
+  },
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "P3": 5,
+    "pending": 2
+  },
+  "externalValidation": {
+    "installedPwaPhysicalDevice": "not verified",
+    "betaUsers": "not performed",
+    "runtimeAccessibility": "implementation required"
+  },
+  "boards": [
+    "CP5_R0_QA_OVERVIEW.svg",
+    "CP5_R0_QA_OVERVIEW.png",
+    "CP5_R0_PRECISION_CORRECTIONS.svg",
+    "CP5_R0_PRECISION_CORRECTIONS.png",
+    "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg",
+    "CP5_R0_ACCESSIBILITY_RESPONSIVE.png",
+    "CP5_R0_HANDOFF_MAP.svg",
+    "CP5_R0_HANDOFF_MAP.png"
+  ],
+  "proofs": [
+    "proof/compact-dashboard-1024-cp5-r0.svg",
+    "proof/compact-dashboard-1024-cp5-r0.png"
+  ],
+  "machineHandoff": [
+    "final-design-tokens.json",
+    "final-design-tokens.css",
+    "responsive-contract.json",
+    "component-state-matrix.json",
+    "precision-findings.json",
+    "asset-inventory.json"
+  ],
+  "documentation": [
+    "README.md",
+    "CP5_R0_SPEC.md",
+    "CP5_R0_VISUAL_QA_REPORT.md",
+    "CP5_R0_IMPLEMENTATION_HANDOFF.md",
+    "CP5_R0_ACCESSIBILITY_MATRIX.md",
+    "CP5_R0_DESIGN_SYSTEM_DELTA.md",
+    "CP5_R0_BETA_TEST_SCRIPT.md",
+    "CP5_R0_FINAL_LOCK.md",
+    "review-notes/CP5_R0_SELF_CRITIQUE.md",
+    "review-notes/CP5_R0_BROWSER_QA.md"
+  ],
+  "preview": [
+    "preview/index.html",
+    "preview/styles.css",
+    "preview/mobile-qa.html"
+  ],
+  "generatedFiles": [
+    "CP5_R0_QA_OVERVIEW.svg",
+    "CP5_R0_QA_OVERVIEW.png",
+    "CP5_R0_PRECISION_CORRECTIONS.svg",
+    "CP5_R0_PRECISION_CORRECTIONS.png",
+    "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg",
+    "CP5_R0_ACCESSIBILITY_RESPONSIVE.png",
+    "CP5_R0_HANDOFF_MAP.svg",
+    "CP5_R0_HANDOFF_MAP.png",
+    "proof/compact-dashboard-1024-cp5-r0.svg",
+    "proof/compact-dashboard-1024-cp5-r0.png"
+  ]
+}

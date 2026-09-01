@@ -1,0 +1,111 @@
+:root {
+  --ft-color-canvas: #f6f2e8;
+  --ft-color-canvas-subtle: #fcfbf7;
+  --ft-color-surface: #ffffff;
+  --ft-color-ink: #0b1220;
+  --ft-color-ink-secondary: #53606c;
+  --ft-color-ink-warm-muted: #6b665e;
+  --ft-color-primary: #285a73;
+  --ft-color-primary-hover: #1f465a;
+  --ft-color-primary-soft: #dceaf0;
+  --ft-color-signal: #b9d86e;
+  --ft-color-signal-ink: #526827;
+  --ft-color-signal-soft: #edf5d5;
+  --ft-color-expense: #d96c52;
+  --ft-color-expense-ink: #a63d2a;
+  --ft-color-expense-soft: #f8e2db;
+  --ft-color-warning-ink: #8a3c00;
+  --ft-color-warning-soft: #fff1d6;
+  --ft-color-error: #b42318;
+  --ft-color-error-soft: #fde8e7;
+  --ft-color-border: #d9d6cc;
+  --ft-color-divider: #e7e3da;
+  --ft-color-disabled-bg: #eeeae1;
+  --ft-color-disabled-ink: #6b665e;
+
+  --ft-font-display: "Space Grotesk", sans-serif;
+  --ft-font-body: "IBM Plex Sans", sans-serif;
+
+  --ft-space-1: 0.25rem;
+  --ft-space-2: 0.5rem;
+  --ft-space-3: 0.75rem;
+  --ft-space-4: 1rem;
+  --ft-space-5: 1.25rem;
+  --ft-space-6: 1.5rem;
+  --ft-space-8: 2rem;
+  --ft-space-10: 2.5rem;
+  --ft-space-12: 3rem;
+  --ft-space-16: 4rem;
+  --ft-space-20: 5rem;
+
+  --ft-radius-xs: 0.25rem;
+  --ft-radius-sm: 0.5rem;
+  --ft-radius-md: 0.75rem;
+  --ft-radius-lg: 1rem;
+  --ft-radius-xl: 1.25rem;
+
+  --ft-shadow-1: 0 1px 2px rgb(11 18 32 / 6%);
+  --ft-shadow-2: 0 8px 24px rgb(11 18 32 / 10%);
+  --ft-shadow-3: 0 18px 48px rgb(11 18 32 / 16%);
+
+  --ft-motion-fast: 120ms;
+  --ft-motion-base: 180ms;
+  --ft-motion-slow: 260ms;
+  --ft-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ft-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  --ft-touch-target-min: 44px;
+  --ft-control-mobile: 48px;
+  --ft-control-desktop: 44px;
+  --ft-focus-ring: 2px;
+  --ft-focus-offset: 2px;
+  --ft-sidebar-compact: 72px;
+  --ft-sidebar-desktop: 240px;
+  --ft-badge-offline-min: 128px;
+  --ft-dashboard-weekly-min: 176px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ft-flex-child,
+.ft-grid-child {
+  min-width: 0;
+}
+
+.ft-status-badge {
+  display: inline-flex;
+  inline-size: max-content;
+  max-inline-size: 100%;
+  min-block-size: 28px;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 10px;
+}
+
+.ft-status-badge--offline {
+  min-inline-size: var(--ft-badge-offline-min);
+}
+
+.ft-dashboard-weekly {
+  min-inline-size: min(var(--ft-dashboard-weekly-min), 100%);
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: var(--ft-focus-ring) solid var(--ft-color-primary);
+  outline-offset: var(--ft-focus-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

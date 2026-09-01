@@ -1,0 +1,649 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP3-R0",
+  "generatedAt": "2026-07-29T11:54:17.206Z",
+  "status": "PASS",
+  "summary": {
+    "total": 106,
+    "passed": 106,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "Checkpoint identity",
+      "passed": true,
+      "severity": "error",
+      "evidence": "CP3-R0; Final / Locked"
+    },
+    {
+      "name": "Primary frame count",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6 frames"
+    },
+    {
+      "name": "Spot-check count",
+      "passed": true,
+      "severity": "error",
+      "evidence": "3 responsive frames"
+    },
+    {
+      "name": "Review board count",
+      "passed": true,
+      "severity": "error",
+      "evidence": "8 SVG/PNG board files"
+    },
+    {
+      "name": "Desktop token contract",
+      "passed": true,
+      "severity": "error",
+      "evidence": "{\"primary\":{\"width\":1440,\"height\":1024},\"spotcheck\":{\"width\":1280,\"height\":1024},\"sidebarWidth\":240,\"desktopPadding\":32,\"widePadding\":40,\"gridColumns\":12,\"gutter\":24,\"minimumControlHeight\":44}"
+    },
+    {
+      "name": "1280 content-width contract",
+      "passed": true,
+      "severity": "error",
+      "evidence": "1280 - 240 sidebar - 64 padding = 976px"
+    },
+    {
+      "name": "Primary control contract",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Desktop control default is 44px"
+    },
+    {
+      "name": "Composition decision recorded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "{\"primary\":\"Editorial Ledger\",\"contextual\":\"Split Workspace\",\"rejected\":\"Analytics Grid\"}"
+    },
+    {
+      "name": "File present: desktop\\desktop-dashboard-default-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=578315"
+    },
+    {
+      "name": "File present: desktop\\desktop-dashboard-default-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=142182"
+    },
+    {
+      "name": "File present: desktop\\desktop-dashboard-states-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=572812"
+    },
+    {
+      "name": "File present: desktop\\desktop-dashboard-states-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=134619"
+    },
+    {
+      "name": "File present: desktop\\desktop-transactions-detail-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=580917"
+    },
+    {
+      "name": "File present: desktop\\desktop-transactions-detail-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=134903"
+    },
+    {
+      "name": "File present: desktop\\desktop-scan-upload-processing-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=571193"
+    },
+    {
+      "name": "File present: desktop\\desktop-scan-upload-processing-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=131297"
+    },
+    {
+      "name": "File present: desktop\\desktop-scan-review-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=571495"
+    },
+    {
+      "name": "File present: desktop\\desktop-scan-review-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=116329"
+    },
+    {
+      "name": "File present: desktop\\desktop-app-shell-component-states-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=575349"
+    },
+    {
+      "name": "File present: desktop\\desktop-app-shell-component-states-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=148856"
+    },
+    {
+      "name": "File present: tests\\dashboard-1280-px-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=578263"
+    },
+    {
+      "name": "File present: tests\\dashboard-1280-px-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=134503"
+    },
+    {
+      "name": "File present: tests\\transactions-1280-px-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=580890"
+    },
+    {
+      "name": "File present: tests\\transactions-1280-px-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=130632"
+    },
+    {
+      "name": "File present: tests\\review-1280-px-cp3-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=571492"
+    },
+    {
+      "name": "File present: tests\\review-1280-px-cp3-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=109729"
+    },
+    {
+      "name": "File present: CP3_R0_DESKTOP_CONTACT_SHEET.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=726494"
+    },
+    {
+      "name": "File present: CP3_R0_DESKTOP_CONTACT_SHEET.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=198490"
+    },
+    {
+      "name": "File present: CP3_R0_DESKTOP_LAYOUT_STUDY.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=553824"
+    },
+    {
+      "name": "File present: CP3_R0_DESKTOP_LAYOUT_STUDY.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=97246"
+    },
+    {
+      "name": "File present: CP3_R0_RESPONSIVE_RULES.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=553320"
+    },
+    {
+      "name": "File present: CP3_R0_RESPONSIVE_RULES.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=98384"
+    },
+    {
+      "name": "File present: CP3_R0_1280_SPOTCHECK.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=641891"
+    },
+    {
+      "name": "File present: CP3_R0_1280_SPOTCHECK.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=108951"
+    },
+    {
+      "name": "File present: cp3-ui-tokens.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=1136"
+    },
+    {
+      "name": "File present: README.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=2467"
+    },
+    {
+      "name": "File present: CP3_R0_SPEC.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=6286"
+    },
+    {
+      "name": "File present: CP3_R0_FINAL_LOCK.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=2653"
+    },
+    {
+      "name": "File present: review-notes\\CP3_R0_SELF_CRITIQUE.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=3983"
+    },
+    {
+      "name": "File present: review-notes\\CP3_R0_REVISION_NOTES.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=1346"
+    },
+    {
+      "name": "File present: manifest.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=3998"
+    },
+    {
+      "name": "File present: tooling\\design-core.mjs",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=19213"
+    },
+    {
+      "name": "File present: tooling\\generate-cp3.mjs",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=51196"
+    },
+    {
+      "name": "File present: tooling\\verify-cp3.mjs",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=9516"
+    },
+    {
+      "name": "11 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "11 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "11 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "11 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "11 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "11 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "11 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "12 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "12 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "12 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "12 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "12 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "12 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "12 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "13 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "13 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "13 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "13 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "13 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "13 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "13 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "14 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "14 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "14 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "14 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "14 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "14 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "14 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.337% exact-color pixels"
+    },
+    {
+      "name": "15 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "15 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "15 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "15 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "15 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "15 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "15 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.225% exact-color pixels"
+    },
+    {
+      "name": "16 viewport 1440x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1440x1024"
+    },
+    {
+      "name": "16 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "16 light-first root canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper root canvas"
+    },
+    {
+      "name": "16 fixed desktop sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "240px Midnight sidebar"
+    },
+    {
+      "name": "16 LOGO-R1 embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Reverse compact lockup is embedded"
+    },
+    {
+      "name": "16 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow filters, or particles"
+    },
+    {
+      "name": "16 Signal Leaf remains restrained",
+      "passed": true,
+      "severity": "error",
+      "evidence": "0.005% exact-color pixels"
+    },
+    {
+      "name": "Dashboard · 1280 px viewport 1280x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1280x1024"
+    },
+    {
+      "name": "Dashboard · 1280 px retains 240px sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Full desktop sidebar retained at 1280px"
+    },
+    {
+      "name": "Transactions · 1280 px viewport 1280x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1280x1024"
+    },
+    {
+      "name": "Transactions · 1280 px retains 240px sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Full desktop sidebar retained at 1280px"
+    },
+    {
+      "name": "Review · 1280 px viewport 1280x1024",
+      "passed": true,
+      "severity": "error",
+      "evidence": "png=1280x1024"
+    },
+    {
+      "name": "Review · 1280 px retains 240px sidebar",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Full desktop sidebar retained at 1280px"
+    },
+    {
+      "name": "Focused inspection remains contextual",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Dark inspection panel is nested within a light page"
+    },
+    {
+      "name": "Focused inspection has no fake progress",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No percentage or confidence score appears in processing"
+    },
+    {
+      "name": "Dashboard avoids enterprise KPI language",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Copy remains personal and Indonesian"
+    },
+    {
+      "name": "Dashboard avoids metric-card wall",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Editorial summary/insight anchor is documented"
+    },
+    {
+      "name": "Responsive guardrail forbids mixed navigation",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Never show full sidebar and bottom navigation together"
+    },
+    {
+      "name": "No inline font-size reduction branch",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Layouts change before typography"
+    },
+    {
+      "name": "WCAG AA ink / canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "16.75:1"
+    },
+    {
+      "name": "WCAG AA secondary / canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "5.77:1"
+    },
+    {
+      "name": "WCAG AA white / primary",
+      "passed": true,
+      "severity": "error",
+      "evidence": "7.50:1"
+    },
+    {
+      "name": "WCAG AA white / midnight",
+      "passed": true,
+      "severity": "error",
+      "evidence": "18.72:1"
+    },
+    {
+      "name": "WCAG AA dark muted / midnight",
+      "passed": true,
+      "severity": "error",
+      "evidence": "8.84:1"
+    },
+    {
+      "name": "WCAG AA expense ink / surface",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6.32:1"
+    },
+    {
+      "name": "WCAG AA warning / warning soft",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6.90:1"
+    },
+    {
+      "name": "WCAG AA signal ink / signal soft",
+      "passed": true,
+      "severity": "error",
+      "evidence": "5.53:1"
+    }
+  ]
+}

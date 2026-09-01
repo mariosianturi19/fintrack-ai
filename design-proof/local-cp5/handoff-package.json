@@ -1,0 +1,22 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP5-R0",
+  "status": "Final / Locked",
+  "archive": "fintrack-ai-design-handoff-cp5-r0.zip",
+  "generatedAt": "2026-07-29",
+  "bytes": 26661493,
+  "sha256": "d49ff28c7f472328011e1f9383c16171e7feab27a0bebe0c30d58e4ef23878bd",
+  "entries": 336,
+  "containsVerificationReport": "301/301 PASS",
+  "excluded": [
+    "tooling-runtime",
+    "node_modules",
+    "archive self-reference",
+    "handoff-package.json (adjacent checksum metadata)"
+  ],
+  "externalValidationPending": [
+    "installed PWA physical-device test",
+    "1-2 beta-user test",
+    "runtime accessibility verification"
+  ]
+}

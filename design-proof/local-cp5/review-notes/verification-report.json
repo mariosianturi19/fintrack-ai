@@ -1,0 +1,1907 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP5-R0",
+  "generatedAt": "2026-07-29T15:12:25.295Z",
+  "status": "PASS",
+  "summary": {
+    "total": 301,
+    "passed": 301,
+    "failed": 0
+  },
+  "categories": {
+    "identity": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "upstream": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "authority": {
+      "total": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "inventory": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "files": {
+      "total": 32,
+      "passed": 32,
+      "failed": 0
+    },
+    "dimensions": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "visual-guardrails": {
+      "total": 25,
+      "passed": 25,
+      "failed": 0
+    },
+    "tokens": {
+      "total": 21,
+      "passed": 21,
+      "failed": 0
+    },
+    "honesty": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "responsive": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "findings": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0
+    },
+    "components": {
+      "total": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "contrast": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "integrity": {
+      "total": 125,
+      "passed": 125,
+      "failed": 0
+    },
+    "traceability": {
+      "total": 15,
+      "passed": 15,
+      "failed": 0
+    },
+    "preview": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0
+    }
+  },
+  "acknowledgedLimits": {
+    "installedPwaPhysicalDevice": "not verified",
+    "betaUsers": "not performed",
+    "runtimeAccessibility": "implementation required"
+  },
+  "failures": [],
+  "checks": [
+    {
+      "name": "Checkpoint identity",
+      "category": "identity",
+      "passed": true,
+      "evidence": "CP5-R0; Final / Locked"
+    },
+    {
+      "name": "Direction remains Quiet Signal Refined",
+      "category": "identity",
+      "passed": true,
+      "evidence": "Quiet Signal — Refined"
+    },
+    {
+      "name": "Token identity matches checkpoint",
+      "category": "identity",
+      "passed": true,
+      "evidence": "{\"project\":\"Fintrack AI\",\"direction\":\"Quiet Signal — Refined\",\"checkpoint\":\"CP5-R0\",\"status\":\"Final / Locked\"}"
+    },
+    {
+      "name": "CP5 final lock records owner confirmation",
+      "category": "identity",
+      "passed": true,
+      "evidence": "CP5_R0_FINAL_LOCK.md; owner confirmed 2026-07-29"
+    },
+    {
+      "name": "Upstream CP2 verification",
+      "category": "upstream",
+      "passed": true,
+      "evidence": "98/98; PASS"
+    },
+    {
+      "name": "Upstream CP3 verification",
+      "category": "upstream",
+      "passed": true,
+      "evidence": "106/106; PASS"
+    },
+    {
+      "name": "Upstream CP4 verification",
+      "category": "upstream",
+      "passed": true,
+      "evidence": "221/221; PASS"
+    },
+    {
+      "name": "Upstream LOGO verification",
+      "category": "upstream",
+      "passed": true,
+      "evidence": "236/236; PASS"
+    },
+    {
+      "name": "Combined upstream verification is 661/661",
+      "category": "upstream",
+      "passed": true,
+      "evidence": "661/661"
+    },
+    {
+      "name": "Source lock contained and present: content",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp1/review-notes/CP1_FINAL_LOCK.md; contained=true; bytes=1648"
+    },
+    {
+      "name": "Source lock is final: content",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp1/review-notes/CP1_FINAL_LOCK.md"
+    },
+    {
+      "name": "Source lock contained and present: logo",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../logo-r1/LOGO_R1_FINAL_LOCK.md; contained=true; bytes=1353"
+    },
+    {
+      "name": "Source lock is final: logo",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../logo-r1/LOGO_R1_FINAL_LOCK.md"
+    },
+    {
+      "name": "Source lock contained and present: mobile",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp2/CP2_R0_FINAL_LOCK.md; contained=true; bytes=2420"
+    },
+    {
+      "name": "Source lock is final: mobile",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp2/CP2_R0_FINAL_LOCK.md"
+    },
+    {
+      "name": "Source lock contained and present: desktop",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp3/CP3_R0_FINAL_LOCK.md; contained=true; bytes=2653"
+    },
+    {
+      "name": "Source lock is final: desktop",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp3/CP3_R0_FINAL_LOCK.md"
+    },
+    {
+      "name": "Source lock contained and present: interaction",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp4/CP4_R0_FINAL_LOCK.md; contained=true; bytes=3569"
+    },
+    {
+      "name": "Source lock is final: interaction",
+      "category": "authority",
+      "passed": true,
+      "evidence": "../local-cp4/CP4_R0_FINAL_LOCK.md"
+    },
+    {
+      "name": "Four board pairs declared",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "8 files"
+    },
+    {
+      "name": "One responsive proof pair declared",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "2 files"
+    },
+    {
+      "name": "Six machine handoff files declared",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "6 files"
+    },
+    {
+      "name": "Ten documentation files declared",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "10 files"
+    },
+    {
+      "name": "Three preview files declared",
+      "category": "inventory",
+      "passed": true,
+      "evidence": "3 files"
+    },
+    {
+      "name": "Artifact present: CP5_R0_QA_OVERVIEW.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=562981"
+    },
+    {
+      "name": "Artifact present: CP5_R0_QA_OVERVIEW.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=156244"
+    },
+    {
+      "name": "Artifact present: CP5_R0_PRECISION_CORRECTIONS.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=562610"
+    },
+    {
+      "name": "Artifact present: CP5_R0_PRECISION_CORRECTIONS.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=159342"
+    },
+    {
+      "name": "Artifact present: CP5_R0_ACCESSIBILITY_RESPONSIVE.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=562095"
+    },
+    {
+      "name": "Artifact present: CP5_R0_ACCESSIBILITY_RESPONSIVE.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=170377"
+    },
+    {
+      "name": "Artifact present: CP5_R0_HANDOFF_MAP.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=567561"
+    },
+    {
+      "name": "Artifact present: CP5_R0_HANDOFF_MAP.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=141607"
+    },
+    {
+      "name": "Artifact present: proof/compact-dashboard-1024-cp5-r0.svg",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=562926"
+    },
+    {
+      "name": "Artifact present: proof/compact-dashboard-1024-cp5-r0.png",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=95750"
+    },
+    {
+      "name": "Artifact present: final-design-tokens.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=4086"
+    },
+    {
+      "name": "Artifact present: final-design-tokens.css",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=2760"
+    },
+    {
+      "name": "Artifact present: responsive-contract.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1728"
+    },
+    {
+      "name": "Artifact present: component-state-matrix.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1690"
+    },
+    {
+      "name": "Artifact present: precision-findings.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1627"
+    },
+    {
+      "name": "Artifact present: asset-inventory.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=24760"
+    },
+    {
+      "name": "Artifact present: README.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=2358"
+    },
+    {
+      "name": "Artifact present: CP5_R0_SPEC.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=3691"
+    },
+    {
+      "name": "Artifact present: CP5_R0_VISUAL_QA_REPORT.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=4345"
+    },
+    {
+      "name": "Artifact present: CP5_R0_IMPLEMENTATION_HANDOFF.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=4459"
+    },
+    {
+      "name": "Artifact present: CP5_R0_ACCESSIBILITY_MATRIX.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=2931"
+    },
+    {
+      "name": "Artifact present: CP5_R0_DESIGN_SYSTEM_DELTA.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1770"
+    },
+    {
+      "name": "Artifact present: CP5_R0_BETA_TEST_SCRIPT.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1662"
+    },
+    {
+      "name": "Artifact present: CP5_R0_FINAL_LOCK.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1837"
+    },
+    {
+      "name": "Artifact present: review-notes/CP5_R0_SELF_CRITIQUE.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=2112"
+    },
+    {
+      "name": "Artifact present: review-notes/CP5_R0_BROWSER_QA.md",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1098"
+    },
+    {
+      "name": "Artifact present: preview/index.html",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1913"
+    },
+    {
+      "name": "Artifact present: preview/styles.css",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=1677"
+    },
+    {
+      "name": "Artifact present: preview/mobile-qa.html",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=867"
+    },
+    {
+      "name": "Artifact present: manifest.json",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=2412"
+    },
+    {
+      "name": "Artifact present: tooling/generate-cp5.mjs",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=43464"
+    },
+    {
+      "name": "Artifact present: tooling/verify-cp5.mjs",
+      "category": "files",
+      "passed": true,
+      "evidence": "contained=true; bytes=22425"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1080"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1080"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1220"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1220"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1160"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1160"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1080"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1800x1080"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0 SVG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1024x1024"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0 PNG dimensions",
+      "category": "dimensions",
+      "passed": true,
+      "evidence": "1024x1024"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW.svg avoids gradient",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW.svg avoids SVG filter",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW.svg avoids foreignObject",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW.svg avoids glass blur",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_QA_OVERVIEW.svg embeds approved type families",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Space Grotesk + IBM Plex Sans"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS.svg avoids gradient",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS.svg avoids SVG filter",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS.svg avoids foreignObject",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS.svg avoids glass blur",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_PRECISION_CORRECTIONS.svg embeds approved type families",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Space Grotesk + IBM Plex Sans"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg avoids gradient",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg avoids SVG filter",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg avoids foreignObject",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg avoids glass blur",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_ACCESSIBILITY_RESPONSIVE.svg embeds approved type families",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Space Grotesk + IBM Plex Sans"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP.svg avoids gradient",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP.svg avoids SVG filter",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP.svg avoids foreignObject",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP.svg avoids glass blur",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "CP5_R0_HANDOFF_MAP.svg embeds approved type families",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Space Grotesk + IBM Plex Sans"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0.svg avoids gradient",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0.svg avoids SVG filter",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0.svg avoids foreignObject",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0.svg avoids glass blur",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Not found"
+    },
+    {
+      "name": "proof/compact-dashboard-1024-cp5-r0.svg embeds approved type families",
+      "category": "visual-guardrails",
+      "passed": true,
+      "evidence": "Space Grotesk + IBM Plex Sans"
+    },
+    {
+      "name": "Core color token: canvas",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#F6F2E8"
+    },
+    {
+      "name": "Core color token: surface",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#FFFFFF"
+    },
+    {
+      "name": "Core color token: ink",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#0B1220"
+    },
+    {
+      "name": "Core color token: primary",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#285A73"
+    },
+    {
+      "name": "Core color token: signal",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#B9D86E"
+    },
+    {
+      "name": "Core color token: expense",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#D96C52"
+    },
+    {
+      "name": "Core color token: error",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "#B42318"
+    },
+    {
+      "name": "Typography families remain locked",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Space Grotesk; IBM Plex Sans"
+    },
+    {
+      "name": "Runtime critical metadata floor is 12px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "12px"
+    },
+    {
+      "name": "Runtime navigation label floor is 11px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "11px"
+    },
+    {
+      "name": "Desktop sidebar authority is 240px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "240px"
+    },
+    {
+      "name": "Compact rail authority is 72px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "72px"
+    },
+    {
+      "name": "Minimum touch target is 44px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "44px"
+    },
+    {
+      "name": "Offline badge minimum is 128px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "128px"
+    },
+    {
+      "name": "Weekly column minimum is 176px",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "176px"
+    },
+    {
+      "name": "Installed PWA logo validation remains pending",
+      "category": "honesty",
+      "passed": true,
+      "evidence": "Asset-ready; installed-PWA physical-device validation pending"
+    },
+    {
+      "name": "CSS contract: global border-box",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "CSS contract: flex/grid min-width helper",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "CSS contract: intrinsic offline badge",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "CSS contract: 128px offline badge",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "CSS contract: reduced motion",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "CSS contract: visible focus ring",
+      "category": "tokens",
+      "passed": true,
+      "evidence": "Present"
+    },
+    {
+      "name": "Responsive proof widths are exact",
+      "category": "responsive",
+      "passed": true,
+      "evidence": "360, 390, 768, 1024, 1280, 1440"
+    },
+    {
+      "name": "Navigation mode never combines bottom bar and side navigation",
+      "category": "responsive",
+      "passed": true,
+      "evidence": "360:bottom; 390:bottom; 768:contextual-single-mode; 1024:compact-rail; 1280:sidebar; 1440:sidebar"
+    },
+    {
+      "name": "1024 mode uses compact 72px rail and 24px padding",
+      "category": "responsive",
+      "passed": true,
+      "evidence": "{\"width\":1024,\"name\":\"compact-desktop\",\"navigation\":\"compact-rail\",\"navigationWidth\":72,\"padding\":24,\"rules\":[\"twelve-column-capable\",\"type-scale-retained\",\"weekly-correction-applied\"]}"
+    },
+    {
+      "name": "1280 and 1440 use 240px sidebar",
+      "category": "responsive",
+      "passed": true,
+      "evidence": "1280:240; 1440:240"
+    },
+    {
+      "name": "Overflow contract stacks before shrinking text",
+      "category": "responsive",
+      "passed": true,
+      "evidence": "{\"flexGridChildMinWidth\":0,\"criticalLabelEllipsis\":false,\"badgeSizing\":\"intrinsic\",\"textContainerHeight\":\"min-height\",\"stackWhenMinimumUnavailable\":true}"
+    },
+    {
+      "name": "Finding counts match the audited inventory",
+      "category": "findings",
+      "passed": true,
+      "evidence": "{\"P0\":0,\"P1\":0,\"P2\":2,\"P3\":5,\"pending\":2}"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-001",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-002",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-003",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-004",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-005",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-006",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-PREC-007",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-VAL-001",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Finding recorded: FT-VAL-002",
+      "category": "findings",
+      "passed": true,
+      "evidence": "FT-PREC-001, FT-PREC-002, FT-PREC-003, FT-PREC-004, FT-PREC-005, FT-PREC-006, FT-PREC-007, FT-VAL-001, FT-VAL-002"
+    },
+    {
+      "name": "Both P2 corrections remain explicit implementation obligations",
+      "category": "findings",
+      "passed": true,
+      "evidence": "[{\"id\":\"FT-PREC-001\",\"severity\":\"P2\",\"title\":\"Weekly summary safe width\",\"status\":\"specified\",\"implementationPending\":true},{\"id\":\"FT-PREC-002\",\"severity\":\"P2\",\"title\":\"Offline cached badge overflow\",\"status\":\"specified\",\"implementationPending\":true}]"
+    },
+    {
+      "name": "Both external validations remain not verified",
+      "category": "honesty",
+      "passed": true,
+      "evidence": "[{\"id\":\"FT-VAL-001\",\"severity\":\"pending\",\"title\":\"Installed PWA physical-device test\",\"status\":\"not-verified\"},{\"id\":\"FT-VAL-002\",\"severity\":\"pending\",\"title\":\"1–2 beta-user test\",\"status\":\"not-verified\"}]"
+    },
+    {
+      "name": "Manifest states all external validation limits",
+      "category": "honesty",
+      "passed": true,
+      "evidence": "{\"installedPwaPhysicalDevice\":\"not verified\",\"betaUsers\":\"not performed\",\"runtimeAccessibility\":\"implementation required\"}"
+    },
+    {
+      "name": "Component contract present: button",
+      "category": "components",
+      "passed": true,
+      "evidence": "button"
+    },
+    {
+      "name": "Component contract present: field",
+      "category": "components",
+      "passed": true,
+      "evidence": "field"
+    },
+    {
+      "name": "Component contract present: badge",
+      "category": "components",
+      "passed": true,
+      "evidence": "badge"
+    },
+    {
+      "name": "Component contract present: transactionRow",
+      "category": "components",
+      "passed": true,
+      "evidence": "transactionRow"
+    },
+    {
+      "name": "Component contract present: dialog",
+      "category": "components",
+      "passed": true,
+      "evidence": "dialog"
+    },
+    {
+      "name": "Component contract present: asyncRegion",
+      "category": "components",
+      "passed": true,
+      "evidence": "asyncRegion"
+    },
+    {
+      "name": "Async region covers required states",
+      "category": "components",
+      "passed": true,
+      "evidence": "loading, empty, offline, error, quota, review, success"
+    },
+    {
+      "name": "Async region prohibits timer-driven fake progress",
+      "category": "components",
+      "passed": true,
+      "evidence": "false"
+    },
+    {
+      "name": "Dialog contract includes keyboard safety",
+      "category": "components",
+      "passed": true,
+      "evidence": "initial-focus-safe-action, focus-trap, escape, focus-return"
+    },
+    {
+      "name": "Status badge is not color-only",
+      "category": "components",
+      "passed": true,
+      "evidence": "false"
+    },
+    {
+      "name": "WCAG AA: Ink on canvas",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "16.75:1"
+    },
+    {
+      "name": "WCAG AA: Secondary ink on canvas",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "5.77:1"
+    },
+    {
+      "name": "WCAG AA: Primary on surface",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "7.50:1"
+    },
+    {
+      "name": "WCAG AA: Expense ink on surface",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "6.32:1"
+    },
+    {
+      "name": "WCAG AA: Error on error soft",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "5.60:1"
+    },
+    {
+      "name": "WCAG AA: Warning ink on warning soft",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "6.90:1"
+    },
+    {
+      "name": "WCAG AA: Signal ink on signal soft",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "5.53:1"
+    },
+    {
+      "name": "WCAG AA: Surface on ink",
+      "category": "contrast",
+      "passed": true,
+      "evidence": "18.72:1"
+    },
+    {
+      "name": "Authority inventory count matches array",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "123/123"
+    },
+    {
+      "name": "Authority inventory has no duplicate paths",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "123 paths; 123 unique"
+    },
+    {
+      "name": "Authority hash: DESIGN_SYSTEM.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=35421/35421; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/CHECKPOINT_TRACKER.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=4724/4724; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/DESIGN_PROOF_SPEC.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=5883/5883; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp1/review-notes/CP1_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1648/1648; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/CP2_R0_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=2420/2420; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/cp2-ui-tokens.json",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1816/1816; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-dashboard-default-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=52812/52812; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-dashboard-default-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=563567/563567; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-dashboard-states-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=42001/42001; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-dashboard-states-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=560849/560849; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-destructive-confirmation-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=46483/46483; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-destructive-confirmation-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=552021/552021; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-processing-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=32433/32433; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-processing-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=553165/553165; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-quota-error-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=42158/42158; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-quota-error-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=552658/552658; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-review-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=39517/39517; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-review-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=555461/555461; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-start-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=32476/32476; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-start-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=553131/553131; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-upload-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=33456/33456; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-scan-upload-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=553883/553883; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-transaction-detail-edit-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=38637/38637; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-transaction-detail-edit-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=555029/555029; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-transactions-list-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=52072/52072; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/mobile/mobile-transactions-list-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=565992/565992; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/dashboard-360-px-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=52026/52026; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/dashboard-360-px-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=563537/563537; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/review-360-px-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=39066/39066; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/review-360-px-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=555472/555472; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/transactions-360-px-cp2-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=51249/51249; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp2/tests/transactions-360-px-cp2-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=565965/565965; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/CP3_R0_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=2653/2653; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/cp3-ui-tokens.json",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1136/1136; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-app-shell-component-states-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=148856/148856; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-app-shell-component-states-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=575349/575349; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-dashboard-default-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=142182/142182; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-dashboard-default-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=578315/578315; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-dashboard-states-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=134619/134619; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-dashboard-states-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=572812/572812; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-scan-review-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=116329/116329; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-scan-review-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=571495/571495; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-scan-upload-processing-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=131297/131297; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-scan-upload-processing-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=571193/571193; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-transactions-detail-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=134903/134903; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/desktop/desktop-transactions-detail-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=580917/580917; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/dashboard-1280-px-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=134503/134503; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/dashboard-1280-px-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=578263/578263; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/review-1280-px-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=109729/109729; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/review-1280-px-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=571492/571492; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/transactions-1280-px-cp3-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=130632/130632; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp3/tests/transactions-1280-px-cp3-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=580890/580890; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/CP4_R0_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3569/3569; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/cp4-interaction-model.json",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3146/3146; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/prototype/README.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1294/1294; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/prototype/app.js",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=21736/21736; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/prototype/index.html",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=4100/4100; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/prototype/styles.css",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=8955/8955; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-manual-entry-fallback-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=106369/106369; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-manual-entry-fallback-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=566450/566450; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-processing-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=104443/104443; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-processing-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=564406/564406; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-quota-fallback-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=106446/106446; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-quota-fallback-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=568156/568156; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-upload-error-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=114950/114950; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-upload-error-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=569994/569994; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-upload-ready-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=109315/109315; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-scan-upload-ready-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=565997/565997; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=142138/142138; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=584889/584889; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-transaction-save-success-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=140891/140891; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/desktop/desktop-transaction-save-success-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=582230/582230; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-manual-entry-fallback-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=39288/39288; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-manual-entry-fallback-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=554728/554728; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-offline-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=44839/44839; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-offline-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=557889/557889; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-saved-success-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=57327/57327; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-saved-success-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=565117/565117; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-upload-error-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=41767/41767; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-scan-upload-error-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=558187/558187; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-transaction-save-error-cp4-r0.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=42679/42679; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp4/states/mobile/mobile-transaction-save-error-cp4-r0.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=557461/557461; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/local-cp5/CP5_R0_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1837/1837; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/LOGO_R1_FINAL_LOCK.md",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1353/1353; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-favicon-16.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=218/218; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-favicon-32.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=254/254; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1558/1558; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=586/586; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1488/1488; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=549/549; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=4898/4898; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=586/586; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=4717/4717; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=573/573; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=16287/16287; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3799/3799; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-light.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=13640/13640; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3799/3799; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-primary.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=16433/16433; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3799/3799; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-reverse.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=16358/16358; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3799/3799; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-dark.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=17211/17211; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3802/3802; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-light.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=14364/14364; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3802/3802; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-primary.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=17611/17611; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-primary.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3802/3802; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-reverse.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=17276/17276; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3802/3802; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-midnight.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3512/3512; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=487/487; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-primary.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3509/3509; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=487/487; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-reverse.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=3104/3104; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=487/487; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-midnight.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=5432/5432; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-midnight.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=490/490; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-primary.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=5500/5500; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-primary.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=490/490; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-reverse.png",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=4484/4484; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/assets/marks/fintrack-ai-mark-reverse.svg",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=490/490; hash=true"
+    },
+    {
+      "name": "Authority hash: design-proof/logo-r1/logo-tokens.json",
+      "category": "integrity",
+      "passed": true,
+      "evidence": "contained=true; bytes=1078/1078; hash=true"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-001",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-001"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-002",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-002"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-003",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-003"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-004",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-004"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-005",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-005"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-006",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-006"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-PREC-007",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-PREC-007"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-VAL-001",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-VAL-001"
+    },
+    {
+      "name": "Finding is traceable in documentation: FT-VAL-002",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "FT-VAL-002"
+    },
+    {
+      "name": "Implementation contract documented: minmax(176px, 0.36fr)",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "minmax(176px, 0.36fr)"
+    },
+    {
+      "name": "Implementation contract documented: 128px",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "128px"
+    },
+    {
+      "name": "Implementation contract documented: 16px",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "16px"
+    },
+    {
+      "name": "Implementation contract documented: 240px",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "240px"
+    },
+    {
+      "name": "Implementation contract documented: 1024",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "1024"
+    },
+    {
+      "name": "Implementation contract documented: runtime",
+      "category": "traceability",
+      "passed": true,
+      "evidence": "runtime"
+    },
+    {
+      "name": "Design-system delta is approved and applied",
+      "category": "authority",
+      "passed": true,
+      "evidence": "Delta applied to DESIGN_SYSTEM.md v1.2"
+    },
+    {
+      "name": "Design system records CP5 final and version 1.2",
+      "category": "authority",
+      "passed": true,
+      "evidence": "CP5 final; v1.2; contracts present"
+    },
+    {
+      "name": "Handoff documentation does not claim production completion",
+      "category": "honesty",
+      "passed": true,
+      "evidence": "Implementation remains a future stage"
+    },
+    {
+      "name": "Preview displays final status",
+      "category": "preview",
+      "passed": true,
+      "evidence": "FINAL / LOCKED"
+    },
+    {
+      "name": "Preview reference resolves: ./styles.css",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=1677"
+    },
+    {
+      "name": "Preview reference resolves: ../CP5_R0_QA_OVERVIEW.png",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=156244"
+    },
+    {
+      "name": "Preview reference resolves: ../CP5_R0_PRECISION_CORRECTIONS.png",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=159342"
+    },
+    {
+      "name": "Preview reference resolves: ../CP5_R0_ACCESSIBILITY_RESPONSIVE.png",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=170377"
+    },
+    {
+      "name": "Preview reference resolves: ../CP5_R0_HANDOFF_MAP.png",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=141607"
+    },
+    {
+      "name": "Preview reference resolves: ../proof/compact-dashboard-1024-cp5-r0.png",
+      "category": "preview",
+      "passed": true,
+      "evidence": "contained=true; bytes=95750"
+    },
+    {
+      "name": "Preview uses responsive image layout",
+      "category": "preview",
+      "passed": true,
+      "evidence": "Wrapped navigation, fluid images, and media query"
+    },
+    {
+      "name": "Preview is dependency-free",
+      "category": "preview",
+      "passed": true,
+      "evidence": "No external runtime references"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "checkpoint": "CP5-R0",
+  "summary": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 2,
+    "P3": 5,
+    "pending": 2
+  },
+  "findings": [
+    {
+      "id": "FT-PREC-001",
+      "severity": "P2",
+      "title": "Weekly summary safe width",
+      "status": "specified",
+      "implementationPending": true
+    },
+    {
+      "id": "FT-PREC-002",
+      "severity": "P2",
+      "title": "Offline cached badge overflow",
+      "status": "specified",
+      "implementationPending": true
+    },
+    {
+      "id": "FT-PREC-003",
+      "severity": "P3",
+      "title": "Sidebar authority mismatch",
+      "status": "documented",
+      "authority": "240px"
+    },
+    {
+      "id": "FT-PREC-004",
+      "severity": "P3",
+      "title": "Runtime text floor",
+      "status": "documented",
+      "criticalMinimum": "12px"
+    },
+    {
+      "id": "FT-PREC-005",
+      "severity": "P3",
+      "title": "Async state source precedence",
+      "status": "documented",
+      "authority": "CP4 split runtime states"
+    },
+    {
+      "id": "FT-PREC-006",
+      "severity": "P3",
+      "title": "1024 transition proof",
+      "status": "resolved-in-cp5-proof"
+    },
+    {
+      "id": "FT-PREC-007",
+      "severity": "P3",
+      "title": "Editable source authority",
+      "status": "documented",
+      "authority": "local generators and exports"
+    },
+    {
+      "id": "FT-VAL-001",
+      "severity": "pending",
+      "title": "Installed PWA physical-device test",
+      "status": "not-verified"
+    },
+    {
+      "id": "FT-VAL-002",
+      "severity": "pending",
+      "title": "1–2 beta-user test",
+      "status": "not-verified"
+    }
+  ]
+}

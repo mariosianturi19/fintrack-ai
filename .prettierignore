@@ -1,0 +1,8 @@
+.next/
+coverage/
+design-proof/
+node_modules/
+next-env.d.ts
+package-lock.json
+DESIGN_SYSTEM.md
+project-brief-fintrack-ai.md

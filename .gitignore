@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Test and tooling output
+coverage/
+*.tsbuildinfo
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel/
+
+# Local engineering operations and raw QA history
+/AGENTS.md
+/CODEX_HANDOFF.md
+/docs/checkpoints/
+/docs/setup/
+/design-proof/local-cp5/fintrack-ai-design-handoff-cp5-r0.zip
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

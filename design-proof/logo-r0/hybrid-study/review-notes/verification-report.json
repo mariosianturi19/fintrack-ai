@@ -1,0 +1,42 @@
+{
+  "track": "Fintrack AI Logo",
+  "round": "LOGO-R0 Hybrid Study",
+  "status": "pass",
+  "recommendation": "D2 — Balanced Refined",
+  "checkedManifestFiles": 52,
+  "svgCount": 14,
+  "pngCount": 38,
+  "checks": [
+    {
+      "name": "manifest files",
+      "status": "pass",
+      "evidence": "52/52 exist and are non-empty"
+    },
+    {
+      "name": "SVG renderability",
+      "status": "pass",
+      "evidence": "14/14 SVG files parsed"
+    },
+    {
+      "name": "PNG metadata",
+      "status": "pass",
+      "evidence": "38/38 PNG files parsed"
+    },
+    {
+      "name": "exact-size raster",
+      "status": "pass",
+      "evidence": "all declared 16, 24, 32, and 48 px files match"
+    },
+    {
+      "name": "8x raster inspection",
+      "status": "pass",
+      "evidence": "all nearest-neighbor zoom files are exact 8x dimensions"
+    },
+    {
+      "name": "shared font",
+      "status": "pass",
+      "evidence": "Space Grotesk source is available from the parent LOGO-R0 assets"
+    }
+  ],
+  "failures": []
+}

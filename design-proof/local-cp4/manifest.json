@@ -1,0 +1,171 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP4",
+  "revision": "R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "generatedAt": "2026-07-29",
+  "sourceLocks": {
+    "content": "../local-cp1/review-notes/CP1_FINAL_LOCK.md",
+    "mobile": "../local-cp2/CP2_R0_FINAL_LOCK.md",
+    "desktop": "../local-cp3/CP3_R0_FINAL_LOCK.md",
+    "logo": "../logo-r1/LOGO_R1_FINAL_LOCK.md"
+  },
+  "designSystem": "../../DESIGN_SYSTEM.md",
+  "stateFrames": [
+    {
+      "platform": "mobile",
+      "title": "Upload error — context preserved",
+      "state": "error",
+      "svg": "states/mobile/mobile-scan-upload-error-cp4-r0.svg",
+      "png": "states/mobile/mobile-scan-upload-error-cp4-r0.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "Offline — manual fallback",
+      "state": "offline",
+      "svg": "states/mobile/mobile-scan-offline-cp4-r0.svg",
+      "png": "states/mobile/mobile-scan-offline-cp4-r0.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "Save error — edits preserved",
+      "state": "error",
+      "svg": "states/mobile/mobile-transaction-save-error-cp4-r0.svg",
+      "png": "states/mobile/mobile-transaction-save-error-cp4-r0.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "Success — non-blocking confirmation",
+      "state": "success",
+      "svg": "states/mobile/mobile-scan-saved-success-cp4-r0.svg",
+      "png": "states/mobile/mobile-scan-saved-success-cp4-r0.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "Manual fallback — clean form",
+      "state": "review",
+      "svg": "states/mobile/mobile-manual-entry-fallback-cp4-r0.svg",
+      "png": "states/mobile/mobile-manual-entry-fallback-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Upload ready — runtime state",
+      "state": "loading",
+      "svg": "states/desktop/desktop-scan-upload-ready-cp4-r0.svg",
+      "png": "states/desktop/desktop-scan-upload-ready-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Processing — event driven",
+      "state": "loading",
+      "svg": "states/desktop/desktop-scan-processing-cp4-r0.svg",
+      "png": "states/desktop/desktop-scan-processing-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Upload error — retry or return",
+      "state": "error",
+      "svg": "states/desktop/desktop-scan-upload-error-cp4-r0.svg",
+      "png": "states/desktop/desktop-scan-upload-error-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "AI quota — graceful degradation",
+      "state": "quota",
+      "svg": "states/desktop/desktop-scan-quota-fallback-cp4-r0.svg",
+      "png": "states/desktop/desktop-scan-quota-fallback-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Success — context remains visible",
+      "state": "success",
+      "svg": "states/desktop/desktop-transaction-save-success-cp4-r0.svg",
+      "png": "states/desktop/desktop-transaction-save-success-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Destructive — explicit confirmation",
+      "state": "destructive",
+      "svg": "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg",
+      "png": "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "Manual fallback — contextual form",
+      "state": "review",
+      "svg": "states/desktop/desktop-manual-entry-fallback-cp4-r0.svg",
+      "png": "states/desktop/desktop-manual-entry-fallback-cp4-r0.png"
+    }
+  ],
+  "reviewBoards": [
+    "CP4_R0_INTERACTION_STRATEGY.svg",
+    "CP4_R0_INTERACTION_STRATEGY.png",
+    "CP4_R0_STATE_INVENTORY.svg",
+    "CP4_R0_STATE_INVENTORY.png",
+    "CP4_R0_SCAN_FLOW.svg",
+    "CP4_R0_SCAN_FLOW.png",
+    "CP4_R0_CORRECTION_FLOW.svg",
+    "CP4_R0_CORRECTION_FLOW.png",
+    "CP4_R0_FOCUS_MOTION.svg",
+    "CP4_R0_FOCUS_MOTION.png",
+    "CP4_R0_RESPONSIVE_STATES.svg",
+    "CP4_R0_RESPONSIVE_STATES.png",
+    "CP4_R0_STATE_CONTACT_SHEET.svg",
+    "CP4_R0_STATE_CONTACT_SHEET.png"
+  ],
+  "prototype": [
+    "prototype/index.html",
+    "prototype/styles.css",
+    "prototype/app.js",
+    "prototype/README.md"
+  ],
+  "documentation": [
+    "README.md",
+    "CP4_R0_SPEC.md",
+    "CP4_R0_FINAL_LOCK.md",
+    "cp4-interaction-model.json",
+    "review-notes/CP4_R0_BROWSER_QA.md",
+    "review-notes/CP4_R0_SELF_CRITIQUE.md"
+  ],
+  "generatedFiles": [
+    "states/mobile/mobile-scan-upload-error-cp4-r0.svg",
+    "states/mobile/mobile-scan-upload-error-cp4-r0.png",
+    "states/mobile/mobile-scan-offline-cp4-r0.svg",
+    "states/mobile/mobile-scan-offline-cp4-r0.png",
+    "states/mobile/mobile-transaction-save-error-cp4-r0.svg",
+    "states/mobile/mobile-transaction-save-error-cp4-r0.png",
+    "states/mobile/mobile-scan-saved-success-cp4-r0.svg",
+    "states/mobile/mobile-scan-saved-success-cp4-r0.png",
+    "states/mobile/mobile-manual-entry-fallback-cp4-r0.svg",
+    "states/mobile/mobile-manual-entry-fallback-cp4-r0.png",
+    "states/desktop/desktop-scan-upload-ready-cp4-r0.svg",
+    "states/desktop/desktop-scan-upload-ready-cp4-r0.png",
+    "states/desktop/desktop-scan-processing-cp4-r0.svg",
+    "states/desktop/desktop-scan-processing-cp4-r0.png",
+    "states/desktop/desktop-scan-upload-error-cp4-r0.svg",
+    "states/desktop/desktop-scan-upload-error-cp4-r0.png",
+    "states/desktop/desktop-scan-quota-fallback-cp4-r0.svg",
+    "states/desktop/desktop-scan-quota-fallback-cp4-r0.png",
+    "states/desktop/desktop-transaction-save-success-cp4-r0.svg",
+    "states/desktop/desktop-transaction-save-success-cp4-r0.png",
+    "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg",
+    "states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png",
+    "states/desktop/desktop-manual-entry-fallback-cp4-r0.svg",
+    "states/desktop/desktop-manual-entry-fallback-cp4-r0.png",
+    "CP4_R0_INTERACTION_STRATEGY.svg",
+    "CP4_R0_INTERACTION_STRATEGY.png",
+    "CP4_R0_STATE_INVENTORY.svg",
+    "CP4_R0_STATE_INVENTORY.png",
+    "CP4_R0_SCAN_FLOW.svg",
+    "CP4_R0_SCAN_FLOW.png",
+    "CP4_R0_CORRECTION_FLOW.svg",
+    "CP4_R0_CORRECTION_FLOW.png",
+    "CP4_R0_FOCUS_MOTION.svg",
+    "CP4_R0_FOCUS_MOTION.png",
+    "CP4_R0_RESPONSIVE_STATES.svg",
+    "CP4_R0_RESPONSIVE_STATES.png",
+    "CP4_R0_STATE_CONTACT_SHEET.svg",
+    "CP4_R0_STATE_CONTACT_SHEET.png"
+  ]
+}

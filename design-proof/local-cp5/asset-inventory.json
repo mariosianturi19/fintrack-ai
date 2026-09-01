@@ -1,0 +1,623 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP5-R0",
+  "generatedAt": "2026-07-29",
+  "authorityFileCount": 123,
+  "files": [
+    {
+      "path": "DESIGN_SYSTEM.md",
+      "bytes": 35421,
+      "sha256": "0d96fc9523bc09b9f833acf219f0784e8b86e9d5d1db29d8af7f56a66a139502"
+    },
+    {
+      "path": "design-proof/CHECKPOINT_TRACKER.md",
+      "bytes": 4724,
+      "sha256": "d121e68f9fe73ccaa2459e6bd2f5210b28e1d892186fab2487ab4a16853a6305"
+    },
+    {
+      "path": "design-proof/DESIGN_PROOF_SPEC.md",
+      "bytes": 5883,
+      "sha256": "56e36804092f6de0af1afdfb38b20a83781c27f6db903a500775398c6f950f8a"
+    },
+    {
+      "path": "design-proof/local-cp1/review-notes/CP1_FINAL_LOCK.md",
+      "bytes": 1648,
+      "sha256": "fc7a99515441884f665fedd40c593bebf7afde6f061235ec86719440f75cf52f"
+    },
+    {
+      "path": "design-proof/local-cp2/CP2_R0_FINAL_LOCK.md",
+      "bytes": 2420,
+      "sha256": "6e148a1bf497ae5685ddacb90aa265e8cf8a2f07ef2c8cc62ce511613fee45c2"
+    },
+    {
+      "path": "design-proof/local-cp2/cp2-ui-tokens.json",
+      "bytes": 1816,
+      "sha256": "0911f2c6ffb66dff31f9c969221be1c9e52a6c83ae449ed4cee542f480571d27"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-dashboard-default-cp2-r0.png",
+      "bytes": 52812,
+      "sha256": "335b723fa0f31862794e7153783269d2875d9813e1df97f3c97d48667eb4b8bb"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-dashboard-default-cp2-r0.svg",
+      "bytes": 563567,
+      "sha256": "b10330d2f09d969cb85d022c8fb3aa9cf9f5f9476acd2c690515d63d1471ad98"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-dashboard-states-cp2-r0.png",
+      "bytes": 42001,
+      "sha256": "99116d8c8c3ddc9d9c7ca18529f2caf476227b28a966908f03704d5e11953cd2"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-dashboard-states-cp2-r0.svg",
+      "bytes": 560849,
+      "sha256": "a254c82ce33bf7cbc22464a354009feaf90e2e7b9e3e3c16902671a566584f74"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-destructive-confirmation-cp2-r0.png",
+      "bytes": 46483,
+      "sha256": "7b964735de68e4e243e69e8ca2b2418a4ba8669bcb2ab86833a8840fea9b5ecb"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-destructive-confirmation-cp2-r0.svg",
+      "bytes": 552021,
+      "sha256": "1f59c75bc507cce9ec29e33ae83e6a79f5ea4ec4ded464c149cbbcce50ac1bab"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-processing-cp2-r0.png",
+      "bytes": 32433,
+      "sha256": "b1bec59e33e4fa8abedf4a05483787abc549c535f4ec118e6adb63c972bc5c06"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-processing-cp2-r0.svg",
+      "bytes": 553165,
+      "sha256": "89a793f938bfb7a95f5f4e40307af6475a474d0358fb7e41bc57070249385ba4"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-quota-error-cp2-r0.png",
+      "bytes": 42158,
+      "sha256": "5797a37f241670a441392bd66fbfd746a0ffbe7774b7f424a2e341981db92d5d"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-quota-error-cp2-r0.svg",
+      "bytes": 552658,
+      "sha256": "6fd1f02687d36d85ed90610f66fda3e5416bb74db0615f547adee3b87e2a3980"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-review-cp2-r0.png",
+      "bytes": 39517,
+      "sha256": "8beff7073702d8d1cc87a21abab31af67b980bdcef51b98f25e1ce2a7f73013d"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-review-cp2-r0.svg",
+      "bytes": 555461,
+      "sha256": "275d24dd5a636e110d01d71997b0c329da2c15854bd0e12b9a65bf98391eb333"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-start-cp2-r0.png",
+      "bytes": 32476,
+      "sha256": "f193ccab4968b8d528485e77413913ebbf479a64434ed138cb13f039e626994d"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-start-cp2-r0.svg",
+      "bytes": 553131,
+      "sha256": "7fe486e470c689ebda3244cc7ec2a790b0aec630cd55a53a9f272d59f46c730f"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-upload-cp2-r0.png",
+      "bytes": 33456,
+      "sha256": "7436f572a4d879d553f1e51a7ff620869923c8c037847e6eaa7a0ad87f5ba5bd"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-scan-upload-cp2-r0.svg",
+      "bytes": 553883,
+      "sha256": "1b7389ff436b840ef39bce353dcbb1ca11b6306cb0d5d0eb882b91c7e9da3ccf"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-transaction-detail-edit-cp2-r0.png",
+      "bytes": 38637,
+      "sha256": "75915b51ef6c4c6a0e617b5dced8d981b851fda541a787fd3d69e52845b738b9"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-transaction-detail-edit-cp2-r0.svg",
+      "bytes": 555029,
+      "sha256": "6a25950fb76eef31d5ee50130442e2d2d5025a1d06c1b74cea39a158a1b2e1f5"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-transactions-list-cp2-r0.png",
+      "bytes": 52072,
+      "sha256": "1f0c71beaec2ec6dfcbabd9df36ca7677f048e8346d48a51d581a6d9790af1a8"
+    },
+    {
+      "path": "design-proof/local-cp2/mobile/mobile-transactions-list-cp2-r0.svg",
+      "bytes": 565992,
+      "sha256": "997115bb5f56a255e0e8733485941d13b096aaf2de1aabd7d5aa62dd981b1ac4"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/dashboard-360-px-cp2-r0.png",
+      "bytes": 52026,
+      "sha256": "d2189277b98ba06ff2ab80010f7954a2e2782240d12131f8d2388810d367714b"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/dashboard-360-px-cp2-r0.svg",
+      "bytes": 563537,
+      "sha256": "ff528efe4de84530829570ef78ab8b3c2b22c59032564a27231ba2da929a6e26"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/review-360-px-cp2-r0.png",
+      "bytes": 39066,
+      "sha256": "9ec27ecb7b71631a113f7c4d3db3176bf4c0eca30b813f48a4549509bd445490"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/review-360-px-cp2-r0.svg",
+      "bytes": 555472,
+      "sha256": "bc60b4f5de5f5997d815691b87d90793b158cd9787d76642a7118c8bd004d031"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/transactions-360-px-cp2-r0.png",
+      "bytes": 51249,
+      "sha256": "2d438261d4fb00dc12c53776eda6f54afdac17174b2222ac06a8e1d42df1614a"
+    },
+    {
+      "path": "design-proof/local-cp2/tests/transactions-360-px-cp2-r0.svg",
+      "bytes": 565965,
+      "sha256": "697bda36687438e904a58265cec5126300eb6dbc4c597a9499576e0aee813c88"
+    },
+    {
+      "path": "design-proof/local-cp3/CP3_R0_FINAL_LOCK.md",
+      "bytes": 2653,
+      "sha256": "241addb252ec2ae72580f15ba38aca183ab8715ba6e3c7df9354651f2abb2c63"
+    },
+    {
+      "path": "design-proof/local-cp3/cp3-ui-tokens.json",
+      "bytes": 1136,
+      "sha256": "66d9b92758bf464cb975bd31c5cb10c9ada0e6e549e7276f9f4a350ee2991842"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-app-shell-component-states-cp3-r0.png",
+      "bytes": 148856,
+      "sha256": "0d319dc7150d4b28823775cc671e407c6012f1e39b3bd75d9d2ffb4aece82b94"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-app-shell-component-states-cp3-r0.svg",
+      "bytes": 575349,
+      "sha256": "e9bea895534c547ba65ac7ce7f980f776779acf6f7aa8945a3795b7f3f44ced4"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-dashboard-default-cp3-r0.png",
+      "bytes": 142182,
+      "sha256": "211bbdcc895f574c997174200b20afcd7b98cf0678cbbdfc5cd613e96ba61d12"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-dashboard-default-cp3-r0.svg",
+      "bytes": 578315,
+      "sha256": "2592054c50eb8b8475b40af49ac04095f7daecc92c736492e800ef7af5790366"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-dashboard-states-cp3-r0.png",
+      "bytes": 134619,
+      "sha256": "473667068e1c735c4fd00d1efed06ffade9fad36cd10ed3afa65c0400c2e6662"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-dashboard-states-cp3-r0.svg",
+      "bytes": 572812,
+      "sha256": "3aa7cd1efee14a73f66990135acd9744670077f326839f80cf586aed11aab3bc"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-scan-review-cp3-r0.png",
+      "bytes": 116329,
+      "sha256": "5d1d0a65727b8400806db936c3dfa446c4596c9d002164b6bc1b5802eab3b0a2"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-scan-review-cp3-r0.svg",
+      "bytes": 571495,
+      "sha256": "e6b1f367a12ded0dfaf2a1b6245c6f39115cbea0ecd9d1b34d6d6db405014bc2"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-scan-upload-processing-cp3-r0.png",
+      "bytes": 131297,
+      "sha256": "f76ef2eceddca8c827359dd3c024c7fb444ffb01b3ae6c4972c046c54fb8fd32"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-scan-upload-processing-cp3-r0.svg",
+      "bytes": 571193,
+      "sha256": "df75d414b8eb7a9fe5a8b379c12c735eec070de62c0d83e897daeb156a682c68"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-transactions-detail-cp3-r0.png",
+      "bytes": 134903,
+      "sha256": "2a2738cf9e21eddcce91aca16bdd77dd79e12db8085b2498e7f53818cf9a2125"
+    },
+    {
+      "path": "design-proof/local-cp3/desktop/desktop-transactions-detail-cp3-r0.svg",
+      "bytes": 580917,
+      "sha256": "f9e96ca3978010d49a3260b7775ca0c4c39d7cefb1a52be1514ea2abb6a00538"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/dashboard-1280-px-cp3-r0.png",
+      "bytes": 134503,
+      "sha256": "1328dbd13a9b3b86e9b49d6e6aadde9913a0584bef1f948581305c415531643f"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/dashboard-1280-px-cp3-r0.svg",
+      "bytes": 578263,
+      "sha256": "ed2b6e1754dc47e6deee498b7ef908ff9e6ea494ad251fdd7b48ad738a4f2205"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/review-1280-px-cp3-r0.png",
+      "bytes": 109729,
+      "sha256": "6aa06b5fe1ca8badf23d60c9d294e424812a04f71a88f96d92231375c008c31e"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/review-1280-px-cp3-r0.svg",
+      "bytes": 571492,
+      "sha256": "fe4519d8e5839857449d701e6f242a53cd08af0e1a17e9a809338c96fe95f9f9"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/transactions-1280-px-cp3-r0.png",
+      "bytes": 130632,
+      "sha256": "e41a1ad14b404add928c75d5105c570af15470a9888561f5546153dd0b8e4c1c"
+    },
+    {
+      "path": "design-proof/local-cp3/tests/transactions-1280-px-cp3-r0.svg",
+      "bytes": 580890,
+      "sha256": "bc7b7067c6a04947ad1636695bd08b94143cad52aed4504693e52986286b7fc2"
+    },
+    {
+      "path": "design-proof/local-cp4/CP4_R0_FINAL_LOCK.md",
+      "bytes": 3569,
+      "sha256": "3b4fa2e64789497a2fb6de6bd3cc7ef603adef2c2d6b41fa2d1317f11fc6bb24"
+    },
+    {
+      "path": "design-proof/local-cp4/cp4-interaction-model.json",
+      "bytes": 3146,
+      "sha256": "7796bbebfd8dc5d56d71e043bc04161de6a2673cbde9d57a5de8b59f65144738"
+    },
+    {
+      "path": "design-proof/local-cp4/prototype/README.md",
+      "bytes": 1294,
+      "sha256": "e7dd6bc06b74f84f80cbdcebb3e9216cc746673ca82b582c27fe8619a1c00001"
+    },
+    {
+      "path": "design-proof/local-cp4/prototype/app.js",
+      "bytes": 21736,
+      "sha256": "6699f882c1f4141207f5d82b6646787a769953f7683115f52ddc848bff325509"
+    },
+    {
+      "path": "design-proof/local-cp4/prototype/index.html",
+      "bytes": 4100,
+      "sha256": "7f939d051baff93bd2fbf6cb1d64563a76eefd20b54608289ba95112add2a5ac"
+    },
+    {
+      "path": "design-proof/local-cp4/prototype/styles.css",
+      "bytes": 8955,
+      "sha256": "2119c163cf8f922d878fca0f66a9a848b1191b1b8e026f9a63f40587785e113c"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-manual-entry-fallback-cp4-r0.png",
+      "bytes": 106369,
+      "sha256": "4823d58e652ff7a97ea18168bfdb06a70e902eef842eafb037c0447918a84dbb"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-manual-entry-fallback-cp4-r0.svg",
+      "bytes": 566450,
+      "sha256": "099c544351b3bb9c93a5b5693224b0f92a5bab0d5061c1cf201ba4d420841e5d"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-processing-cp4-r0.png",
+      "bytes": 104443,
+      "sha256": "17aaf3a18b732b07aaf15885c591a071107d0ebd96aca272107753baad5dd772"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-processing-cp4-r0.svg",
+      "bytes": 564406,
+      "sha256": "779f32bedc2e6e7d7391df3318adcdb54c4cdb93e51aba325c42ba33a7e8aaf1"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-quota-fallback-cp4-r0.png",
+      "bytes": 106446,
+      "sha256": "43ea97a1f9b11cf3b8ac045d06a78d1aef46a576b7b61dfe491f8744a8e2167c"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-quota-fallback-cp4-r0.svg",
+      "bytes": 568156,
+      "sha256": "9234abca1f38d01344ea35781b3b57330f76d147e715ac865b247ed4bd53e277"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-upload-error-cp4-r0.png",
+      "bytes": 114950,
+      "sha256": "f87ee32162a1106ea178a25aa3849e29bfca6dfe19cb7b1e9a622ea81218ac0d"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-upload-error-cp4-r0.svg",
+      "bytes": 569994,
+      "sha256": "1bfd2bbd89293d2e4fd892ab8a6ceb94fc3d5f1ebb8a9522eac83b27aa761ee5"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-upload-ready-cp4-r0.png",
+      "bytes": 109315,
+      "sha256": "646114771c0845509754a8923c6ce8287aa2b63bd3382aa81d49370f7e6c9624"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-scan-upload-ready-cp4-r0.svg",
+      "bytes": 565997,
+      "sha256": "62028d5411fb8fa1215fbeb39075bbd6b46e0f5df17ecffc30fba839c0dfc5de"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-transaction-delete-confirmation-cp4-r0.png",
+      "bytes": 142138,
+      "sha256": "f01e26ca6b5e384f086a23f6bcd8dc8fc1d27c48abb0253767de5b0a5a14deb8"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-transaction-delete-confirmation-cp4-r0.svg",
+      "bytes": 584889,
+      "sha256": "841864b57cde7a32c61ee9a00b17d2bd1c0c8be8e3c1c2ea5bcc3b201c4cb9c3"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-transaction-save-success-cp4-r0.png",
+      "bytes": 140891,
+      "sha256": "2cd3d8fa5fd69a0932eb965ec3282df9449cfb3e0ce54618d029f57c640db0bf"
+    },
+    {
+      "path": "design-proof/local-cp4/states/desktop/desktop-transaction-save-success-cp4-r0.svg",
+      "bytes": 582230,
+      "sha256": "7b65880e0801c510775f353fb67ed522bd89f04282e30645e8d88eaac68eca75"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-manual-entry-fallback-cp4-r0.png",
+      "bytes": 39288,
+      "sha256": "14f3a87e4bf2cd7dc568a7a53766a6574066a43687195a3fd904900299d942c7"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-manual-entry-fallback-cp4-r0.svg",
+      "bytes": 554728,
+      "sha256": "eddcdafa47e42e5cc436095c970a704540dd2bb73a669bee038396d1c6b071ab"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-offline-cp4-r0.png",
+      "bytes": 44839,
+      "sha256": "d6fa57aca8149a78219dac6f4f1663ef19e19f518fc6a38fa2dd3d524424cbce"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-offline-cp4-r0.svg",
+      "bytes": 557889,
+      "sha256": "d3e726efa2f19baa6cab8a04f24750d8dc219e5527a356a0968f3cc49de1bff4"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-saved-success-cp4-r0.png",
+      "bytes": 57327,
+      "sha256": "1f26c3cad29ea61caa8e5229c3a4d4a341380358e395080e825bbf82491fca49"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-saved-success-cp4-r0.svg",
+      "bytes": 565117,
+      "sha256": "8181275ee7c0bdcf1465aa28a29c1a07f1c7ffa8722b7b8d088801bc6a061aea"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-upload-error-cp4-r0.png",
+      "bytes": 41767,
+      "sha256": "c901415a835c3c144fcc46a72ce7c102e5c701643f262f7ffb254cd0d8155e1b"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-scan-upload-error-cp4-r0.svg",
+      "bytes": 558187,
+      "sha256": "9f112c48aad8d062477cc8889ea8a3ae7cc69192876b0eaaeeec42ca502bf421"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-transaction-save-error-cp4-r0.png",
+      "bytes": 42679,
+      "sha256": "34be25431e1b5ec9e5e0ad151103e4483dd024a13be941c0f77897f0e1518846"
+    },
+    {
+      "path": "design-proof/local-cp4/states/mobile/mobile-transaction-save-error-cp4-r0.svg",
+      "bytes": 557461,
+      "sha256": "cf6b9d5fb1f26d8709409008f78769afc8f1d42c25359d0cb905466cc29d2b95"
+    },
+    {
+      "path": "design-proof/local-cp5/CP5_R0_FINAL_LOCK.md",
+      "bytes": 1837,
+      "sha256": "b2f465629e4c039b7169029441c1ed1e8f1b06049052648761a49b0d5d5ea36b"
+    },
+    {
+      "path": "design-proof/logo-r1/LOGO_R1_FINAL_LOCK.md",
+      "bytes": 1353,
+      "sha256": "1f5d4db9c45f308cf39e0ffc2a84700b23c95467e09e6ca1a65b89652bfbd395"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-favicon-16.png",
+      "bytes": 218,
+      "sha256": "421073b39bd8d6809e3e13c6629a4579ecb98652641815e0c88f5c7df09e6299"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-favicon-32.png",
+      "bytes": 254,
+      "sha256": "6ec3c5a28d0ff71f604553909ca62386b2a88b07ae5ea741715b402d0ddd8953"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192-maskable.png",
+      "bytes": 1558,
+      "sha256": "dfdf7d1c0d7c6542590e351176a1ad7351df2ddd513e681d2e33711edb94e490"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192-maskable.svg",
+      "bytes": 586,
+      "sha256": "50f62f25a67a844a012afc06e76f7475d104a00e7a890489759d45467e548c06"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192.png",
+      "bytes": 1488,
+      "sha256": "10dc4545361f2f22b337ef4134298e4ca0f91e99af1072118f52d559383892f3"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-192.svg",
+      "bytes": 549,
+      "sha256": "cb420a54e857bedaf015d64b516f62f31e486a26b9966b749d87021536afec3c"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512-maskable.png",
+      "bytes": 4898,
+      "sha256": "fb13655f5a36101819fe44ba1d967164a7c9a61f479aca185209032deafb7466"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512-maskable.svg",
+      "bytes": 586,
+      "sha256": "6fbd7d62a6dd03e47d8970eb9a0be45b3f9ef7d2d350dd9418411d7618351782"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512.png",
+      "bytes": 4717,
+      "sha256": "5a86768c71e393015cc0b9db5eae7f8f63cb36644ae9382ffbe61169e98175df"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/app-icons/fintrack-ai-pwa-512.svg",
+      "bytes": 573,
+      "sha256": "237e0c67f9a4728280e329c9717d2e0169077ef1e2c0aa708b9adb52a93b3f13"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.png",
+      "bytes": 16287,
+      "sha256": "9c71d4ed0e4a8a6ecc2093615ea3ceab8c78cce94ab93b037fa35d0c064e0853"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-dark.svg",
+      "bytes": 3799,
+      "sha256": "0deeaec5bf170593d72d78d4b6404711670c4ce090a1bfc3d3ff6b872f29d6a7"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-light.png",
+      "bytes": 13640,
+      "sha256": "fbfd70002d3119691ad77259c5f1cbf5b4bef84fb438a39991f6aaa65026afb4"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-monochrome-light.svg",
+      "bytes": 3799,
+      "sha256": "67be02ef1a3cb67d06bdac38b0668dea196b00e8929503215c3d12218a19e3eb"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-primary.png",
+      "bytes": 16433,
+      "sha256": "fd67c6f0c7980dcdfdde2a806effba0e5e472bb82fd29de039ef3e8ca5cbe961"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+      "bytes": 3799,
+      "sha256": "b150845eb05b6e8871de46a316d7514f39a464862657d8a36c3d434508c37ff6"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-reverse.png",
+      "bytes": 16358,
+      "sha256": "3e1ac15a6b94f2addd355b8320de31e12491c070b61d379628536f7d4c7a3620"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-compact-reverse.svg",
+      "bytes": 3799,
+      "sha256": "57a300dbbfcacfc14a19aa73f3b890fd061a328e9b4ef7cb74c2be85b7fe82ad"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-dark.png",
+      "bytes": 17211,
+      "sha256": "945811f5ae5deefe98c163393f3f1d95ec66c39b45e336978f72e5b7caa216b5"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-dark.svg",
+      "bytes": 3802,
+      "sha256": "d459ab019bac806c1b2d4e4f4fc741b2e2738fdacdcbc21347d9de6d28f3d684"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-light.png",
+      "bytes": 14364,
+      "sha256": "209609e21138a560bb768a704ac420e912535c61aaf5e7cea72a7513c317f2d8"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-monochrome-light.svg",
+      "bytes": 3802,
+      "sha256": "158992cffff45d45bc527d3f06b264da90fc6699f5a2615e5f42c22a3653c05d"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-primary.png",
+      "bytes": 17611,
+      "sha256": "9ddacefa5271e4a0f3a0d0ade85b1856d526420a6c04a3c413362094c32cb00a"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-primary.svg",
+      "bytes": 3802,
+      "sha256": "da70c1fdd0b2f2b1004b90ada9bd0b23c74a6f72d04d5c0f32f7bd6c8d72ed6a"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-reverse.png",
+      "bytes": 17276,
+      "sha256": "e14c8e9409de5ffa4feecdbe006722bc52ded5e4fad27bed91608c217d4785ea"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/lockups/fintrack-ai-lockup-reverse.svg",
+      "bytes": 3802,
+      "sha256": "c21df22bdec229bcfab1d765f2e0f6c17242e85002c2eaee3051fb8114fb6b40"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-midnight.png",
+      "bytes": 3512,
+      "sha256": "1fc4e0f60ca470c4beff058b742b13ee7dc717bb551626460a9fb87790b9183c"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-midnight.svg",
+      "bytes": 487,
+      "sha256": "410599185373bad21c13859f121318b1c3c3c57de6ca73e73f0c5b4ab6eedc72"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-primary.png",
+      "bytes": 3509,
+      "sha256": "33a96ed0b84cc4d48e0058f86e14a69258c8fb321981794c7a3d434432dc296c"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-primary.svg",
+      "bytes": 487,
+      "sha256": "41a017df0ac9fc85c01a1a839e7d1f1fc957fa97b294afb486838fbab3cbe750"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-reverse.png",
+      "bytes": 3104,
+      "sha256": "bc6b2ff6c0b5e98a79b8c64f99c86757f89a710a2eb73e367920250100b9a5d4"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-micro-reverse.svg",
+      "bytes": 487,
+      "sha256": "a5e0a498f7eef0c2c1b16eb1309a95cc9f8ce5d38ac89477ee54352878a0c3e1"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-midnight.png",
+      "bytes": 5432,
+      "sha256": "5a19fc994b7de65417a692f831c568f095fdc1f15895c959e56ee2cacc5762d8"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-midnight.svg",
+      "bytes": 490,
+      "sha256": "bda5a2403a9613a3e6f75e97ebe11f6e75a981f09907c63031717400711bce0c"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-primary.png",
+      "bytes": 5500,
+      "sha256": "2e68e5b32c8a2fa6d58788b950cfeea36d51a0cf2e2828085e41fc95dc2bf291"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-primary.svg",
+      "bytes": 490,
+      "sha256": "08544d0046f90d9683b7f71d34867cd477158c518a509af68358ff5166bac3cb"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-reverse.png",
+      "bytes": 4484,
+      "sha256": "322383915d8dc9ea76cf7f22cf624783c05090d9c7a553829d92139de200bde4"
+    },
+    {
+      "path": "design-proof/logo-r1/assets/marks/fintrack-ai-mark-reverse.svg",
+      "bytes": 490,
+      "sha256": "d9c3a2a12cf3fbd41849593bea834acc0a1e23c3e42901004a8f86809cc58560"
+    },
+    {
+      "path": "design-proof/logo-r1/logo-tokens.json",
+      "bytes": 1078,
+      "sha256": "9a2f430081e48e6b3c3c39dc8b39e91aa3da72abcbad1444f6066e183feb493b"
+    }
+  ]
+}

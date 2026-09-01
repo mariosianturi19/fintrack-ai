@@ -1,0 +1,601 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP2-R0",
+  "generatedAt": "2026-07-29T10:40:14.925Z",
+  "status": "PASS",
+  "summary": {
+    "total": 98,
+    "passed": 98,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "Checkpoint identity",
+      "passed": true,
+      "severity": "error",
+      "evidence": "CP2-R0; Final / Locked"
+    },
+    {
+      "name": "Primary frame count",
+      "passed": true,
+      "severity": "error",
+      "evidence": "10 frames declared"
+    },
+    {
+      "name": "Review board count",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6 SVG/PNG board files declared"
+    },
+    {
+      "name": "Token viewport contract",
+      "passed": true,
+      "severity": "error",
+      "evidence": "{\"primary\":{\"width\":390,\"height\":844},\"spotcheck\":{\"width\":360,\"height\":844},\"horizontalPadding\":16,\"bottomNavigationHeight\":80,\"minimumTouchTarget\":44}"
+    },
+    {
+      "name": "Minimum touch target token",
+      "passed": true,
+      "severity": "error",
+      "evidence": "44px"
+    },
+    {
+      "name": "Primary control primitives exceed minimum touch target",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Button and field defaults are 48px; bottom navigation is 80px"
+    },
+    {
+      "name": "File present: mobile\\mobile-dashboard-default-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=563567"
+    },
+    {
+      "name": "File present: mobile\\mobile-dashboard-default-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=52812"
+    },
+    {
+      "name": "File present: mobile\\mobile-dashboard-states-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=560849"
+    },
+    {
+      "name": "File present: mobile\\mobile-dashboard-states-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=42001"
+    },
+    {
+      "name": "File present: mobile\\mobile-transactions-list-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=565992"
+    },
+    {
+      "name": "File present: mobile\\mobile-transactions-list-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=52072"
+    },
+    {
+      "name": "File present: mobile\\mobile-transaction-detail-edit-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=555029"
+    },
+    {
+      "name": "File present: mobile\\mobile-transaction-detail-edit-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=38637"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-start-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=553131"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-start-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=32476"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-upload-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=553883"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-upload-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=33456"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-processing-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=553165"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-processing-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=32433"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-review-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=555461"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-review-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=39517"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-quota-error-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=552658"
+    },
+    {
+      "name": "File present: mobile\\mobile-scan-quota-error-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=42158"
+    },
+    {
+      "name": "File present: mobile\\mobile-destructive-confirmation-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=552021"
+    },
+    {
+      "name": "File present: mobile\\mobile-destructive-confirmation-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=46483"
+    },
+    {
+      "name": "File present: CP2_R0_MOBILE_CONTACT_SHEET.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=661624"
+    },
+    {
+      "name": "File present: CP2_R0_MOBILE_CONTACT_SHEET.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=250972"
+    },
+    {
+      "name": "File present: CP2_R0_VISUAL_FOUNDATION.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=562630"
+    },
+    {
+      "name": "File present: CP2_R0_VISUAL_FOUNDATION.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=118409"
+    },
+    {
+      "name": "File present: CP2_R0_360_SPOTCHECK.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=595719"
+    },
+    {
+      "name": "File present: CP2_R0_360_SPOTCHECK.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=142401"
+    },
+    {
+      "name": "File present: tests\\dashboard-360-px-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=563537"
+    },
+    {
+      "name": "File present: tests\\dashboard-360-px-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=52026"
+    },
+    {
+      "name": "File present: tests\\transactions-360-px-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=565965"
+    },
+    {
+      "name": "File present: tests\\transactions-360-px-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=51249"
+    },
+    {
+      "name": "File present: tests\\review-360-px-cp2-r0.svg",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=555472"
+    },
+    {
+      "name": "File present: tests\\review-360-px-cp2-r0.png",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=39066"
+    },
+    {
+      "name": "File present: cp2-ui-tokens.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=1816"
+    },
+    {
+      "name": "File present: manifest.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=4243"
+    },
+    {
+      "name": "File present: CP2_R0_FINAL_LOCK.md",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=2420"
+    },
+    {
+      "name": "File present: tooling\\generate-cp2.mjs",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=56656"
+    },
+    {
+      "name": "File present: tooling\\verify-cp2.mjs",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=7685"
+    },
+    {
+      "name": "File present: tooling-runtime\\package.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=280"
+    },
+    {
+      "name": "File present: tooling-runtime\\package-lock.json",
+      "passed": true,
+      "severity": "error",
+      "evidence": "contained=true; bytes=20612"
+    },
+    {
+      "name": "01 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "01 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "01 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "02 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "02 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "02 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "03 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "03 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "03 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "04 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "04 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "04 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "05 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "05 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "05 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "06 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "06 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "06 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "07 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "07 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "07 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "08 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "08 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "08 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "09 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "09 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "09 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "10 viewport 390x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "svg=true; png=390x844"
+    },
+    {
+      "name": "10 target fonts embedded",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Space Grotesk TTF and IBM Plex Sans WOFF embedded"
+    },
+    {
+      "name": "10 anti-slop primitives absent",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No gradients, glass, glow, or decorative filters"
+    },
+    {
+      "name": "Spot-check dashboard-360-px-cp2-r0.png is 360x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "360x844"
+    },
+    {
+      "name": "Spot-check transactions-360-px-cp2-r0.png is 360x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "360x844"
+    },
+    {
+      "name": "Spot-check review-360-px-cp2-r0.png is 360x844",
+      "passed": true,
+      "severity": "error",
+      "evidence": "360x844"
+    },
+    {
+      "name": "Focused inspection is intentionally dark",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Midnight is the root canvas only for processing"
+    },
+    {
+      "name": "Focused inspection has no fake numeric progress",
+      "passed": true,
+      "severity": "error",
+      "evidence": "No percentage or numeric confidence is rendered"
+    },
+    {
+      "name": "01 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "02 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "03 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "04 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "05 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "06 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "08 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "09 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "10 remains light-first",
+      "passed": true,
+      "severity": "error",
+      "evidence": "Rice Paper is the root canvas"
+    },
+    {
+      "name": "WCAG AA ink / canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "16.75:1"
+    },
+    {
+      "name": "WCAG AA secondary / canvas",
+      "passed": true,
+      "severity": "error",
+      "evidence": "5.77:1"
+    },
+    {
+      "name": "WCAG AA primary / surface",
+      "passed": true,
+      "severity": "error",
+      "evidence": "7.50:1"
+    },
+    {
+      "name": "WCAG AA expense ink / surface",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6.32:1"
+    },
+    {
+      "name": "WCAG AA error / surface",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6.57:1"
+    },
+    {
+      "name": "WCAG AA warning / warning soft",
+      "passed": true,
+      "severity": "error",
+      "evidence": "6.90:1"
+    },
+    {
+      "name": "WCAG AA signal ink / signal soft",
+      "passed": true,
+      "severity": "error",
+      "evidence": "5.53:1"
+    },
+    {
+      "name": "WCAG AA surface / midnight",
+      "passed": true,
+      "severity": "error",
+      "evidence": "18.72:1"
+    },
+    {
+      "name": "WCAG AA dark muted / midnight",
+      "passed": true,
+      "severity": "error",
+      "evidence": "8.84:1"
+    }
+  ]
+}

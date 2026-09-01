@@ -1,0 +1,87 @@
+{
+  "checkpoint": "CP2-R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "viewport": {
+    "primary": {
+      "width": 390,
+      "height": 844
+    },
+    "spotcheck": {
+      "width": 360,
+      "height": 844
+    },
+    "horizontalPadding": 16,
+    "bottomNavigationHeight": 80,
+    "minimumTouchTarget": 44
+  },
+  "typography": {
+    "display": {
+      "family": "Space Grotesk",
+      "weights": [
+        500,
+        600,
+        700
+      ]
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "weights": [
+        400,
+        500,
+        600
+      ]
+    },
+    "financialNumerals": "tabular-nums"
+  },
+  "color": {
+    "canvas": "#F6F2E8",
+    "canvasSubtle": "#FCFBF7",
+    "surface": "#FFFFFF",
+    "ink": "#0B1220",
+    "secondary": "#53606C",
+    "primary": "#285A73",
+    "primarySoft": "#DCEAF0",
+    "signal": "#B9D86E",
+    "signalSoft": "#EDF5D5",
+    "expense": "#D96C52",
+    "expenseSoft": "#F8E2DB",
+    "warning": "#8A3C00",
+    "warningSoft": "#FFF1D6",
+    "error": "#B42318",
+    "errorSoft": "#FDE8E7",
+    "border": "#D9D6CC",
+    "divider": "#E7E3DA"
+  },
+  "shape": {
+    "button": 12,
+    "field": 10,
+    "card": [
+      14,
+      16
+    ],
+    "scanPanel": 18
+  },
+  "iconography": {
+    "family": "Phosphor Icons",
+    "defaultWeight": "regular",
+    "activeNavigationWeight": "fill where available",
+    "sizes": {
+      "inline": [
+        16,
+        18
+      ],
+      "navigation": 20,
+      "primaryScan": 26
+    }
+  },
+  "logo": {
+    "revision": "LOGO-R1",
+    "asset": "../logo-r1/assets/lockups/fintrack-ai-lockup-compact-primary.svg",
+    "dashboardHeight": 24
+  },
+  "motifs": {
+    "cropFrame": "scan start, upload, focused inspection, and review only",
+    "trackingLine": "1.5–2 px; semantic progress or relationship only"
+  }
+}

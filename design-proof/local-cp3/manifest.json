@@ -1,0 +1,119 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP3",
+  "revision": "R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "generatedAt": "2026-07-29",
+  "sourceHierarchy": "../local-cp1/CONTENT_HIERARCHY.md",
+  "responsiveNotes": "../local-cp1/RESPONSIVE_NOTES.md",
+  "mobileFinalLock": "../local-cp2/CP2_R0_FINAL_LOCK.md",
+  "designSystem": "../../DESIGN_SYSTEM.md",
+  "logo": "../logo-r1/LOGO_R1_FINAL_LOCK.md",
+  "viewports": {
+    "primary": "1440x1024",
+    "spotcheck": "1280x1024"
+  },
+  "frames": [
+    {
+      "number": "11",
+      "title": "Dashboard — default",
+      "svg": "desktop/desktop-dashboard-default-cp3-r0.svg",
+      "png": "desktop/desktop-dashboard-default-cp3-r0.png"
+    },
+    {
+      "number": "12",
+      "title": "Dashboard states",
+      "svg": "desktop/desktop-dashboard-states-cp3-r0.svg",
+      "png": "desktop/desktop-dashboard-states-cp3-r0.png"
+    },
+    {
+      "number": "13",
+      "title": "Transactions + side panel",
+      "svg": "desktop/desktop-transactions-detail-cp3-r0.svg",
+      "png": "desktop/desktop-transactions-detail-cp3-r0.png"
+    },
+    {
+      "number": "14",
+      "title": "Upload + processing",
+      "svg": "desktop/desktop-scan-upload-processing-cp3-r0.svg",
+      "png": "desktop/desktop-scan-upload-processing-cp3-r0.png"
+    },
+    {
+      "number": "15",
+      "title": "Receipt review — two column",
+      "svg": "desktop/desktop-scan-review-cp3-r0.svg",
+      "png": "desktop/desktop-scan-review-cp3-r0.png"
+    },
+    {
+      "number": "16",
+      "title": "App shell + state board",
+      "svg": "desktop/desktop-app-shell-component-states-cp3-r0.svg",
+      "png": "desktop/desktop-app-shell-component-states-cp3-r0.png"
+    }
+  ],
+  "spotchecks": [
+    {
+      "title": "Dashboard · 1280 px",
+      "svg": "tests/dashboard-1280-px-cp3-r0.svg",
+      "png": "tests/dashboard-1280-px-cp3-r0.png"
+    },
+    {
+      "title": "Transactions · 1280 px",
+      "svg": "tests/transactions-1280-px-cp3-r0.svg",
+      "png": "tests/transactions-1280-px-cp3-r0.png"
+    },
+    {
+      "title": "Review · 1280 px",
+      "svg": "tests/review-1280-px-cp3-r0.svg",
+      "png": "tests/review-1280-px-cp3-r0.png"
+    }
+  ],
+  "reviewBoards": [
+    "CP3_R0_DESKTOP_CONTACT_SHEET.svg",
+    "CP3_R0_DESKTOP_CONTACT_SHEET.png",
+    "CP3_R0_DESKTOP_LAYOUT_STUDY.svg",
+    "CP3_R0_DESKTOP_LAYOUT_STUDY.png",
+    "CP3_R0_RESPONSIVE_RULES.svg",
+    "CP3_R0_RESPONSIVE_RULES.png",
+    "CP3_R0_1280_SPOTCHECK.svg",
+    "CP3_R0_1280_SPOTCHECK.png"
+  ],
+  "documentation": [
+    "README.md",
+    "CP3_R0_SPEC.md",
+    "CP3_R0_FINAL_LOCK.md",
+    "review-notes/CP3_R0_SELF_CRITIQUE.md",
+    "review-notes/CP3_R0_REVISION_NOTES.md"
+  ],
+  "finalLock": "CP3_R0_FINAL_LOCK.md",
+  "generatedFiles": [
+    "desktop/desktop-dashboard-default-cp3-r0.svg",
+    "desktop/desktop-dashboard-default-cp3-r0.png",
+    "desktop/desktop-dashboard-states-cp3-r0.svg",
+    "desktop/desktop-dashboard-states-cp3-r0.png",
+    "desktop/desktop-transactions-detail-cp3-r0.svg",
+    "desktop/desktop-transactions-detail-cp3-r0.png",
+    "desktop/desktop-scan-upload-processing-cp3-r0.svg",
+    "desktop/desktop-scan-upload-processing-cp3-r0.png",
+    "desktop/desktop-scan-review-cp3-r0.svg",
+    "desktop/desktop-scan-review-cp3-r0.png",
+    "desktop/desktop-app-shell-component-states-cp3-r0.svg",
+    "desktop/desktop-app-shell-component-states-cp3-r0.png",
+    "tests/dashboard-1280-px-cp3-r0.svg",
+    "tests/dashboard-1280-px-cp3-r0.png",
+    "tests/transactions-1280-px-cp3-r0.svg",
+    "tests/transactions-1280-px-cp3-r0.png",
+    "tests/review-1280-px-cp3-r0.svg",
+    "tests/review-1280-px-cp3-r0.png",
+    "CP3_R0_DESKTOP_CONTACT_SHEET.svg",
+    "CP3_R0_DESKTOP_CONTACT_SHEET.png",
+    "CP3_R0_DESKTOP_LAYOUT_STUDY.svg",
+    "CP3_R0_DESKTOP_LAYOUT_STUDY.png",
+    "CP3_R0_RESPONSIVE_RULES.svg",
+    "CP3_R0_RESPONSIVE_RULES.png",
+    "CP3_R0_1280_SPOTCHECK.svg",
+    "CP3_R0_1280_SPOTCHECK.png",
+    "cp3-ui-tokens.json"
+  ]
+}

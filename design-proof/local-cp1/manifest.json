@@ -1,0 +1,127 @@
+{
+  "project": "Fintrack AI",
+  "checkpoint": "CP1",
+  "revision": "R1 — hierarchy audit corrections",
+  "direction": "Quiet Signal — Refined",
+  "status": "CP1 FINAL — local fallback; pending Figma-native recreation",
+  "generatedAt": "2026-07-29",
+  "approvedAt": "2026-07-29",
+  "approvedBy": "Mario Sianturi",
+  "viewports": {
+    "mobile": "390x844",
+    "desktop": "1440x1024"
+  },
+  "flowDecisions": {
+    "scanSteps": [
+      "Foto",
+      "Persiapan",
+      "Pemeriksaan AI",
+      "Tinjau"
+    ],
+    "afterSave": "Kembali ke Dashboard, tampilkan feedback sukses, dan letakkan transaksi baru di urutan teratas."
+  },
+  "frames": [
+    {
+      "platform": "mobile",
+      "title": "01 · Dashboard — default",
+      "svg": "mobile/mobile-dashboard-default-cp1.svg",
+      "png": "mobile/mobile-dashboard-default-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "02 · Dashboard — loading / empty / offline",
+      "svg": "mobile/mobile-dashboard-states-cp1.svg",
+      "png": "mobile/mobile-dashboard-states-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "03 · Daftar transaksi",
+      "svg": "mobile/mobile-transactions-list-cp1.svg",
+      "png": "mobile/mobile-transactions-list-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "04 · Detail & edit transaksi",
+      "svg": "mobile/mobile-transaction-detail-edit-cp1.svg",
+      "png": "mobile/mobile-transaction-detail-edit-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "05 · Scan — pilih foto",
+      "svg": "mobile/mobile-scan-start-cp1.svg",
+      "png": "mobile/mobile-scan-start-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "06 · Kompresi & upload",
+      "svg": "mobile/mobile-scan-upload-cp1.svg",
+      "png": "mobile/mobile-scan-upload-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "07 · Focused inspection",
+      "svg": "mobile/mobile-scan-processing-cp1.svg",
+      "png": "mobile/mobile-scan-processing-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "08 · Review hasil AI",
+      "svg": "mobile/mobile-scan-review-cp1.svg",
+      "png": "mobile/mobile-scan-review-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "09 · AI quota / fallback",
+      "svg": "mobile/mobile-scan-quota-error-cp1.svg",
+      "png": "mobile/mobile-scan-quota-error-cp1.png"
+    },
+    {
+      "platform": "mobile",
+      "title": "10 · Destructive confirmation",
+      "svg": "mobile/mobile-destructive-confirmation-cp1.svg",
+      "png": "mobile/mobile-destructive-confirmation-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "11 · Dashboard — default",
+      "svg": "desktop/desktop-dashboard-default-cp1.svg",
+      "png": "desktop/desktop-dashboard-default-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "12 · Dashboard states",
+      "svg": "desktop/desktop-dashboard-states-cp1.svg",
+      "png": "desktop/desktop-dashboard-states-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "13 · Transactions + side panel",
+      "svg": "desktop/desktop-transactions-detail-cp1.svg",
+      "png": "desktop/desktop-transactions-detail-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "14 · Upload + processing",
+      "svg": "desktop/desktop-scan-upload-processing-cp1.svg",
+      "png": "desktop/desktop-scan-upload-processing-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "15 · Receipt review — two column",
+      "svg": "desktop/desktop-scan-review-cp1.svg",
+      "png": "desktop/desktop-scan-review-cp1.png"
+    },
+    {
+      "platform": "desktop",
+      "title": "16 · App shell + state board",
+      "svg": "desktop/desktop-app-shell-component-states-cp1.svg",
+      "png": "desktop/desktop-app-shell-component-states-cp1.png"
+    }
+  ],
+  "contactSheets": [
+    "contact-sheet-mobile-cp1.svg",
+    "contact-sheet-mobile-cp1.png",
+    "contact-sheet-desktop-cp1.svg",
+    "contact-sheet-desktop-cp1.png"
+  ]
+}

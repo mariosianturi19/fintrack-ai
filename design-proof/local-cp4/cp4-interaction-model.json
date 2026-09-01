@@ -1,0 +1,145 @@
+{
+  "checkpoint": "CP4-R0",
+  "direction": "Quiet Signal — Refined",
+  "status": "Final / Locked",
+  "strategies": {
+    "scan": "Guided Linear",
+    "correction": "Contextual Inline",
+    "recovery": "Recovery First branching"
+  },
+  "states": [
+    {
+      "id": "loading",
+      "announcement": "Ringkasan sedang dimuat.",
+      "actions": [
+        "wait",
+        "use-cache-if-available"
+      ]
+    },
+    {
+      "id": "empty",
+      "announcement": "Belum ada transaksi bulan ini.",
+      "actions": [
+        "add-manual",
+        "scan-receipt"
+      ]
+    },
+    {
+      "id": "offline",
+      "announcement": "Kamu sedang offline. Data tersimpan masih bisa dilihat.",
+      "actions": [
+        "manual-entry",
+        "retry-connection"
+      ]
+    },
+    {
+      "id": "error",
+      "announcement": "Tindakan belum berhasil. Input tetap dipertahankan.",
+      "actions": [
+        "retry",
+        "back"
+      ]
+    },
+    {
+      "id": "quota",
+      "announcement": "Pemindaian AI sedang sibuk.",
+      "actions": [
+        "manual-entry",
+        "try-later"
+      ]
+    },
+    {
+      "id": "review",
+      "announcement": "Kategori perlu diperiksa.",
+      "actions": [
+        "edit-field",
+        "save-when-valid"
+      ]
+    },
+    {
+      "id": "success",
+      "announcement": "Transaksi tersimpan.",
+      "actions": [
+        "dismiss-optional"
+      ]
+    },
+    {
+      "id": "destructive",
+      "announcement": "Konfirmasi penghapusan transaksi.",
+      "actions": [
+        "cancel-default",
+        "confirm-delete"
+      ]
+    }
+  ],
+  "flows": {
+    "scan": {
+      "happyPath": [
+        "dashboard",
+        "scan-start",
+        "preparation",
+        "processing",
+        "review",
+        "save",
+        "dashboard-updated"
+      ],
+      "recovery": [
+        "permission-denied",
+        "offline",
+        "upload-error",
+        "quota",
+        "validation",
+        "save-error"
+      ]
+    },
+    "correction": {
+      "happyPath": [
+        "transactions",
+        "detail",
+        "edit-category",
+        "save",
+        "list-updated"
+      ],
+      "recovery": [
+        "save-error",
+        "delete-confirmation"
+      ]
+    }
+  },
+  "focus": {
+    "mobileReview": [
+      "back",
+      "merchant",
+      "amount",
+      "date",
+      "category-warning",
+      "items",
+      "save"
+    ],
+    "destructiveDialog": {
+      "initial": "cancel",
+      "trapped": true,
+      "escapeCloses": true,
+      "returnsToTrigger": true
+    },
+    "successToastTakesFocus": false
+  },
+  "motion": {
+    "fast": 120,
+    "base": 180,
+    "slow": 260,
+    "asyncAutoAdvance": false,
+    "fakeProgress": false,
+    "reducedMotion": "remove transforms and scanning animation; preserve state change"
+  },
+  "responsive": {
+    "mobile": "Focused page, inline state, or bottom sheet by complexity",
+    "tablet": "Compact rail; stack context and form when needed",
+    "desktop": "Contextual side panel or dialog; preserve list/workspace context"
+  },
+  "inheritedFrom": [
+    "../local-cp2/CP2_R0_FINAL_LOCK.md",
+    "../local-cp3/CP3_R0_FINAL_LOCK.md",
+    "../logo-r1/LOGO_R1_FINAL_LOCK.md"
+  ]
+}

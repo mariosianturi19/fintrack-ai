@@ -1,0 +1,90 @@
+{
+  "checkpoint": "CP5-R0",
+  "components": {
+    "button": {
+      "variants": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "destructive"
+      ],
+      "states": [
+        "default",
+        "hover",
+        "pressed",
+        "focus-visible",
+        "disabled",
+        "loading"
+      ],
+      "minimumTarget": 44,
+      "labelClippingAllowed": false
+    },
+    "field": {
+      "states": [
+        "default",
+        "hover",
+        "focus",
+        "filled",
+        "warning",
+        "error",
+        "disabled",
+        "read-only"
+      ],
+      "requirements": [
+        "persistent-label",
+        "programmatic-error",
+        "min-height-for-scaling"
+      ]
+    },
+    "badge": {
+      "states": [
+        "information",
+        "success",
+        "warning",
+        "error",
+        "offline",
+        "manual",
+        "ai-source"
+      ],
+      "sizing": "intrinsic-with-horizontal-padding",
+      "colorOnly": false
+    },
+    "transactionRow": {
+      "states": [
+        "default",
+        "hover",
+        "selected",
+        "focus-visible",
+        "sync-pending",
+        "disabled"
+      ],
+      "numericAlignment": "tabular-right"
+    },
+    "dialog": {
+      "states": [
+        "open",
+        "submitting",
+        "error"
+      ],
+      "keyboard": [
+        "initial-focus-safe-action",
+        "focus-trap",
+        "escape",
+        "focus-return"
+      ]
+    },
+    "asyncRegion": {
+      "states": [
+        "loading",
+        "empty",
+        "offline",
+        "error",
+        "quota",
+        "review",
+        "success"
+      ],
+      "timerDrivenFakeProgress": false,
+      "contextPreservedOnFailure": true
+    }
+  }
+}
