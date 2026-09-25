@@ -32,7 +32,7 @@ workspace; data is never shared between users.
 Phase 1 covers:
 
 - Google authentication and automatic account registration;
-- owner-scoped transaction creation, editing, deletion, filtering, and detail
+- owner-scoped transaction creation, editing, deletion, pagination, and detail
   views;
 - dashboard totals, category distribution, recent activity, and weekly
   insights;

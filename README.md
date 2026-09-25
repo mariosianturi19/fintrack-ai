@@ -208,7 +208,7 @@ npm run format:check
 npm run build
 ```
 
-The repository currently contains **183 automated tests across 18 test files**,
+The repository currently contains **185 automated tests across 18 test files**,
 covering authentication boundaries, owner isolation, transactions, exports,
 receipt storage and AI review, scheduled insights, environment validation, and
 account deletion behavior. SQL verification under `supabase/tests/` complements

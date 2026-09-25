@@ -9,6 +9,7 @@ import { SpinnerGap } from "@phosphor-icons/react/SpinnerGap";
 import { Trash } from "@phosphor-icons/react/Trash";
 import { UploadSimple } from "@phosphor-icons/react/UploadSimple";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import type { TransactionCategory } from "@/features/transactions/domain";
@@ -151,6 +152,7 @@ export function ReceiptUploadFlow({
   categories,
   maximumDate,
 }: ReceiptUploadFlowProps) {
+  const router = useRouter();
   const [phase, setPhase] = useState<UploadPhase>("idle");
   const [compressed, setCompressed] = useState<ReceiptCompressionResult | null>(
     null,
@@ -375,7 +377,7 @@ export function ReceiptUploadFlow({
       }
     }
 
-    window.location.assign("/transactions/new");
+    router.push("/transactions/new");
   }
 
   if (

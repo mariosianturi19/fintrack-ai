@@ -1,13 +1,14 @@
 # Fintrack AI — Project Progress
 
-Last updated: September 1, 2026
+Last updated: September 26, 2026
 
 ## Current status
 
-**Phase 1 is feature-complete and deployed.** The application supports Google
-authentication, owner-isolated transaction management, private receipt
-processing, reviewable AI extraction, dashboard insights, exports, scheduled
-operations, PWA foundations, and account deletion.
+**Phase 1 implementation is feature-complete, with a live production
+deployment.** The application supports Google authentication, owner-isolated
+transaction management, private receipt processing, reviewable AI extraction,
+dashboard insights, exports, scheduled operations, PWA foundations, and account
+deletion.
 
 The live deployment is available at
 [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
@@ -37,13 +38,17 @@ The current repository quality gate includes:
 - TypeScript compilation without emitted output;
 - Prettier formatting verification;
 - a production Next.js build; and
-- **183 automated tests across 18 test files** using Vitest and PGlite.
+- **185 automated tests across 18 test files** using Vitest and PGlite.
 
 The automated suite covers authentication boundaries, owner isolation,
 transaction validation, dashboard aggregation, exports, private receipt
 storage, AI review behavior, weekly insights, environment validation, and
 account deletion. SQL assertions under `supabase/tests/` add schema and
 cross-user isolation checks.
+
+The September 26 maintenance pass also updates the patched Next.js and Sharp
+dependency baseline, keeps the static offline fallback outside the authenticated
+session gate, and invalidates the previous service-worker static cache.
 
 Focused production smoke checks have covered:
 

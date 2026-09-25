@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "fintrack-ai";
-const STATIC_CACHE = `${CACHE_PREFIX}-static-v1`;
+const STATIC_CACHE = `${CACHE_PREFIX}-static-v2`;
 const OFFLINE_FALLBACK = "/offline.html";
 const PRECACHE_URLS = [
   OFFLINE_FALLBACK,

@@ -11,9 +11,14 @@ const sessionOptionalPathPrefixes = [
   "/login",
 ] as const;
 
+const sessionOptionalExactPaths = ["/offline.html"] as const;
+
 export function isSessionOptionalPath(pathname: string) {
-  return sessionOptionalPathPrefixes.some(
-    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  return (
+    sessionOptionalExactPaths.some((path) => pathname === path) ||
+    sessionOptionalPathPrefixes.some(
+      (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+    )
   );
 }
 

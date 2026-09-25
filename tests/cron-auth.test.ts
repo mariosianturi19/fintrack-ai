@@ -39,13 +39,14 @@ describe("scheduled operation authorization", () => {
   });
 });
 
-describe("scheduled operation session gate", () => {
+describe("session gate exceptions", () => {
   it.each([
     "/api/cron",
     "/api/cron/daily",
     "/api/account/deletion",
     "/account/deletion",
-  ])("lets %s reach its bearer-protected route handler", (pathname) => {
+    "/offline.html",
+  ])("lets %s bypass the account session requirement", (pathname) => {
     expect(isSessionOptionalPath(pathname)).toBe(true);
   });
 
@@ -54,7 +55,8 @@ describe("scheduled operation session gate", () => {
     "/api/cronology",
     "/api/receipts/uploads",
     "/api/account/deletion-foreign",
-  ])("keeps unrelated API path %s behind the user session gate", (pathname) => {
+    "/offline.html/private",
+  ])("keeps unrelated path %s behind the user session gate", (pathname) => {
     expect(isSessionOptionalPath(pathname)).toBe(false);
   });
 });

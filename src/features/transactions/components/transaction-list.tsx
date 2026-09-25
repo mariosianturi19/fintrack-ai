@@ -70,8 +70,8 @@ export function TransactionList({
           Belum ada transaksi.
         </h2>
         <p className="mt-2 max-w-[440px] font-body text-sm leading-6 text-ink-secondary">
-          Tambahkan pengeluaran pertamamu secara manual. Scan struk akan
-          tersedia pada checkpoint integrasi berikutnya.
+          Tambahkan pengeluaran pertamamu secara manual atau gunakan Scan untuk
+          membaca foto struk.
         </p>
         <div className="mt-6">
           <ActionLink
