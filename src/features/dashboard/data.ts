@@ -6,6 +6,8 @@ import {
   parseTransactions,
 } from "@/features/transactions/data";
 import { getLatestWeeklyInsightState } from "@/features/insights/data";
+import { getLatestMonthlyInsightState } from "@/features/insights/monthly-data";
+import { getBudgetOverview } from "@/features/budgets/data";
 
 import { createDashboardPeriod, createDashboardSnapshot } from "./aggregate";
 
@@ -33,30 +35,38 @@ function reportDashboardError(context: string, error: unknown) {
 export async function getDashboardSnapshot(userId: string, date = new Date()) {
   const period = createDashboardPeriod(date);
   const supabase = await createClient();
-  const [periodResult, recentResult, categoryResult, weeklyInsightState] =
-    await Promise.all([
-      supabase
-        .from("transactions")
-        .select(transactionSelect, { count: "exact" })
-        .eq("user_id", userId)
-        .gte("transaction_date", period.queryStartDate)
-        .lt("transaction_date", period.endDateExclusive)
-        .order("transaction_date", { ascending: false })
-        .order("created_at", { ascending: false })
-        .range(0, dashboardMaxRows - 1),
-      supabase
-        .from("transactions")
-        .select(transactionSelect)
-        .eq("user_id", userId)
-        .order("transaction_date", { ascending: false })
-        .order("created_at", { ascending: false })
-        .limit(recentTransactionLimit),
-      supabase
-        .from("categories")
-        .select("id, slug, name, color_hex, sort_order, is_active")
-        .order("sort_order", { ascending: true }),
-      getLatestWeeklyInsightState(userId),
-    ]);
+  const [
+    periodResult,
+    recentResult,
+    categoryResult,
+    weeklyInsightState,
+    monthlyInsightState,
+    budgetOverview,
+  ] = await Promise.all([
+    supabase
+      .from("transactions")
+      .select(transactionSelect, { count: "exact" })
+      .eq("user_id", userId)
+      .gte("transaction_date", period.queryStartDate)
+      .lt("transaction_date", period.endDateExclusive)
+      .order("transaction_date", { ascending: false })
+      .order("created_at", { ascending: false })
+      .range(0, dashboardMaxRows - 1),
+    supabase
+      .from("transactions")
+      .select(transactionSelect)
+      .eq("user_id", userId)
+      .order("transaction_date", { ascending: false })
+      .order("created_at", { ascending: false })
+      .limit(recentTransactionLimit),
+    supabase
+      .from("categories")
+      .select("id, slug, name, color_hex, sort_order, is_active")
+      .order("sort_order", { ascending: true }),
+    getLatestWeeklyInsightState(userId),
+    getLatestMonthlyInsightState(userId),
+    getBudgetOverview(userId, date),
+  ]);
 
   if (periodResult.error || recentResult.error || categoryResult.error) {
     const error =
@@ -87,6 +97,8 @@ export async function getDashboardSnapshot(userId: string, date = new Date()) {
       recentTransactions,
       period,
       weeklyInsightState,
+      monthlyInsightState,
+      budgetOverview,
     );
   } catch (error) {
     reportDashboardError("Respons dashboard tidak valid.", error);

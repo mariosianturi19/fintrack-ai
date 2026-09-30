@@ -42,6 +42,15 @@ Phase 1 covers:
 - installable PWA foundations and an offline fallback;
 - durable account and data deletion.
 
+Phase 2 extends the same owner-controlled workspace with:
+
+- transaction search and filtering by category and date range;
+- monthly category budgets with in-app warnings at 80% and 100%;
+- completed-month insights with deterministic facts and an optional Gemini
+  narrative; and
+- natural-language questions over a bounded, aggregate-only view of the
+  authenticated user's transactions.
+
 Social features, bank synchronization, payments, investment tracking, and
 automated financial advice are outside the current scope.
 
@@ -101,6 +110,26 @@ transactions, and the latest completed weekly insight. Weekly generation uses
 Jakarta-aware date boundaries and a deterministic fallback when AI generation
 is unavailable.
 
+### Plan a monthly budget
+
+1. The user opens Budget from primary navigation.
+2. A rupiah limit can be set independently for each active category and month.
+3. Current spending is aggregated from owner-scoped transactions.
+4. The interface marks categories at or above 80% as near the limit and at or
+   above 100% as exceeded.
+5. Warnings remain in-app and never block transaction entry.
+
+### Ask about transactions
+
+1. The user chooses a bounded period of up to 366 days and writes a question.
+2. The server builds category, day, merchant, count, and total aggregates for
+   the authenticated owner only.
+3. Notes, receipt line items, receipt images, and raw object references are not
+   included in the AI context.
+4. Gemini receives the untrusted question separately from the financial facts.
+5. The answer is displayed without storing a chat history; insufficient data
+   produces an explicit limitation instead of an invented answer.
+
 ### Delete an account
 
 1. The user enters an explicit confirmation phrase.
@@ -130,6 +159,10 @@ is unavailable.
   requests analysis; extracted fields must be reviewed before saving.
 - Account deletion covers authentication, database rows, private objects,
   retries, and orphan reconciliation.
+- Budget and monthly-insight rows use owner-scoped RLS and cascade with the Auth
+  account.
+- Financial Q&A uses aggregate-only context, a one-year maximum range,
+  per-account rate limits, and a global daily quota.
 
 ## Architecture
 
@@ -138,10 +171,10 @@ is unavailable.
 | Next.js App Router | Pages, server actions, API routes, authentication guards, and rendering |
 | React and TypeScript | Interactive forms, review workflows, responsive navigation, and type-safe UI |
 | Supabase Auth | Google authentication and session lifecycle |
-| Supabase PostgreSQL | Transactions, categories, receipt metadata, weekly insights, and deletion state |
+| Supabase PostgreSQL | Transactions, categories, budgets, weekly/monthly insights, AI quota events, and deletion state |
 | PostgreSQL RLS | Owner isolation and authorization at the database boundary |
 | Cloudflare R2 | Private receipt object storage |
-| Google Gemini | Structured receipt extraction and optional weekly narrative generation |
+| Google Gemini | Structured receipt extraction, optional weekly/monthly narratives, and aggregate financial Q&A |
 | Vercel | Application hosting and authenticated scheduled operations |
 
 ## Reliability expectations
@@ -167,6 +200,18 @@ Phase 1 is successful when:
   objects without affecting another user; and
 - the primary journeys remain usable across supported responsive viewports,
   keyboard navigation, and 200% zoom.
+
+Phase 2 is successful when:
+
+- transaction filters remain owner-scoped, composable, and stable through
+  pagination;
+- monthly category budgets report current spending without stale notification
+  state;
+- completed-month insight generation is idempotent and retains a deterministic
+  fallback;
+- financial Q&A cannot access another account or receipt-detail content and
+  refuses unsupported conclusions; and
+- all Phase 1 deletion and session barriers also cover Phase 2 records.
 
 Implementation and verification status are maintained in
 [PROGRESS.md](./PROGRESS.md). Visual rules are defined in

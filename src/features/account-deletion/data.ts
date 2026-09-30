@@ -62,6 +62,8 @@ export async function verifyOwnedDatabaseRowsAbsent(
   for (const table of [
     "transactions",
     "weekly_insights",
+    "monthly_insights",
+    "category_budgets",
     "ai_request_events",
     "account_storage_activity",
   ]) {

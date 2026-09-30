@@ -1,5 +1,6 @@
 import { isAuthorizedCronRequest } from "@/features/insights/cron-auth";
 import { generatePreviousWeekInsights } from "@/features/insights/generate";
+import { generatePreviousMonthInsights } from "@/features/insights/monthly-generate";
 import { environment } from "@/lib/env/server";
 import {
   processScheduledDeletions,
@@ -35,16 +36,27 @@ export async function GET(request: Request) {
         ...(await reconcileDeletedAccountReceipts()),
         failedCount: 0,
       };
-    } catch {
+    } catch (error) {
       // Storage trouble must not suppress the existing weekly insight job.
+      console.error("[Fintrack AI] Rekonsiliasi struk terhapus gagal.", {
+        code:
+          error && typeof error === "object" && "code" in error
+            ? String(error.code).slice(0, 40)
+            : undefined,
+        errorName: error instanceof Error ? error.name : "UnknownError",
+      });
       receiptCleanup.failedCount = 1;
     }
-    const result = await generatePreviousWeekInsights();
+    const [weeklyInsight, monthlyInsight] = await Promise.all([
+      generatePreviousWeekInsights(),
+      generatePreviousMonthInsights(),
+    ]);
 
     return Response.json(
       {
         ok: deletions.failedCount === 0 && receiptCleanup.failedCount === 0,
-        ...result,
+        ...weeklyInsight,
+        monthlyInsight,
         deletions,
         receiptCleanup,
       },

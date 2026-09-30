@@ -1,5 +1,7 @@
 import type { TransactionRecord } from "../transactions/domain";
 import type { WeeklyInsightState } from "../insights/domain";
+import type { MonthlyInsightState } from "../insights/monthly-domain";
+import type { BudgetOverview } from "../budgets/domain";
 import {
   formatTransactionMonth,
   getJakartaDateInputValue,
@@ -43,6 +45,20 @@ export function createDashboardSnapshot(
   weeklyInsightState: WeeklyInsightState = {
     insight: null,
     status: "empty",
+  },
+  monthlyInsightState: MonthlyInsightState = {
+    insight: null,
+    status: "empty",
+  },
+  budgetOverview: BudgetOverview = {
+    categories: [],
+    exceededCount: 0,
+    monthEnd: period.endDateExclusive,
+    monthLabel: period.label,
+    monthStart: period.startDate,
+    nearLimitCount: 0,
+    totalBudgetAmountIdr: 0,
+    totalSpentAmountIdr: 0,
   },
 ): DashboardSnapshot {
   const periodTransactions = transactions.filter(
@@ -110,9 +126,11 @@ export function createDashboardSnapshot(
     }));
 
   return {
+    budgetOverview,
     categories,
     period,
     recentTransactions,
+    monthlyInsightState,
     totalAmountIdr,
     transactionCount: periodTransactions.length,
     weeklyInsightState,

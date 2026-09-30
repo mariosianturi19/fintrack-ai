@@ -8,10 +8,12 @@ import type { ParsedTransactionInput } from "./validation";
 import type {
   TransactionCategory,
   TransactionEditorData,
+  TransactionFilters,
   TransactionPage,
   TransactionReceiptItem,
   TransactionRecord,
 } from "./domain";
+import { escapeLikePattern } from "./filters";
 
 const defaultPageSize = 20;
 const exportBatchSize = 1_000;
@@ -147,6 +149,12 @@ export async function listTransactionsPage(
   userId: string,
   requestedPage: number,
   pageSize = defaultPageSize,
+  filters: TransactionFilters = {
+    categoryId: null,
+    endDate: null,
+    search: "",
+    startDate: null,
+  },
 ): Promise<TransactionPage> {
   const currentPage =
     Number.isInteger(requestedPage) && requestedPage > 0 ? requestedPage : 1;
@@ -154,17 +162,41 @@ export async function listTransactionsPage(
   const to = from + pageSize - 1;
   const supabase = await createClient();
 
+  let transactionQuery = supabase
+    .from("transactions")
+    .select(
+      "id, category_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
+      { count: "exact" },
+    )
+    .eq("user_id", userId)
+    .order("transaction_date", { ascending: false })
+    .order("created_at", { ascending: false })
+    .range(from, to);
+
+  if (filters.categoryId) {
+    transactionQuery = transactionQuery.eq("category_id", filters.categoryId);
+  }
+  if (filters.startDate) {
+    transactionQuery = transactionQuery.gte(
+      "transaction_date",
+      filters.startDate,
+    );
+  }
+  if (filters.endDate) {
+    transactionQuery = transactionQuery.lte(
+      "transaction_date",
+      filters.endDate,
+    );
+  }
+  if (filters.search) {
+    transactionQuery = transactionQuery.ilike(
+      "search_text",
+      `%${escapeLikePattern(filters.search)}%`,
+    );
+  }
+
   const [transactionResult, categoryResult] = await Promise.all([
-    supabase
-      .from("transactions")
-      .select(
-        "id, category_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
-        { count: "exact" },
-      )
-      .eq("user_id", userId)
-      .order("transaction_date", { ascending: false })
-      .order("created_at", { ascending: false })
-      .range(from, to),
+    transactionQuery,
     supabase
       .from("categories")
       .select("id, slug, name, color_hex, sort_order, is_active")

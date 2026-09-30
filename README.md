@@ -30,8 +30,11 @@ control.** A receipt analysis never creates a transaction automatically. The
 merchant, date, category, total, and line items remain editable until the user
 confirms the result.
 
-The current Phase 1 implementation is deployed as a non-commercial personal
-project. It demonstrates end-to-end product engineering across responsive UI,
+Phase 1 is deployed as a non-commercial personal project. The repository also
+contains the Phase 2 implementation. Its migration is applied and verified in
+both development and production, while application deployment and production
+owner QA remain pending. It
+demonstrates end-to-end product engineering across responsive UI,
 authentication, database authorization, private object storage, AI integration,
 scheduled operations, exports, and account deletion.
 
@@ -49,6 +52,15 @@ scheduled operations, exports, and account deletion.
   line items through Gemini structured output before saving.
 - **Dashboard and weekly insights** with Jakarta-aware date boundaries,
   category aggregation, recent transactions, and deterministic AI fallback.
+- **Transaction discovery** with merchant/note search, category filters, date
+  ranges, stable pagination, and responsive filter controls.
+- **Monthly category budgets** with live spending progress and restrained
+  in-app warnings when a category reaches 80% or 100% of its limit.
+- **Completed-month insights** with aggregate facts, an optional Gemini
+  narrative, and a deterministic fallback.
+- **Aggregate financial Q&A** over an owner-scoped period without sending notes,
+  receipt items, or receipt images to Gemini, with a validated fallback when the
+  configured model is unavailable or returns malformed structured output.
 - **CSV and XLSX exports** with UTF-8 support and spreadsheet formula-injection
   protection.
 - **Durable account deletion** covering authentication, database records,
@@ -98,7 +110,7 @@ flowchart LR
     App -->|Verified session| Auth
     App -->|Owner-scoped queries| DB
     App -->|Presigned upload and private reads| Storage
-    App -->|Validated receipt or weekly facts| AI
+    App -->|Validated receipt or aggregate insight facts| AI
     Cron -->|Authenticated scheduled work| App
 ```
 
@@ -136,6 +148,9 @@ R2 credentials, the Gemini API key, and the cron secret remain server-only.
   transaction data.
 - AI responses, form payloads, route parameters, and export text are validated
   or sanitized at their trust boundaries.
+- Financial questions are treated as untrusted prompt input. Their Gemini
+  context is owner-scoped, aggregate-only, limited to 366 days, and protected
+  by per-user and global quotas.
 - Server credentials are validated from environment variables and never use a
   `NEXT_PUBLIC_*` prefix.
 - Account deletion uses explicit confirmation, an idempotent cleanup request,
@@ -208,8 +223,8 @@ npm run format:check
 npm run build
 ```
 
-The repository currently contains **185 automated tests across 18 test files**,
-covering authentication boundaries, owner isolation, transactions, exports,
+The automated suite covers authentication boundaries, owner isolation,
+transactions, exports,
 receipt storage and AI review, scheduled insights, environment validation, and
 account deletion behavior. SQL verification under `supabase/tests/` complements
 the TypeScript suite for schema and cross-user isolation checks.
@@ -222,7 +237,7 @@ fintrack-ai/
 ├── src/
 │   ├── app/                   # App Router pages, layouts, actions, and API routes
 │   ├── components/            # Shared UI, authentication, PWA, and app shell
-│   ├── features/              # Dashboard, transactions, receipts, insights, deletion
+│   ├── features/              # Dashboard, transactions, budgets, receipts, insights, questions, deletion
 │   ├── lib/                   # Auth, environment, navigation, and Supabase clients
 │   └── styles/                # Design tokens
 ├── supabase/
@@ -238,6 +253,9 @@ fintrack-ai/
 ## Project status
 
 - Phase 1 checkpoints F1-CP1 through F1-CP10 are implemented.
+- Phase 2 code is implemented locally and its migration is schema-verified in
+  development and production; application deployment and production owner QA
+  remain pending.
 - A live deployment is available at
   [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
 - Automated linting, type checking, tests, formatting, and production builds are

@@ -6,11 +6,12 @@ import {
 } from "../src/lib/navigation";
 
 describe("primary application navigation", () => {
-  it("exposes the four destinations locked by the design system", () => {
+  it("exposes the Phase 2 destinations locked by the design system", () => {
     expect(primaryNavigation.map((item) => item.label)).toEqual([
       "Dashboard",
       "Transaksi",
       "Scan",
+      "Budget",
       "Profil",
     ]);
   });

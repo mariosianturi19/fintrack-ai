@@ -5,11 +5,20 @@ import { redirect } from "next/navigation";
 import { ActionLink } from "@/components/ui/action-link";
 import { PageHeader } from "@/components/ui/page-header";
 import { TransactionList } from "@/features/transactions/components/transaction-list";
+import { TransactionFilters } from "@/features/transactions/components/transaction-filters";
 import {
   getTransactionNoticeStatus,
   TransactionNotice,
 } from "@/features/transactions/components/transaction-notice";
-import { listTransactionsPage } from "@/features/transactions/data";
+import {
+  listActiveCategories,
+  listTransactionsPage,
+} from "@/features/transactions/data";
+import {
+  createTransactionListQuery,
+  hasTransactionFilters,
+  parseTransactionFilters,
+} from "@/features/transactions/filters";
 import { getAuthenticatedUserId } from "@/lib/auth/session";
 
 export const dynamic = "force-dynamic";
@@ -42,10 +51,17 @@ export default async function TransactionsPage({
   }
 
   const requestedPage = parsePage(parameters.page);
-  const page = await listTransactionsPage(userId, requestedPage);
+  const filters = parseTransactionFilters(parameters);
+  const [page, categories] = await Promise.all([
+    listTransactionsPage(userId, requestedPage, undefined, filters),
+    listActiveCategories(),
+  ]);
+  const filtered = hasTransactionFilters(filters);
+  const paginationQuery = createTransactionListQuery(filters);
 
   if (page.total > 0 && requestedPage > page.pageCount) {
-    redirect(`/transactions?page=${page.pageCount}`);
+    const query = createTransactionListQuery(filters, page.pageCount);
+    redirect(query ? `/transactions?${query}` : "/transactions");
   }
 
   return (
@@ -61,7 +77,9 @@ export default async function TransactionsPage({
         }
         description={
           page.total > 0
-            ? `${page.total} transaksi tersimpan · terbaru lebih dahulu`
+            ? filtered
+              ? `${page.total} transaksi cocok dengan filter aktif`
+              : `${page.total} transaksi tersimpan · terbaru lebih dahulu`
             : "Catat pengeluaran manual dengan data yang dapat kamu koreksi"
         }
         eyebrow="Pengeluaran pribadi"
@@ -70,8 +88,13 @@ export default async function TransactionsPage({
       <TransactionNotice
         status={getTransactionNoticeStatus(parameters.status)}
       />
+      <TransactionFilters categories={categories} filters={filters} />
       <div className="mt-6">
-        <TransactionList page={page} />
+        <TransactionList
+          filtersActive={filtered}
+          page={page}
+          paginationQuery={paginationQuery}
+        />
       </div>
     </>
   );

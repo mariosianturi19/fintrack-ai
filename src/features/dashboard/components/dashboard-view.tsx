@@ -8,6 +8,12 @@ import {
   formatTransactionDate,
 } from "@/features/transactions/format";
 import { WeeklyInsightCard } from "@/features/insights/components/weekly-insight-card";
+import { MonthlyInsightCard } from "@/features/insights/components/monthly-insight-card";
+import { FinanceQuestionCard } from "@/features/questions/components/finance-question-card";
+import { createQuestionPeriodOptions } from "@/features/questions/period";
+import { Warning } from "@phosphor-icons/react/dist/ssr/Warning";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr/ArrowRight";
+import Link from "next/link";
 
 import type { DashboardSnapshot } from "../domain";
 import { CategoryExpenseChart } from "./category-expense-chart";
@@ -56,6 +62,9 @@ function ExportLink({
 export function DashboardView({ snapshot }: DashboardViewProps) {
   const largestCategory = snapshot.categories[0];
   const hasTransactions = snapshot.recentTransactions.length > 0;
+  const budgetWarningCount =
+    snapshot.budgetOverview.exceededCount +
+    snapshot.budgetOverview.nearLimitCount;
 
   return (
     <div className="mt-7 min-w-0">
@@ -112,6 +121,48 @@ export function DashboardView({ snapshot }: DashboardViewProps) {
         <WeeklyInsightCard state={snapshot.weeklyInsightState} />
       </section>
 
+      {budgetWarningCount > 0 ? (
+        <section
+          className={`mt-6 flex min-w-0 flex-col gap-4 rounded-lg border p-5 sm:flex-row sm:items-center sm:justify-between ${
+            snapshot.budgetOverview.exceededCount > 0
+              ? "border-error bg-error-soft"
+              : "border-warning-ink/30 bg-warning-soft"
+          }`}
+          role="status"
+        >
+          <div className="flex min-w-0 items-start gap-3">
+            <Warning
+              aria-hidden="true"
+              className={
+                snapshot.budgetOverview.exceededCount > 0
+                  ? "shrink-0 text-error"
+                  : "shrink-0 text-warning-ink"
+              }
+              size={24}
+              weight="bold"
+            />
+            <div className="min-w-0">
+              <h2 className="font-display text-lg font-semibold text-ink">
+                {snapshot.budgetOverview.exceededCount > 0
+                  ? `${snapshot.budgetOverview.exceededCount} budget kategori terlewati`
+                  : `${snapshot.budgetOverview.nearLimitCount} budget kategori mendekati batas`}
+              </h2>
+              <p className="mt-1 font-body text-sm leading-6 text-ink-secondary">
+                Periksa pemakaian bulan ini tanpa mengubah transaksi yang sudah
+                tercatat.
+              </p>
+            </div>
+          </div>
+          <Link
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 font-body text-sm font-semibold text-primary underline-offset-4 hover:underline"
+            href="/budgets"
+          >
+            Lihat budget
+            <ArrowRight aria-hidden="true" size={17} weight="bold" />
+          </Link>
+        </section>
+      ) : null}
+
       <section className="mt-6 grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.35fr)_minmax(300px,0.65fr)] lg:gap-6">
         <article
           aria-labelledby="category-distribution-title"
@@ -146,6 +197,14 @@ export function DashboardView({ snapshot }: DashboardViewProps) {
           transactionCount={snapshot.transactionCount}
           transactions={snapshot.recentTransactions}
         />
+      </section>
+
+      <section className="mt-6">
+        <MonthlyInsightCard state={snapshot.monthlyInsightState} />
+      </section>
+
+      <section className="mt-6">
+        <FinanceQuestionCard periods={createQuestionPeriodOptions()} />
       </section>
 
       <section

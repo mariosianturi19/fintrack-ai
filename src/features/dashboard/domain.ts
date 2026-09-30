@@ -1,5 +1,7 @@
 import type { TransactionRecord } from "../transactions/domain";
 import type { WeeklyInsightState } from "../insights/domain";
+import type { MonthlyInsightState } from "../insights/monthly-domain";
+import type { BudgetOverview } from "../budgets/domain";
 
 export type DashboardPeriod = Readonly<{
   endDateExclusive: string;
@@ -20,9 +22,11 @@ export type DashboardCategoryBreakdown = Readonly<{
 }>;
 
 export type DashboardSnapshot = Readonly<{
+  budgetOverview: BudgetOverview;
   categories: readonly DashboardCategoryBreakdown[];
   period: DashboardPeriod;
   recentTransactions: readonly TransactionRecord[];
+  monthlyInsightState: MonthlyInsightState;
   totalAmountIdr: number;
   transactionCount: number;
   weeklyInsightState: WeeklyInsightState;

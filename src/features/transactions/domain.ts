@@ -55,6 +55,13 @@ export type TransactionPage = Readonly<{
   transactions: readonly TransactionRecord[];
 }>;
 
+export type TransactionFilters = Readonly<{
+  categoryId: string | null;
+  endDate: string | null;
+  search: string;
+  startDate: string | null;
+}>;
+
 export type TransactionEditorData = Readonly<{
   categories: readonly TransactionCategory[];
   transaction: TransactionRecord;

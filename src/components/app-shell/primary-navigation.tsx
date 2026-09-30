@@ -5,6 +5,7 @@ import type { Icon } from "@phosphor-icons/react/lib";
 import { Receipt } from "@phosphor-icons/react/Receipt";
 import { Scan } from "@phosphor-icons/react/Scan";
 import { UserCircle } from "@phosphor-icons/react/UserCircle";
+import { Wallet } from "@phosphor-icons/react/Wallet";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,6 +16,7 @@ import {
 } from "@/lib/navigation";
 
 const navigationIcons: Record<NavigationIcon, Icon> = {
+  budgets: Wallet,
   dashboard: House,
   profile: UserCircle,
   scan: Scan,
@@ -32,7 +34,7 @@ export function PrimaryNavigation({ variant }: PrimaryNavigationProps) {
     return (
       <nav
         aria-label="Navigasi utama"
-        className="mobile-bottom-navigation fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-divider bg-surface lg:hidden"
+        className="mobile-bottom-navigation fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-divider bg-surface lg:hidden"
       >
         {primaryNavigation.map((item) => {
           const active = isNavigationItemActive(pathname, item.href);

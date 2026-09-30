@@ -15,6 +15,11 @@ export const primaryNavigation = [
     label: "Scan",
   },
   {
+    href: "/budgets",
+    icon: "budgets",
+    label: "Budget",
+  },
+  {
     href: "/profile",
     icon: "profile",
     label: "Profil",

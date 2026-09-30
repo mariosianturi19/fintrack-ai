@@ -2,6 +2,7 @@ import { CaretLeft } from "@phosphor-icons/react/dist/ssr/CaretLeft";
 import { CaretRight } from "@phosphor-icons/react/dist/ssr/CaretRight";
 import { Plus } from "@phosphor-icons/react/dist/ssr/Plus";
 import { Receipt } from "@phosphor-icons/react/dist/ssr/Receipt";
+import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr/MagnifyingGlass";
 import Link from "next/link";
 
 import { ActionLink } from "@/components/ui/action-link";
@@ -18,6 +19,8 @@ import { CategoryIcon } from "./category-icon";
 
 type TransactionListProps = Readonly<{
   page: TransactionPage;
+  filtersActive?: boolean;
+  paginationQuery?: string;
   selectedTransactionId?: string;
   showPagination?: boolean;
 }>;
@@ -54,38 +57,58 @@ function PaginationLink({
 
 export function TransactionList({
   page,
+  filtersActive = false,
+  paginationQuery = "",
   selectedTransactionId,
   showPagination = true,
 }: TransactionListProps) {
   if (page.transactions.length === 0) {
+    const EmptyIcon = filtersActive ? MagnifyingGlass : Receipt;
+
     return (
       <section className="flex min-h-[360px] min-w-0 flex-col items-center justify-center rounded-xl border border-border bg-surface px-5 py-12 text-center shadow-level-1">
         <span
           aria-hidden="true"
           className="flex size-14 items-center justify-center rounded-lg bg-primary-soft text-primary"
         >
-          <Receipt size={27} weight="regular" />
+          <EmptyIcon size={27} weight="regular" />
         </span>
         <h2 className="mt-5 font-display text-[22px] leading-7 font-semibold text-ink">
-          Belum ada transaksi.
+          {filtersActive
+            ? "Transaksi tidak ditemukan."
+            : "Belum ada transaksi."}
         </h2>
         <p className="mt-2 max-w-[440px] font-body text-sm leading-6 text-ink-secondary">
-          Tambahkan pengeluaran pertamamu secara manual atau gunakan Scan untuk
-          membaca foto struk.
+          {filtersActive
+            ? "Ubah kata pencarian, kategori, atau rentang tanggal untuk melihat hasil lain."
+            : "Tambahkan pengeluaran pertamamu secara manual atau gunakan Scan untuk membaca foto struk."}
         </p>
         <div className="mt-6">
-          <ActionLink
-            href="/transactions/new"
-            icon={<Plus size={18} weight="bold" />}
-          >
-            Tambah transaksi
-          </ActionLink>
+          {filtersActive ? (
+            <ActionLink href="/transactions" variant="secondary">
+              Reset filter
+            </ActionLink>
+          ) : (
+            <ActionLink
+              href="/transactions/new"
+              icon={<Plus size={18} weight="bold" />}
+            >
+              Tambah transaksi
+            </ActionLink>
+          )}
         </div>
       </section>
     );
   }
 
   const groups = groupTransactionsByDate(page.transactions);
+  const pageHref = (targetPage: number) => {
+    const parameters = new URLSearchParams(paginationQuery);
+    if (targetPage > 1) parameters.set("page", String(targetPage));
+    else parameters.delete("page");
+    const query = parameters.toString();
+    return query ? `/transactions?${query}` : "/transactions";
+  };
 
   return (
     <section
@@ -158,7 +181,7 @@ export function TransactionList({
           >
             <PaginationLink
               disabled={page.currentPage <= 1}
-              href={`/transactions?page=${page.currentPage - 1}`}
+              href={pageHref(page.currentPage - 1)}
             >
               <CaretLeft aria-hidden="true" size={16} weight="bold" />
               Sebelumnya
@@ -168,7 +191,7 @@ export function TransactionList({
             </span>
             <PaginationLink
               disabled={page.currentPage >= page.pageCount}
-              href={`/transactions?page=${page.currentPage + 1}`}
+              href={pageHref(page.currentPage + 1)}
             >
               Berikutnya
               <CaretRight aria-hidden="true" size={16} weight="bold" />

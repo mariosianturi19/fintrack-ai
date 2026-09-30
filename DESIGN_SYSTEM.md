@@ -1074,6 +1074,27 @@ ketiganya telah lulus.
 - CP10 reuses existing brand tokens, fonts, and navigation. Its focused owner QA
   covers mobile/desktop, keyboard, and zoom together; no new brand direction.
 
+### 25.8 Phase 2 planning and question surfaces
+
+- Budget becomes the fifth primary destination only after its schema and route
+  are active. Mobile retains visible labels and five equal-width targets;
+  desktop retains the locked sidebar geometry.
+- Budget status is communicated with copy and icon in addition to color.
+  `80–99%` uses Warning and `100%+` uses Error; neither status blocks entry.
+- Budget cards may be denser than dashboard summary cards, but controls remain
+  at least `44 px` and financial values keep tabular numerals.
+- Transaction filters use an inline desktop region and a focused mobile sheet.
+  Active-filter count and a clear reset action must remain visible.
+- Monthly insight is secondary to the current-period total and weekly insight.
+  It appears after the core dashboard review and links to a focused detail page.
+- Financial Q&A sits below deterministic dashboard content. The question field,
+  period selector, provider notice, loading state, grounded answer, quota state,
+  and unavailable state are part of one card rather than a floating chatbot.
+- Q&A never uses neon, chat bubbles, assistant avatars, typing theatrics, or
+  conversational history. It is a bounded analytical tool, not a social chat.
+- Phase 2 must be verified at the existing CP5 viewports, keyboard-only, and
+  `200%` zoom before its implementation status is marked complete.
+
 ---
 
 ## 26. Change Policy
