@@ -40,6 +40,34 @@ beforeEach(() => {
 });
 
 describe("R2 deletion adapter", () => {
+  it("treats a missing single object as an already-complete cleanup", async () => {
+    send.mockRejectedValue(
+      Object.assign(new Error("missing"), { name: "NoSuchKey" }),
+    );
+    await expect(
+      createStorageCleanupPort().remove([`receipts/${userId}/test.jpg`]),
+    ).resolves.toBeUndefined();
+  });
+  it("accepts per-object NoSuchKey responses but not other failures", async () => {
+    send.mockResolvedValue({
+      $metadata: { httpStatusCode: 200 },
+      Errors: [{ Key: `receipts/${userId}/test.jpg`, Code: "NoSuchKey" }],
+    });
+    await expect(
+      createStorageCleanupPort().remove([`receipts/${userId}/test.jpg`]),
+    ).resolves.toBeUndefined();
+  });
+  it("does not hide a missing-object exception for a multi-key batch", async () => {
+    send.mockRejectedValue(
+      Object.assign(new Error("missing"), { name: "NoSuchKey" }),
+    );
+    await expect(
+      createStorageCleanupPort().remove([
+        `receipts/${userId}/first.jpg`,
+        `receipts/${userId}/second.jpg`,
+      ]),
+    ).rejects.toMatchObject({ name: "NoSuchKey" });
+  });
   it("treats HTTP 200 with per-object errors as incomplete deletion", async () => {
     send.mockResolvedValue({
       $metadata: { httpStatusCode: 200 },

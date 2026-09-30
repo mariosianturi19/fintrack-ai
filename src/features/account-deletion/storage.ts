@@ -10,6 +10,16 @@ import {
   type StorageCleanupPort,
 } from "./storage-domain";
 
+function isMissingObjectError(error: unknown): boolean {
+  if (!error || typeof error !== "object") return false;
+
+  return ["name", "Code", "code"].some(
+    (property) =>
+      property in error &&
+      (error as Record<string, unknown>)[property] === "NoSuchKey",
+  );
+}
+
 export function createStorageCleanupPort(
   signal = AbortSignal.timeout(20_000),
 ): StorageCleanupPort {
@@ -31,15 +41,26 @@ export function createStorageCleanupPort(
       return { keys, truncated: result.IsTruncated === true };
     },
     async remove(keys) {
-      const result = await client.send(
-        new DeleteObjectsCommand({
-          Bucket: bucket,
-          Delete: { Objects: keys.map((Key) => ({ Key })), Quiet: true },
-        }),
-        { abortSignal: signal },
-      );
-      // S3 can return HTTP 200 with individual deletion errors.
-      if (result.Errors?.length) throw new AccountDeletionError("storage");
+      try {
+        const result = await client.send(
+          new DeleteObjectsCommand({
+            Bucket: bucket,
+            Delete: { Objects: keys.map((Key) => ({ Key })), Quiet: true },
+          }),
+          { abortSignal: signal },
+        );
+        // The desired cleanup state is already satisfied for missing objects.
+        // S3-compatible providers may report per-object errors with HTTP 200.
+        const failures = (result.Errors ?? []).filter(
+          (error) => error.Code !== "NoSuchKey",
+        );
+        if (failures.length) throw new AccountDeletionError("storage");
+      } catch (error) {
+        // A single-key reconciliation may race with another cleanup worker.
+        // Do not swallow a batch failure because other keys may remain.
+        if (keys.length === 1 && isMissingObjectError(error)) return;
+        throw error;
+      }
     },
   };
 }
