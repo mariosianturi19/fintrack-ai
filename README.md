@@ -32,8 +32,9 @@ confirms the result.
 
 Phase 1 is deployed as a non-commercial personal project. The repository also
 contains the Phase 2 implementation. Its migration is applied and verified in
-both development and production, and the application is deployed. Production
-owner QA remains in progress, with two reset-state fixes awaiting redeployment.
+both development and production, and the application is deployed. Core Phase 2
+production smoke flows, including transaction-filter and budget-form reset
+regressions, have passed; broader owner QA remains in progress.
 It demonstrates end-to-end product engineering across responsive UI,
 authentication, database authorization, private object storage, AI integration,
 scheduled operations, exports, and account deletion.
@@ -253,8 +254,9 @@ fintrack-ai/
 ## Project status
 
 - Phase 1 checkpoints F1-CP1 through F1-CP10 are implemented.
-- Phase 2 code and schema are deployed in production. Production owner QA is in
-  progress, with reset-state fixes verified locally and awaiting redeployment.
+- Phase 2 code and schema are deployed in production. Core owner smoke QA and
+  the transaction-filter and budget-form reset regressions have passed;
+  extended production validation remains in progress.
 - A live deployment is available at
   [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
 - Automated linting, type checking, tests, formatting, and production builds are

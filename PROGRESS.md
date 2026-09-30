@@ -12,9 +12,10 @@ deletion.
 Phase 2 adds transaction discovery, monthly category budgets, completed-month
 insights, and aggregate-only natural-language questions. Its consolidated
 migration is applied and schema-verified in both development and production,
-and the full automated repository gate passes. Production owner QA is in
-progress, with two reset-state fixes verified locally and awaiting redeployment,
-so Phase 2 must not yet be described as fully production-verified.
+and the full automated repository gate passes. The transaction-filter and
+budget-form reset fixes are deployed and production-verified. Broader owner QA
+is still in progress, so Phase 2 must not yet be described as fully
+production-verified.
 
 The live deployment is available at
 [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
@@ -38,18 +39,18 @@ or an independent third-party security audit.
 
 ## Phase 2 implementation
 
-| Capability                                         | Implementation            | Verification                                               |
-| -------------------------------------------------- | ------------------------- | ---------------------------------------------------------- |
-| Transaction search and category/date filters       | Deployed; reset fix local | Production search/filter/empty-state QA passed             |
-| Monthly category budgets and in-app thresholds     | Deployed; reset fix local | Production create/update/delete QA passed and data cleaned |
-| Completed-month insight and deterministic fallback | Deployed                  | Dev generation passed; production scheduled run pending    |
-| Aggregate financial Q&A with bounded periods       | Deployed                  | Production aggregate answer passed                         |
-| Phase 2 account-deletion cascade coverage          | Deployed                  | Disposable-user cascade passed; live RLS isolation pending |
+| Capability                                         | Implementation | Verification                                               |
+| -------------------------------------------------- | -------------- | ---------------------------------------------------------- |
+| Transaction search and category/date filters       | Deployed       | Production search/filter/empty/reset QA passed             |
+| Monthly category budgets and in-app thresholds     | Deployed       | Production CRUD/reset QA passed and data cleaned           |
+| Completed-month insight and deterministic fallback | Deployed       | Dev generation passed; production scheduled run pending    |
+| Aggregate financial Q&A with bounded periods       | Deployed       | Production aggregate answer passed                         |
+| Phase 2 account-deletion cascade coverage          | Deployed       | Disposable-user cascade passed; live RLS isolation pending |
 
 The Phase 2 production schema and initial application deployment gates are
-complete. Release validation remains open until the reset-state patch is
-redeployed and owner QA covers responsive behavior, zoom, multi-account
-isolation, cron idempotency, quota behavior, and deletion cleanup.
+complete. Release validation remains open until owner QA covers responsive
+behavior, zoom, multi-account isolation, cron idempotency, quota behavior, and
+deletion cleanup.
 
 ## Verification snapshot
 
@@ -99,12 +100,14 @@ RLS.
   Transactions, Budget, and Monthly Insight routes.
 - Transaction search, category filtering, keyboard submission, reset results,
   and the no-results state passed against the existing owner-scoped production
-  transaction. Resetting left the uncontrolled category field visually stale;
-  a keyed-remount regression fix is verified locally and awaits redeployment.
+  transaction. On October 1, commit `be23ff7` was production-verified: Reset
+  cleared the search field, restored `Semua kategori`, removed the query string,
+  and displayed the transaction again.
 - A disposable `Lainnya` budget passed create at Rp12.345, update to Rp15.000,
   explicit confirmation, and deletion. The production account returned to Rp0
-  total budget. The amount field also remained visually stale after deletion;
-  the same keyed-remount fix is verified locally and awaits redeployment.
+  total budget. On October 1, the post-deployment regression repeated a
+  disposable Rp12.345 create/delete cycle and verified that the amount field
+  returned empty after deletion. No temporary budget remained.
 - Aggregate Q&A returned the correct Rp12.345 total and Makanan & minuman top
   category for the bounded 12-month period without browser errors.
 - The Monthly Insight route rendered its safe empty state. The first production
