@@ -114,6 +114,12 @@ export function TransactionFilters({
 }: TransactionFiltersProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const active = hasTransactionFilters(filters);
+  const filterStateKey = JSON.stringify([
+    filters.search,
+    filters.categoryId,
+    filters.startDate,
+    filters.endDate,
+  ]);
   const activeCount = [
     filters.search,
     filters.categoryId,
@@ -150,6 +156,7 @@ export function TransactionFilters({
       <form
         action="/transactions"
         className="hidden min-w-0 items-end gap-3 rounded-lg border border-border bg-surface p-4 shadow-level-1 md:flex md:flex-wrap"
+        key={`desktop-${filterStateKey}`}
         method="get"
       >
         <FilterFields categories={categories} filters={filters} />
@@ -163,6 +170,7 @@ export function TransactionFilters({
         <form
           action="/transactions"
           className="min-w-0 overflow-y-auto p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))]"
+          key={`mobile-${filterStateKey}`}
           method="get"
         >
           <div className="flex items-center justify-between gap-4 border-b border-divider pb-4">

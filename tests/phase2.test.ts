@@ -126,6 +126,42 @@ describe("Phase 2 budget and monthly period contract", () => {
     expect(dialog).toContain("autoFocus");
     expect(dialog).toContain("deleteCategoryBudgetAction");
   });
+
+  it("remounts uncontrolled Phase 2 forms after server state changes", async () => {
+    const [budgetPlanner, transactionFilters] = await Promise.all([
+      readFile(
+        join(
+          process.cwd(),
+          "src",
+          "features",
+          "budgets",
+          "components",
+          "budget-planner.tsx",
+        ),
+        "utf8",
+      ),
+      readFile(
+        join(
+          process.cwd(),
+          "src",
+          "features",
+          "transactions",
+          "components",
+          "transaction-filters.tsx",
+        ),
+        "utf8",
+      ),
+    ]);
+
+    expect(budgetPlanner).toContain(
+      'key={`${budget.categoryId}:${budget.limitAmountIdr ?? "unset"}`}',
+    );
+    expect(transactionFilters).toContain(
+      "const filterStateKey = JSON.stringify([",
+    );
+    expect(transactionFilters).toContain("key={`desktop-${filterStateKey}`}");
+    expect(transactionFilters).toContain("key={`mobile-${filterStateKey}`}");
+  });
 });
 
 describe("Phase 2 finance question boundary", () => {

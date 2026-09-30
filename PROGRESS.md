@@ -4,8 +4,7 @@ Last updated: September 30, 2026
 
 ## Current status
 
-**Phase 1 is feature-complete in production, while the full Phase 2
-implementation and production schema are ready for application deployment.** The application supports Google authentication, owner-isolated
+**Phase 1 and the initial Phase 2 application are deployed in production.** The application supports Google authentication, owner-isolated
 transaction management, private receipt processing, reviewable AI extraction,
 dashboard insights, exports, scheduled operations, PWA foundations, and account
 deletion.
@@ -13,9 +12,9 @@ deletion.
 Phase 2 adds transaction discovery, monthly category budgets, completed-month
 insights, and aggregate-only natural-language questions. Its consolidated
 migration is applied and schema-verified in both development and production,
-and the full automated repository gate passes. Application deployment and
-production owner QA remain pending, so Phase 2 must not yet be described as
-production-verified.
+and the full automated repository gate passes. Production owner QA is in
+progress, with two reset-state fixes verified locally and awaiting redeployment,
+so Phase 2 must not yet be described as fully production-verified.
 
 The live deployment is available at
 [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
@@ -39,18 +38,18 @@ or an independent third-party security audit.
 
 ## Phase 2 implementation
 
-| Capability                                         | Implementation  | Verification                                               |
-| -------------------------------------------------- | --------------- | ---------------------------------------------------------- |
-| Transaction search and category/date filters       | Present locally | Dev owner QA passed                                        |
-| Monthly category budgets and in-app thresholds     | Present locally | Save/update/threshold QA passed; delete submit pending     |
-| Completed-month insight and deterministic fallback | Present locally | Dev generation/render/idempotency passed                   |
-| Aggregate financial Q&A with bounded periods       | Present locally | Dev fallback QA passed twice                               |
-| Phase 2 account-deletion cascade coverage          | Present locally | Disposable-user cascade passed; live RLS isolation pending |
+| Capability                                         | Implementation            | Verification                                               |
+| -------------------------------------------------- | ------------------------- | ---------------------------------------------------------- |
+| Transaction search and category/date filters       | Deployed; reset fix local | Production search/filter/empty-state QA passed             |
+| Monthly category budgets and in-app thresholds     | Deployed; reset fix local | Production create/update/delete QA passed and data cleaned |
+| Completed-month insight and deterministic fallback | Deployed                  | Dev generation passed; production scheduled run pending    |
+| Aggregate financial Q&A with bounded periods       | Deployed                  | Production aggregate answer passed                         |
+| Phase 2 account-deletion cascade coverage          | Deployed                  | Disposable-user cascade passed; live RLS isolation pending |
 
-The Phase 2 production schema gate is complete. Application deployment is the
-next promotion step; release validation remains open until owner QA covers
-responsive behavior, keyboard access, zoom, multi-account isolation, cron
-idempotency, quota behavior, and deletion cleanup.
+The Phase 2 production schema and initial application deployment gates are
+complete. Release validation remains open until the reset-state patch is
+redeployed and owner QA covers responsive behavior, zoom, multi-account
+isolation, cron idempotency, quota behavior, and deletion cleanup.
 
 ## Verification snapshot
 
@@ -60,9 +59,9 @@ The current repository quality gate includes:
 - TypeScript compilation without emitted output;
 - Prettier formatting verification;
 - a production Next.js build; and
-- **197 automated tests across 19 test files** using Vitest and PGlite.
+- **198 automated tests across 19 test files** using Vitest and PGlite.
 
-The September 30 Phase 2 repository gate passed all 197 tests, ESLint,
+The September 30 Phase 2 repository gate passed all 198 tests, ESLint,
 Prettier, the full TypeScript check, and an optimized production build.
 
 The same day, the consolidated Phase 2 migration was applied to
@@ -83,8 +82,8 @@ RLS.
 - The September budget overview passed create, update, 80%, and 100% mutation
   checks. Temporary rows were removed and the original Rp30.000 zero-spend
   state was restored. The new delete-confirmation dialog passed copy, initial
-  focus, cancel, and focus-return checks; its final destructive submit remains
-  pending explicit owner confirmation.
+  focus, cancel, and focus-return checks; its final destructive submit was
+  reserved for a disposable production budget and later passed.
 - The development R2 credential was rotated to an object read/write token scoped
   only to `fintrack-ai-dev-receipts`. A direct bucket-list request passed, and
   the combined authenticated cron completed with HTTP 200, zero deletion or
@@ -93,6 +92,23 @@ RLS.
   `monthly_insights` cascade to zero rows after Auth deletion. Live two-account
   RLS isolation remains pending because the intentionally disabled Email
   provider prevents password login for disposable QA users.
+
+## Phase 2 production smoke QA — September 30, 2026
+
+- Authentication guards preserved the requested destination for Dashboard,
+  Transactions, Budget, and Monthly Insight routes.
+- Transaction search, category filtering, keyboard submission, reset results,
+  and the no-results state passed against the existing owner-scoped production
+  transaction. Resetting left the uncontrolled category field visually stale;
+  a keyed-remount regression fix is verified locally and awaits redeployment.
+- A disposable `Lainnya` budget passed create at Rp12.345, update to Rp15.000,
+  explicit confirmation, and deletion. The production account returned to Rp0
+  total budget. The amount field also remained visually stale after deletion;
+  the same keyed-remount fix is verified locally and awaits redeployment.
+- Aggregate Q&A returned the correct Rp12.345 total and Makanan & minuman top
+  category for the bounded 12-month period without browser errors.
+- The Monthly Insight route rendered its safe empty state. The first production
+  scheduled generation remains pending after the Phase 2 schema deployment.
 
 The automated suite covers authentication boundaries, owner isolation,
 transaction validation, dashboard aggregation, exports, private receipt

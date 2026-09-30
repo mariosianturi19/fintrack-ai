@@ -113,7 +113,11 @@ export function BudgetPlanner({
               </p>
             </div>
 
-            <form action={saveCategoryBudgetAction} className="mt-5">
+            <form
+              action={saveCategoryBudgetAction}
+              className="mt-5"
+              key={`${budget.categoryId}:${budget.limitAmountIdr ?? "unset"}`}
+            >
               <input
                 name="categoryId"
                 type="hidden"
