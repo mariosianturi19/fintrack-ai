@@ -52,6 +52,22 @@ describe("environment validation", () => {
     expect(environment.R2_BUCKET_NAME).toBe("fintrack-ai-dev");
   });
 
+  it.each([
+    "https://account-id.r2.cloudflarestorage.com/fintrack-ai-dev",
+    "http://account-id.r2.cloudflarestorage.com",
+    "https://account-id.r2.cloudflarestorage.com?bucket=fintrack-ai-dev",
+  ])("rejects a non-root R2 endpoint: %s", (endpoint) => {
+    expect(() =>
+      parseEnvironment({
+        R2_ACCOUNT_ID: "account-id",
+        R2_ACCESS_KEY_ID: "access-key",
+        R2_BUCKET_NAME: "fintrack-ai-dev",
+        R2_ENDPOINT: endpoint,
+        R2_SECRET_ACCESS_KEY: "secret-key",
+      }),
+    ).toThrow("R2 endpoint must be the HTTPS account root");
+  });
+
   it("accepts server-only scheduled-operation secrets", () => {
     const environment = parseEnvironment({
       CRON_SECRET: "a-random-secret-longer-than-sixteen",

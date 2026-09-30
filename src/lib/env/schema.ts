@@ -15,6 +15,24 @@ const optionalUrl = z.preprocess(
   z.string().url().optional(),
 );
 
+const optionalR2Endpoint = z.preprocess(
+  (value) => (value === "" ? undefined : value),
+  z
+    .string()
+    .url()
+    .refine((value) => {
+      if (!URL.canParse(value)) return false;
+      const url = new URL(value);
+      return (
+        url.protocol === "https:" &&
+        url.pathname === "/" &&
+        !url.search &&
+        !url.hash
+      );
+    }, "R2 endpoint must be the HTTPS account root without a bucket path.")
+    .optional(),
+);
+
 const baseEnvironmentSchema = z.object({
   NODE_ENV: z
     .enum(["development", "test", "production"])
@@ -27,7 +45,7 @@ const baseEnvironmentSchema = z.object({
   NEXT_PUBLIC_SUPABASE_URL: optionalUrl,
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: optionalString,
   R2_ACCOUNT_ID: optionalString,
-  R2_ENDPOINT: optionalUrl,
+  R2_ENDPOINT: optionalR2Endpoint,
   R2_ACCESS_KEY_ID: optionalString,
   R2_SECRET_ACCESS_KEY: optionalString,
   R2_BUCKET_NAME: optionalString,
