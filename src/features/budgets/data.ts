@@ -41,20 +41,23 @@ export async function getBudgetOverview(
 ): Promise<BudgetOverview> {
   const period = createBudgetMonth(date);
   const supabase = await createClient();
+  const budgetQuery = supabase
+    .from("category_budgets")
+    .select("id, category_id, limit_amount_idr")
+    .eq("user_id", userId)
+    .eq("month_start", period.monthStart);
+
   const [categoriesResult, budgetsResult, spendingResult] = await Promise.all([
     supabase
       .from("categories")
       .select("id, slug, name, color_hex, sort_order, is_active")
       .eq("is_active", true)
       .order("sort_order", { ascending: true }),
-    supabase
-      .from("category_budgets")
-      .select("id, category_id, limit_amount_idr")
-      .eq("user_id", userId)
-      .eq("month_start", period.monthStart),
+    budgetQuery,
     supabase.rpc("get_category_spending", {
       p_end_date: period.monthEnd,
       p_start_date: period.monthStart,
+      p_wallet_id: null,
     }),
   ]);
 

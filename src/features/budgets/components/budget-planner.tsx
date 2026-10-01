@@ -130,7 +130,7 @@ export function BudgetPlanner({
               />
               <label className="block">
                 <span className="font-body text-xs font-semibold text-ink-secondary">
-                  Batas pengeluaran
+                  Batas pengeluaran semua dompet
                 </span>
                 <span className="mt-1.5 flex min-w-0">
                   <span className="flex min-h-12 items-center rounded-l-md border border-r-0 border-border bg-canvas-subtle px-3 font-body text-sm font-semibold text-ink-secondary">

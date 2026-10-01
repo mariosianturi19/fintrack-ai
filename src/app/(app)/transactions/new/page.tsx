@@ -7,6 +7,10 @@ import { PageHeader } from "@/components/ui/page-header";
 import { TransactionForm } from "@/features/transactions/components/transaction-form";
 import { listActiveCategories } from "@/features/transactions/data";
 import { getJakartaDateInputValue } from "@/features/transactions/format";
+import { listWallets } from "@/features/wallets/data";
+import { WalletRequiredState } from "@/features/wallets/components/wallet-required-state";
+import { getAuthenticatedUserId } from "@/lib/auth/session";
+import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +19,12 @@ export const metadata: Metadata = {
 };
 
 export default async function NewTransactionPage() {
-  const categories = await listActiveCategories();
+  const [userId, categories] = await Promise.all([
+    getAuthenticatedUserId(),
+    listActiveCategories(),
+  ]);
+  if (!userId) redirect("/login?next=%2Ftransactions%2Fnew");
+  const wallets = await listWallets(userId);
   const today = getJakartaDateInputValue();
 
   return (
@@ -35,38 +44,46 @@ export default async function NewTransactionPage() {
         title="Tambah transaksi"
       />
 
-      <div className="mt-6 grid min-w-0 gap-5 xl:grid-cols-[minmax(0,640px)_minmax(280px,0.5fr)] xl:items-start">
-        <section className="min-w-0 rounded-xl border border-border bg-surface p-5 shadow-level-1 sm:p-7">
-          <TransactionForm
-            categories={categories}
-            initialValues={{
-              amountIdr: "",
-              categoryId: "",
-              notes: "",
-              transactionDate: today,
-            }}
-            maximumDate={today}
-            mode="create"
-          />
-        </section>
+      {wallets.length === 0 ? (
+        <div className="mt-6">
+          <WalletRequiredState description="Transaksi harus memiliki sumber pembayaran. Buat dompet seperti BCA, GoPay, atau Tunai sebelum mencatat transaksi." />
+        </div>
+      ) : (
+        <div className="mt-6 grid min-w-0 gap-5 xl:grid-cols-[minmax(0,640px)_minmax(280px,0.5fr)] xl:items-start">
+          <section className="min-w-0 rounded-xl border border-border bg-surface p-5 shadow-level-1 sm:p-7">
+            <TransactionForm
+              categories={categories}
+              initialValues={{
+                amountIdr: "",
+                categoryId: "",
+                notes: "",
+                transactionDate: today,
+                walletId: "",
+              }}
+              maximumDate={today}
+              mode="create"
+              wallets={wallets}
+            />
+          </section>
 
-        <aside className="min-w-0 rounded-xl bg-primary-soft p-5 sm:p-6">
-          <span
-            aria-hidden="true"
-            className="flex size-11 items-center justify-center rounded-md bg-surface text-primary"
-          >
-            <Receipt size={22} weight="regular" />
-          </span>
-          <h2 className="mt-5 font-display text-xl leading-7 font-semibold text-ink">
-            Catat secukupnya.
-          </h2>
-          <p className="mt-2 font-body text-sm leading-6 text-ink-secondary">
-            Catatan bersifat opsional. Gunakan informasi singkat yang
-            memudahkanmu mengenali transaksi nanti tanpa memasukkan data pribadi
-            yang tidak diperlukan.
-          </p>
-        </aside>
-      </div>
+          <aside className="min-w-0 rounded-xl bg-primary-soft p-5 sm:p-6">
+            <span
+              aria-hidden="true"
+              className="flex size-11 items-center justify-center rounded-md bg-surface text-primary"
+            >
+              <Receipt size={22} weight="regular" />
+            </span>
+            <h2 className="mt-5 font-display text-xl leading-7 font-semibold text-ink">
+              Catat secukupnya.
+            </h2>
+            <p className="mt-2 font-body text-sm leading-6 text-ink-secondary">
+              Catatan bersifat opsional. Gunakan informasi singkat yang
+              memudahkanmu mengenali transaksi nanti tanpa memasukkan data
+              pribadi yang tidak diperlukan.
+            </p>
+          </aside>
+        </div>
+      )}
     </>
   );
 }

@@ -41,12 +41,14 @@ const contextSchema = z.object({
 export async function getFinanceQuestionContext(
   startDate: string,
   endDate: string,
+  walletId: string | null,
 ): Promise<FinanceQuestionContext> {
   const { data, error } = await (
     await createClient()
   ).rpc("get_finance_question_context", {
     p_end_date: endDate,
     p_start_date: startDate,
+    p_wallet_id: walletId,
   });
   if (error) throw new Error("question_context_unavailable");
   const parsed = contextSchema.parse(data);

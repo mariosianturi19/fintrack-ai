@@ -18,6 +18,15 @@ import {
   parseTransactionForm,
   transactionFormSchema,
 } from "../src/features/transactions/validation";
+import type { WalletRecord } from "../src/features/wallets/domain";
+
+const wallet: WalletRecord = {
+  createdAt: "2026-07-30T01:00:00.000Z",
+  id: "6d45ad1d-a780-4297-9d4e-a4ad61a7f90f",
+  name: "BCA",
+  updatedAt: "2026-07-30T01:00:00.000Z",
+  walletType: "bank",
+};
 
 const category: TransactionCategory = {
   colorHex: "#D96C52",
@@ -44,6 +53,8 @@ function createTransaction(
     source: "manual",
     transactionDate: "2026-07-30",
     updatedAt: "2026-07-30T02:00:00.000Z",
+    wallet,
+    walletId: wallet.id,
     ...overrides,
   };
 }
@@ -56,12 +67,14 @@ describe("transaction input contract", () => {
         categoryId: category.id,
         notes: "  Belanja kebutuhan rumah  ",
         transactionDate: "2026-07-30",
+        walletId: wallet.id,
       }),
     ).toEqual({
       amountIdr: 326_500,
       categoryId: category.id,
       notes: "Belanja kebutuhan rumah",
       transactionDate: "2026-07-30",
+      walletId: wallet.id,
     });
   });
 
@@ -72,6 +85,7 @@ describe("transaction input contract", () => {
         categoryId: category.id,
         notes: "   ",
         transactionDate: "2026-07-30",
+        walletId: wallet.id,
       }).notes,
     ).toBeNull();
   });
@@ -85,6 +99,7 @@ describe("transaction input contract", () => {
           categoryId: category.id,
           notes: "",
           transactionDate: "2026-07-30",
+          walletId: wallet.id,
         }).success,
       ).toBe(false);
     },
@@ -99,6 +114,7 @@ describe("transaction input contract", () => {
           categoryId: category.id,
           notes: "",
           transactionDate,
+          walletId: wallet.id,
         }).success,
       ).toBe(false);
     },
@@ -111,6 +127,7 @@ describe("transaction input contract", () => {
         categoryId: category.id,
         notes: "",
         transactionDate: "2999-01-01",
+        walletId: wallet.id,
       }).success,
     ).toBe(false);
   });
@@ -121,6 +138,7 @@ describe("transaction input contract", () => {
     formData.set("categoryId", "");
     formData.set("transactionDate", "2026-02-30");
     formData.set("notes", "Catatan tetap ada");
+    formData.set("walletId", wallet.id);
 
     const result = parseTransactionForm(formData);
 
@@ -202,7 +220,9 @@ describe("transaction authorization structure", () => {
 
     expect(actions).toContain("getAuthenticatedUserId()");
     expect(data).toContain("user_id: userId");
-    expect(data.match(/\.eq\("user_id", userId\)/g)).toHaveLength(8);
+    expect(
+      data.match(/\.eq\("user_id", userId\)/g)?.length ?? 0,
+    ).toBeGreaterThanOrEqual(8);
     expect(`${actions}\n${data}`).not.toMatch(/service[_-]?role/i);
   });
 

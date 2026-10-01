@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createClient } from "@/lib/supabase/server";
+import { assertOwnedWallet, WalletDataError } from "@/features/wallets/data";
 
 import { createReceiptObjectKey } from "./object-key";
 import type { ParsedReceiptReviewInput } from "./review-validation";
@@ -10,7 +11,8 @@ import {
   promotePendingReceiptUpload,
 } from "./storage";
 
-type ReceiptDataErrorCode = "category_unavailable" | "database";
+type ReceiptDataErrorCode =
+  "category_unavailable" | "database" | "wallet_unavailable";
 
 export class ReceiptDataError extends Error {
   constructor(
@@ -77,6 +79,17 @@ export async function createReviewedReceiptTransaction(
     throw new ReceiptDataError("category_unavailable");
   }
 
+  try {
+    await assertOwnedWallet(userId, input.walletId);
+  } catch (error) {
+    throw new ReceiptDataError(
+      error instanceof WalletDataError && error.code === "not_found"
+        ? "wallet_unavailable"
+        : "database",
+      { cause: error },
+    );
+  }
+
   await promotePendingReceiptUpload(userId, input.uploadId);
 
   const { data, error } = await supabase
@@ -91,6 +104,7 @@ export async function createReviewedReceiptTransaction(
       source: "receipt_ai",
       transaction_date: input.transactionDate,
       user_id: userId,
+      wallet_id: input.walletId,
     })
     .select("id")
     .maybeSingle();

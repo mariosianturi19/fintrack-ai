@@ -40,6 +40,7 @@ describe("Phase 2 transaction discovery contract", () => {
       endDate: "2026-09-26",
       search: "Indomaret",
       startDate: "2026-09-01",
+      walletId: null,
     });
 
     expect(
@@ -58,6 +59,7 @@ describe("Phase 2 transaction discovery contract", () => {
         endDate: "2026-09-26",
         search: "Kopi susu",
         startDate: "2026-09-01",
+        walletId: null,
       },
       3,
     );
@@ -156,6 +158,8 @@ describe("Phase 2 budget and monthly period contract", () => {
     expect(budgetPlanner).toContain(
       'key={`${budget.categoryId}:${budget.limitAmountIdr ?? "unset"}`}',
     );
+    expect(budgetPlanner).toContain("Batas pengeluaran semua dompet");
+    expect(budgetPlanner).not.toContain('name="walletId"');
     expect(transactionFilters).toContain(
       "const filterStateKey = JSON.stringify([",
     );

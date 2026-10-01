@@ -149,8 +149,8 @@ export function TransactionList({
                         {getTransactionPrimaryLabel(transaction)}
                       </span>
                       <span className="mt-1 block min-w-0 font-body text-xs leading-4 text-ink-secondary">
-                        {transaction.category.name} ·{" "}
-                        {getTransactionSourceLabel(transaction.source)}
+                        {transaction.category.name} · {transaction.wallet.name}{" "}
+                        · {getTransactionSourceLabel(transaction.source)}
                       </span>
                       <span className="mt-1 block font-body text-xs leading-4 text-ink-secondary md:hidden">
                         {formatTransactionDate(transaction.transactionDate)}

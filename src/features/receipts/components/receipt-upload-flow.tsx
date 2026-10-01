@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import type { TransactionCategory } from "@/features/transactions/domain";
+import type { WalletRecord } from "@/features/wallets/domain";
 
 import {
   compressReceiptImage,
@@ -146,11 +147,13 @@ function BusyState({ phase }: Readonly<{ phase: UploadPhase }>) {
 type ReceiptUploadFlowProps = Readonly<{
   categories: readonly TransactionCategory[];
   maximumDate: string;
+  wallets: readonly WalletRecord[];
 }>;
 
 export function ReceiptUploadFlow({
   categories,
   maximumDate,
+  wallets,
 }: ReceiptUploadFlowProps) {
   const router = useRouter();
   const [phase, setPhase] = useState<UploadPhase>("idle");
@@ -397,6 +400,7 @@ export function ReceiptUploadFlow({
         maximumDate={maximumDate}
         onManualFallback={() => void handleManualEntry()}
         previewUrl={previewUrl}
+        wallets={wallets}
       />
     );
   }

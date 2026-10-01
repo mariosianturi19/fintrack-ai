@@ -3,6 +3,7 @@ import "server-only";
 import {
   CopyObjectCommand,
   DeleteObjectCommand,
+  DeleteObjectsCommand,
   GetObjectCommand,
   HeadObjectCommand,
   PutObjectCommand,
@@ -418,6 +419,48 @@ export async function deleteStoredReceiptObject(
     throw new ReceiptStorageError(
       "unavailable",
       "Foto struk belum dapat dihapus. Coba lagi.",
+    );
+  }
+}
+
+export async function deleteStoredReceiptObjects(
+  userId: string,
+  objectKeys: readonly string[],
+): Promise<void> {
+  const keys = [...new Set(objectKeys)];
+  if (keys.length === 0) return;
+  if (keys.some((key) => !isOwnedReceiptObjectKey(userId, key))) {
+    throw new ReceiptStorageError(
+      "invalid_object",
+      "Identitas salah satu foto struk tidak valid.",
+    );
+  }
+
+  const configuration = getR2Configuration();
+  const client = getR2Client(configuration);
+
+  try {
+    for (let offset = 0; offset < keys.length; offset += 1_000) {
+      const response = await client.send(
+        new DeleteObjectsCommand({
+          Bucket: configuration.bucket,
+          Delete: {
+            Objects: keys.slice(offset, offset + 1_000).map((Key) => ({ Key })),
+            Quiet: true,
+          },
+        }),
+      );
+      if ((response.Errors?.length ?? 0) > 0) {
+        throw new Error("R2 returned one or more object deletion errors.");
+      }
+    }
+  } catch (error) {
+    console.error("[Fintrack AI] Penghapusan foto dompet dari R2 gagal.", {
+      statusCode: getStorageStatusCode(error),
+    });
+    throw new ReceiptStorageError(
+      "unavailable",
+      "Foto struk belum dapat dihapus. Dompet belum diubah; coba lagi.",
     );
   }
 }

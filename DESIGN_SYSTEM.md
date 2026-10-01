@@ -1095,6 +1095,39 @@ ketiganya telah lulus.
 - Phase 2 must be verified at the existing CP5 viewports, keyboard-only, and
   `200%` zoom before its implementation status is marked complete.
 
+### 25.9 Phase 3 multi-wallet scope
+
+- `Semua dompet` is the default reporting scope for Dashboard, Transactions,
+  and Q&A. Selecting a wallet is always explicit and stored in `?wallet=<id>`;
+  do not hide this context in a cookie or global client state.
+- The wallet selector belongs in the page-header action region on desktop and
+  remains a full-width labeled control on narrow screens. It does not add a
+  sixth primary navigation item.
+- Dashboard, Transactions, and Q&A repeat the active scope in descriptive copy.
+  Search/date/category reset actions preserve the chosen wallet scope.
+- Manual and receipt review forms label `Dompet tujuan` as a required field and
+  show an unselected placeholder. The user must choose a created wallet for
+  every new transaction.
+- Budget is always an editable account-wide plan. It has no wallet selector;
+  one category limit covers spending from every wallet.
+- Weekly and monthly AI insight cards remain account-wide. When another wallet
+  is selected, the interface must state that the persisted insight still covers
+  `Semua dompet`.
+- Wallet management stays in Profile. The user creates and names every wallet;
+  there are no presets, default badges, archive states, or restore actions.
+- Wallet creation also requires a visible type selector: `Bank`, `E-wallet`,
+  `Tunai`, or `Lainnya`. The type appears beside the wallet name in management
+  cards and within transaction destination options; it is classification, not
+  a preset account or live-balance indicator.
+- Existing migration wallets use `Lainnya` until the owner selects the correct
+  type. The interface must not infer a type from a wallet name.
+- Wallet deletion is always permanent. Its dialog names the wallet, reports the
+  affected transaction and receipt counts, explains insight cleanup, states
+  that account-wide budgets remain, and uses `Batal` plus
+  `Hapus dompet dan transaksinya` actions.
+- A wallet is an expense-record grouping, not a bank-balance metaphor. Do not
+  add balance, transfer, payment, or bank-sync cues to Phase 3 surfaces.
+
 ---
 
 ## 26. Change Policy

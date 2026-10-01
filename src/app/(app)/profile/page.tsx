@@ -6,8 +6,13 @@ import { signOut } from "@/app/auth/actions";
 import { SignOutButton } from "@/components/auth/sign-out-button";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { getAuthenticatedAccount } from "@/lib/auth/session";
+import {
+  getAuthenticatedAccount,
+  getAuthenticatedUserId,
+} from "@/lib/auth/session";
 import { DeleteAccountDialog } from "@/features/account-deletion/components/delete-account-dialog";
+import { WalletManager } from "@/features/wallets/components/wallet-manager";
+import { listWalletsWithDeletionSummaries } from "@/features/wallets/data";
 
 export const metadata: Metadata = {
   title: "Profil",
@@ -16,18 +21,48 @@ export const metadata: Metadata = {
 type ProfilePageProps = Readonly<{
   searchParams: Promise<{
     error?: string;
+    walletStatus?: string;
   }>;
 }>;
 
+const walletNotices: Record<
+  string,
+  { message: string; tone: "error" | "success" }
+> = {
+  created: { message: "Dompet baru siap digunakan.", tone: "success" },
+  deleted: {
+    message: "Dompet dan seluruh data terkait berhasil dihapus permanen.",
+    tone: "success",
+  },
+  duplicate: {
+    message: "Nama dompet sudah digunakan. Pilih nama lain.",
+    tone: "error",
+  },
+  error: {
+    message: "Perubahan dompet belum tersimpan. Coba lagi.",
+    tone: "error",
+  },
+  invalid: {
+    message: "Data dompet belum valid. Periksa nama dan jenis lalu coba lagi.",
+    tone: "error",
+  },
+  renamed: { message: "Nama dan jenis dompet diperbarui.", tone: "success" },
+};
+
 export default async function ProfilePage({ searchParams }: ProfilePageProps) {
-  const [account, parameters] = await Promise.all([
+  const [account, parameters, userId] = await Promise.all([
     getAuthenticatedAccount(),
     searchParams,
+    getAuthenticatedUserId(),
   ]);
 
-  if (!account) {
+  if (!account || !userId) {
     return null;
   }
+  const wallets = await listWalletsWithDeletionSummaries(userId);
+  const walletNotice = parameters.walletStatus
+    ? walletNotices[parameters.walletStatus]
+    : undefined;
 
   return (
     <>
@@ -49,6 +84,19 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
             Sesi masih aktif. Periksa koneksi lalu coba lagi.
           </p>
         </div>
+      ) : null}
+
+      {walletNotice ? (
+        <p
+          className={`mt-6 rounded-md border p-4 font-body text-sm ${
+            walletNotice.tone === "error"
+              ? "border-error bg-error-soft text-error"
+              : "border-signal bg-signal-soft text-signal-ink"
+          }`}
+          role={walletNotice.tone === "error" ? "alert" : "status"}
+        >
+          {walletNotice.message}
+        </p>
       ) : null}
 
       <section className="mt-7 grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(280px,0.42fr)] lg:gap-6">
@@ -107,6 +155,7 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
           </div>
         </aside>
       </section>
+      <WalletManager wallets={wallets} />
       <section
         aria-labelledby="account-deletion-heading"
         className="mt-8 min-w-0 rounded-lg border border-error bg-surface p-5 sm:p-7"

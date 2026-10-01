@@ -60,6 +60,7 @@ export function createDashboardSnapshot(
     totalBudgetAmountIdr: 0,
     totalSpentAmountIdr: 0,
   },
+  exportAvailable = recentTransactions.length > 0,
 ): DashboardSnapshot {
   const periodTransactions = transactions.filter(
     (transaction) =>
@@ -128,6 +129,7 @@ export function createDashboardSnapshot(
   return {
     budgetOverview,
     categories,
+    exportAvailable,
     period,
     recentTransactions,
     monthlyInsightState,

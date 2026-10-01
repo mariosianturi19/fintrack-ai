@@ -44,6 +44,7 @@ export async function POST(request: Request) {
     const context = await getFinanceQuestionContext(
       input.data.startDate,
       input.data.endDate,
+      input.data.walletId ?? null,
     );
     if (context.overall.transactionCount === 0) {
       return json(

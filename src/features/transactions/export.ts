@@ -15,6 +15,7 @@ export type TransactionExportRow = Readonly<{
   source: string;
   transactionDate: string;
   updatedAt: string;
+  wallet: string;
 }>;
 
 export function neutralizeSpreadsheetFormula(value: string) {
@@ -38,6 +39,7 @@ export function buildTransactionExportRows(
     source: getTransactionSourceLabel(transaction.source),
     transactionDate: transaction.transactionDate,
     updatedAt: transaction.updatedAt,
+    wallet: neutralizeSpreadsheetFormula(transaction.wallet.name),
   }));
 }
 
@@ -57,6 +59,7 @@ export function createTransactionsCsv(
     "Merchant",
     "Catatan",
     "Kategori",
+    "Dompet",
     "Nominal (IDR)",
     "Sumber",
     "Dibuat pada",
@@ -69,6 +72,7 @@ export function createTransactionsCsv(
       row.merchant,
       row.notes,
       row.category,
+      row.wallet,
       row.amountIdr,
       row.source,
       row.createdAt,
@@ -98,6 +102,7 @@ export async function createTransactionsXlsx(
       header("Merchant"),
       header("Catatan"),
       header("Kategori"),
+      header("Dompet"),
       header("Nominal (IDR)"),
       header("Sumber"),
       header("Dibuat pada"),
@@ -109,6 +114,7 @@ export async function createTransactionsXlsx(
       row.merchant,
       row.notes,
       row.category,
+      row.wallet,
       { format: "#,##0", type: Number, value: row.amountIdr },
       row.source,
       row.createdAt,
@@ -124,6 +130,7 @@ export async function createTransactionsXlsx(
         { width: 14 },
         { width: 24 },
         { width: 34 },
+        { width: 22 },
         { width: 22 },
         { width: 18 },
         { width: 14 },

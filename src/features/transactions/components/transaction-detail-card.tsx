@@ -22,18 +22,21 @@ type TransactionDetailCardProps = Readonly<{
   categories: readonly TransactionCategory[];
   receiptPreviewUrl: string | null;
   transaction: TransactionRecord;
+  wallets: readonly import("@/features/wallets/domain").WalletRecord[];
 }>;
 
 export function TransactionDetailCard({
   categories,
   receiptPreviewUrl,
   transaction,
+  wallets,
 }: TransactionDetailCardProps) {
   const initialValues: TransactionFormValues = {
     amountIdr: String(transaction.amountIdr),
     categoryId: transaction.categoryId,
     notes: transaction.notes ?? "",
     transactionDate: transaction.transactionDate,
+    walletId: transaction.walletId,
   };
   const primaryLabel = getTransactionPrimaryLabel(transaction);
 
@@ -85,6 +88,7 @@ export function TransactionDetailCard({
           maximumDate={getJakartaDateInputValue()}
           mode="update"
           transactionId={transaction.id}
+          wallets={wallets}
         />
       </div>
 

@@ -31,12 +31,17 @@ export function parseTransactionFilters(
   const rawSearch = firstValue(parameters.q)?.trim() ?? "";
   const startDate = parseOptionalDate(parameters.from);
   const endDate = parseOptionalDate(parameters.to);
+  const walletResult = z
+    .string()
+    .uuid()
+    .safeParse(firstValue(parameters.wallet));
 
   return {
     categoryId: categoryResult.success ? categoryResult.data : null,
     endDate: startDate && endDate && endDate < startDate ? null : endDate,
     search: rawSearch.slice(0, 80),
     startDate,
+    walletId: walletResult.success ? walletResult.data : null,
   };
 }
 
@@ -59,6 +64,7 @@ export function createTransactionListQuery(
   if (filters.categoryId) parameters.set("category", filters.categoryId);
   if (filters.startDate) parameters.set("from", filters.startDate);
   if (filters.endDate) parameters.set("to", filters.endDate);
+  if (filters.walletId) parameters.set("wallet", filters.walletId);
   if (page && page > 1) parameters.set("page", String(page));
 
   return parameters.toString();

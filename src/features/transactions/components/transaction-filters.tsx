@@ -20,6 +20,9 @@ type TransactionFiltersProps = Readonly<{
 function FilterFields({ categories, filters }: TransactionFiltersProps) {
   return (
     <>
+      {filters.walletId ? (
+        <input name="wallet" type="hidden" value={filters.walletId} />
+      ) : null}
       <label className="min-w-0 flex-1">
         <span className="font-body text-xs font-semibold text-ink-secondary">
           Cari transaksi
@@ -87,7 +90,10 @@ function FilterFields({ categories, filters }: TransactionFiltersProps) {
   );
 }
 
-function FilterActions({ active }: Readonly<{ active: boolean }>) {
+function FilterActions({
+  active,
+  resetHref,
+}: Readonly<{ active: boolean; resetHref: string }>) {
   return (
     <div className="flex min-w-0 flex-wrap items-center gap-3">
       <button
@@ -99,7 +105,7 @@ function FilterActions({ active }: Readonly<{ active: boolean }>) {
       {active ? (
         <Link
           className="inline-flex min-h-11 items-center justify-center px-2 font-body text-sm font-semibold text-primary underline-offset-4 hover:underline"
-          href="/transactions"
+          href={resetHref}
         >
           Reset filter
         </Link>
@@ -114,11 +120,15 @@ export function TransactionFilters({
 }: TransactionFiltersProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const active = hasTransactionFilters(filters);
+  const resetHref = filters.walletId
+    ? `/transactions?wallet=${filters.walletId}`
+    : "/transactions";
   const filterStateKey = JSON.stringify([
     filters.search,
     filters.categoryId,
     filters.startDate,
     filters.endDate,
+    filters.walletId,
   ]);
   const activeCount = [
     filters.search,
@@ -146,7 +156,7 @@ export function TransactionFilters({
         {active ? (
           <Link
             className="font-body text-sm font-semibold text-primary underline-offset-4 hover:underline"
-            href="/transactions"
+            href={resetHref}
           >
             Reset
           </Link>
@@ -160,7 +170,7 @@ export function TransactionFilters({
         method="get"
       >
         <FilterFields categories={categories} filters={filters} />
-        <FilterActions active={active} />
+        <FilterActions active={active} resetHref={resetHref} />
       </form>
 
       <dialog
@@ -195,7 +205,7 @@ export function TransactionFilters({
             <FilterFields categories={categories} filters={filters} />
           </div>
           <div className="mt-6 border-t border-divider pt-5">
-            <FilterActions active={active} />
+            <FilterActions active={active} resetHref={resetHref} />
           </div>
         </form>
       </dialog>

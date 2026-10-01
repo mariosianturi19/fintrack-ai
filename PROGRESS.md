@@ -1,6 +1,6 @@
 # Fintrack AI — Project Progress
 
-Last updated: September 30, 2026
+Last updated: October 1, 2026
 
 ## Current status
 
@@ -13,9 +13,24 @@ Phase 2 adds transaction discovery, monthly category budgets, completed-month
 insights, and aggregate-only natural-language questions. Its consolidated
 migration is applied and schema-verified in both development and production,
 and the full automated repository gate passes. The transaction-filter and
-budget-form reset fixes are deployed and production-verified. Broader owner QA
-is still in progress, so Phase 2 must not yet be described as fully
-production-verified.
+budget-form reset fixes are deployed and production-verified. The authenticated
+production maintenance route also completes successfully with the corrected R2
+account endpoint. Phase 2 is complete for the current portfolio scope; broader
+device, multi-account, and long-running availability checks remain deferred
+release validation rather than missing implementation.
+
+Phase 3 multi-wallet organization is implemented in the local workspace. It
+keeps **Semua dompet** as the default view, adds an explicit URL-backed wallet
+scope to Dashboard, Transactions, and Q&A, requires a destination wallet for
+manual and receipt transactions, and manages user-created, explicitly typed
+payment sources from Profile. Budget remains one account-wide plan across every
+wallet. There is no default wallet, automatic selection, archive state, or
+preset wallet list.
+Permanent wallet deletion includes transactions, private receipt objects, and
+stale persisted insights while preserving budgets. The base,
+user-managed-wallet, and global-budget migrations passed development
+verification. The final wallet-type migration is ready locally and awaits
+development application. Phase 3 is not yet part of the live deployment.
 
 The live deployment is available at
 [fintrack-ai-sigma-two.vercel.app](https://fintrack-ai-sigma-two.vercel.app).
@@ -43,14 +58,34 @@ or an independent third-party security audit.
 | -------------------------------------------------- | -------------- | ---------------------------------------------------------- |
 | Transaction search and category/date filters       | Deployed       | Production search/filter/empty/reset QA passed             |
 | Monthly category budgets and in-app thresholds     | Deployed       | Production CRUD/reset QA passed and data cleaned           |
-| Completed-month insight and deterministic fallback | Deployed       | Dev generation passed; production scheduled run pending    |
+| Completed-month insight and deterministic fallback | Deployed       | Dev generation/idempotency passed; production cron passed  |
 | Aggregate financial Q&A with bounded periods       | Deployed       | Production aggregate answer passed                         |
 | Phase 2 account-deletion cascade coverage          | Deployed       | Disposable-user cascade passed; live RLS isolation pending |
 
-The Phase 2 production schema and initial application deployment gates are
-complete. Release validation remains open until owner QA covers responsive
-behavior, zoom, multi-account isolation, cron idempotency, quota behavior, and
-deletion cleanup.
+The Phase 2 production schema, application deployment, core owner smoke flows,
+and authenticated scheduled route are verified. The latest production cron had
+no eligible completed-month transaction data, so no monthly-insight row was
+expected. Extended responsive, multi-account, quota, and repeated-cycle checks
+are intentionally deferred and do not block the current portfolio release.
+
+## Phase 3 multi-wallet implementation
+
+| Capability                                                    | Local implementation | Release state                            |
+| ------------------------------------------------------------- | -------------------- | ---------------------------------------- |
+| Default Semua dompet plus explicit URL scope                  | Complete             | Awaiting corrected deployment            |
+| User-created owner-scoped wallets without defaults or presets | Complete             | Development verification passed          |
+| Explicit Bank, E-wallet, Tunai, or Lainnya wallet type        | Complete locally     | Forward dev migration and QA pending     |
+| Explicit manual/receipt wallet choice and reassignment        | Complete             | Awaiting deployment                      |
+| Account-wide budget across all payment-source wallets         | Complete             | Development verification passed          |
+| Wallet-aware Dashboard and aggregate Q&A                      | Complete             | Awaiting deployment                      |
+| All-wallet CSV/XLSX export with Dompet column                 | Complete             | Awaiting deployment                      |
+| Permanent wallet transaction/receipt/insight deletion         | Corrected locally    | Global-budget preservation QA pending    |
+| PostgreSQL schema, RLS, owner isolation, and delete cascade   | Complete locally     | Updated development SQL verification due |
+
+Weekly and monthly persisted insights deliberately remain all-wallet summaries.
+This avoids multiplying scheduled Gemini requests and is disclosed whenever a
+specific wallet is selected. Phase 3 does not introduce balances, income,
+transfers, payments, bank synchronization, or investment tracking.
 
 ## Verification snapshot
 
@@ -60,10 +95,14 @@ The current repository quality gate includes:
 - TypeScript compilation without emitted output;
 - Prettier formatting verification;
 - a production Next.js build; and
-- **198 automated tests across 19 test files** using Vitest and PGlite.
+- **211 automated tests across 20 test files** using Vitest and PGlite.
 
-The September 30 Phase 2 repository gate passed all 198 tests, ESLint,
-Prettier, the full TypeScript check, and an optimized production build.
+The October 1 Phase 3 implementation and its user-managed-wallet,
+global-budget, and wallet-type corrections pass all 211 tests, ESLint,
+Prettier, the full TypeScript check, dedicated PostgreSQL/PGlite migration and
+isolation checks, and an optimized production build. The wallet-type migration
+still awaits application to the development project. Phase 3 deployment
+remains pending.
 
 The same day, the consolidated Phase 2 migration was applied to
 `fintrack-ai-prod`. The production verification query returned `F2 schema PASS`
@@ -94,7 +133,7 @@ RLS.
   RLS isolation remains pending because the intentionally disabled Email
   provider prevents password login for disposable QA users.
 
-## Phase 2 production smoke QA — September 30, 2026
+## Phase 2 production smoke QA — September 30–October 1, 2026
 
 - Authentication guards preserved the requested destination for Dashboard,
   Transactions, Budget, and Monthly Insight routes.
@@ -110,8 +149,11 @@ RLS.
   returned empty after deletion. No temporary budget remained.
 - Aggregate Q&A returned the correct Rp12.345 total and Makanan & minuman top
   category for the bounded 12-month period without browser errors.
-- The Monthly Insight route rendered its safe empty state. The first production
-  scheduled generation remains pending after the Phase 2 schema deployment.
+- The Monthly Insight route rendered its safe empty state. The authenticated
+  production cron completed with HTTP 200 after the R2 configuration was
+  corrected to the account-level S3 endpoint. Its R2 listing and maintenance
+  cursor update succeeded without cleanup errors. No insight was generated
+  because the account had no eligible transaction in the last completed month.
 
 The automated suite covers authentication boundaries, owner isolation,
 transaction validation, dashboard aggregation, exports, private receipt
@@ -135,9 +177,9 @@ Focused production smoke checks have covered:
 
 ## Release boundaries
 
-The deployed Phase 1 product is suitable for portfolio demonstration and
-controlled personal use. The following validation remains intentionally
-ongoing before making stronger availability or scale claims:
+The deployed Phase 1 and Phase 2 product is suitable for portfolio
+demonstration and controlled personal use. The following optional validation is
+deferred until stronger availability or scale claims are needed:
 
 - repeat receipt-analysis checks under variable provider latency;
 - an end-to-end receipt save, refresh, private preview, permanent-object, and

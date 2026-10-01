@@ -8,6 +8,15 @@ import type {
   TransactionCategory,
   TransactionRecord,
 } from "../src/features/transactions/domain";
+import type { WalletRecord } from "../src/features/wallets/domain";
+
+const wallet: WalletRecord = {
+  createdAt: "2026-08-01T01:00:00.000Z",
+  id: "6d45ad1d-a780-4297-9d4e-a4ad61a7f90f",
+  name: "BCA",
+  updatedAt: "2026-08-01T01:00:00.000Z",
+  walletType: "bank",
+};
 
 const foodCategory: TransactionCategory = {
   colorHex: "#D96C52",
@@ -43,6 +52,8 @@ function createTransaction(
     source: "manual",
     transactionDate: "2026-08-01",
     updatedAt: "2026-08-01T02:00:00.000Z",
+    wallet,
+    walletId: wallet.id,
     ...overrides,
   };
 }

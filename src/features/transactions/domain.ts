@@ -29,6 +29,8 @@ export type TransactionRecord = Readonly<{
   source: TransactionSource;
   transactionDate: string;
   updatedAt: string;
+  wallet: import("@/features/wallets/domain").WalletRecord;
+  walletId: string;
 }>;
 
 export type TransactionFormValues = Readonly<{
@@ -36,6 +38,7 @@ export type TransactionFormValues = Readonly<{
   categoryId: string;
   notes: string;
   transactionDate: string;
+  walletId: string;
 }>;
 
 export type TransactionField = keyof TransactionFormValues;
@@ -60,9 +63,11 @@ export type TransactionFilters = Readonly<{
   endDate: string | null;
   search: string;
   startDate: string | null;
+  walletId: string | null;
 }>;
 
 export type TransactionEditorData = Readonly<{
   categories: readonly TransactionCategory[];
   transaction: TransactionRecord;
+  wallets: readonly import("@/features/wallets/domain").WalletRecord[];
 }>;

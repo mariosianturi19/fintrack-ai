@@ -64,6 +64,7 @@ export async function verifyOwnedDatabaseRowsAbsent(
     "weekly_insights",
     "monthly_insights",
     "category_budgets",
+    "wallets",
     "ai_request_events",
     "account_storage_activity",
   ]) {

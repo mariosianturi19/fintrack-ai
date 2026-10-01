@@ -16,6 +16,7 @@ export const financeQuestionRequestSchema = z
     question: z.string().trim().min(3).max(300),
     requestId: z.string().uuid(),
     startDate: dateSchema,
+    walletId: z.string().uuid().nullable().optional(),
   })
   .refine((value) => value.startDate <= value.endDate, {
     message: "Invalid period",

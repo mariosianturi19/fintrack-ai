@@ -14,6 +14,15 @@ import {
   createTransactionsXlsx,
   neutralizeSpreadsheetFormula,
 } from "../src/features/transactions/export";
+import type { WalletRecord } from "../src/features/wallets/domain";
+
+const wallet: WalletRecord = {
+  createdAt: "2026-08-01T01:00:00.000Z",
+  id: "6d45ad1d-a780-4297-9d4e-a4ad61a7f90f",
+  name: "BCA",
+  updatedAt: "2026-08-01T01:00:00.000Z",
+  walletType: "bank",
+};
 
 const category: TransactionCategory = {
   colorHex: "#D96C52",
@@ -40,6 +49,8 @@ function createTransaction(
     source: "manual",
     transactionDate: "2026-08-01",
     updatedAt: "2026-08-01T02:05:00.000Z",
+    wallet,
+    walletId: wallet.id,
     ...overrides,
   };
 }
@@ -64,6 +75,7 @@ describe("transaction export safety", () => {
 
     expect(row.merchant).toBe('\'=HYPERLINK("bad")');
     expect(row.amountIdr).toBe(12_345);
+    expect(row.wallet).toBe("BCA");
   });
 });
 
@@ -75,6 +87,7 @@ describe("transaction export formats", () => {
 
     expect(csv.startsWith("\uFEFF")).toBe(true);
     expect(csv).toContain('"Nominal (IDR)"');
+    expect(csv).toContain('"Dompet"');
     expect(csv).toContain('"12345"');
     expect(csv).toContain('"\'=1+1, baris baru\naman"');
   });

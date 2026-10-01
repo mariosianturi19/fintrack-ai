@@ -3,6 +3,12 @@ import "server-only";
 import { z } from "zod";
 
 import { createClient } from "@/lib/supabase/server";
+import {
+  assertOwnedWallet,
+  parseWallets,
+  WalletDataError,
+} from "@/features/wallets/data";
+import type { WalletRecord } from "@/features/wallets/domain";
 
 import type { ParsedTransactionInput } from "./validation";
 import type {
@@ -50,10 +56,15 @@ const transactionRowSchema = z.object({
   source: z.enum(["manual", "receipt_ai"]),
   transaction_date: z.string(),
   updated_at: z.string(),
+  wallet_id: z.string().uuid(),
 });
 
 type TransactionDataErrorCode =
-  "category_unavailable" | "database" | "export_limit" | "not_found";
+  | "category_unavailable"
+  | "database"
+  | "export_limit"
+  | "not_found"
+  | "wallet_unavailable";
 
 export class TransactionDataError extends Error {
   readonly code: TransactionDataErrorCode;
@@ -81,6 +92,7 @@ function mapCategory(
 function mapTransaction(
   row: z.infer<typeof transactionRowSchema>,
   category: TransactionCategory,
+  wallet: WalletRecord,
 ): TransactionRecord {
   return {
     amountIdr: row.amount_idr,
@@ -96,6 +108,8 @@ function mapTransaction(
     source: row.source,
     transactionDate: row.transaction_date,
     updatedAt: row.updated_at,
+    wallet,
+    walletId: row.wallet_id,
   };
 }
 
@@ -106,22 +120,25 @@ export function parseCategories(data: unknown) {
 export function parseTransactions(
   data: unknown,
   categories: readonly TransactionCategory[],
+  wallets: readonly WalletRecord[],
 ) {
   const categoriesById = new Map(
     categories.map((category) => [category.id, category]),
   );
+  const walletsById = new Map(wallets.map((wallet) => [wallet.id, wallet]));
 
   return z
     .array(transactionRowSchema)
     .parse(data)
     .map((row) => {
       const category = categoriesById.get(row.category_id);
+      const wallet = walletsById.get(row.wallet_id);
 
-      if (!category) {
+      if (!category || !wallet) {
         throw new TransactionDataError("database");
       }
 
-      return mapTransaction(row, category);
+      return mapTransaction(row, category, wallet);
     });
 }
 
@@ -154,6 +171,7 @@ export async function listTransactionsPage(
     endDate: null,
     search: "",
     startDate: null,
+    walletId: null,
   },
 ): Promise<TransactionPage> {
   const currentPage =
@@ -165,7 +183,7 @@ export async function listTransactionsPage(
   let transactionQuery = supabase
     .from("transactions")
     .select(
-      "id, category_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
+      "id, category_id, wallet_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
       { count: "exact" },
     )
     .eq("user_id", userId)
@@ -175,6 +193,9 @@ export async function listTransactionsPage(
 
   if (filters.categoryId) {
     transactionQuery = transactionQuery.eq("category_id", filters.categoryId);
+  }
+  if (filters.walletId) {
+    transactionQuery = transactionQuery.eq("wallet_id", filters.walletId);
   }
   if (filters.startDate) {
     transactionQuery = transactionQuery.gte(
@@ -195,27 +216,37 @@ export async function listTransactionsPage(
     );
   }
 
-  const [transactionResult, categoryResult] = await Promise.all([
+  const [transactionResult, categoryResult, walletResult] = await Promise.all([
     transactionQuery,
     supabase
       .from("categories")
       .select("id, slug, name, color_hex, sort_order, is_active")
       .order("sort_order", { ascending: true }),
+    supabase
+      .from("wallets")
+      .select("id, name, wallet_type, created_at, updated_at")
+      .eq("user_id", userId),
   ]);
 
-  if (transactionResult.error || categoryResult.error) {
+  if (transactionResult.error || categoryResult.error || walletResult.error) {
     reportDatabaseError(
       "Gagal memuat daftar transaksi.",
-      transactionResult.error ?? categoryResult.error,
+      transactionResult.error ?? categoryResult.error ?? walletResult.error,
     );
     throw new TransactionDataError("database", {
-      cause: transactionResult.error ?? categoryResult.error,
+      cause:
+        transactionResult.error ?? categoryResult.error ?? walletResult.error,
     });
   }
 
   try {
     const categories = parseCategories(categoryResult.data);
-    const transactions = parseTransactions(transactionResult.data, categories);
+    const wallets = parseWallets(walletResult.data);
+    const transactions = parseTransactions(
+      transactionResult.data,
+      categories,
+      wallets,
+    );
     const total = transactionResult.count ?? 0;
 
     return {
@@ -233,30 +264,44 @@ export async function listTransactionsPage(
 
 export async function listOwnedTransactionsForExport(userId: string) {
   const supabase = await createClient();
-  const [categoryResult, firstTransactionResult] = await Promise.all([
-    supabase
-      .from("categories")
-      .select("id, slug, name, color_hex, sort_order, is_active")
-      .order("sort_order", { ascending: true }),
-    supabase
-      .from("transactions")
-      .select(
-        "id, category_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
-        { count: "exact" },
-      )
-      .eq("user_id", userId)
-      .order("transaction_date", { ascending: false })
-      .order("created_at", { ascending: false })
-      .range(0, exportBatchSize - 1),
-  ]);
+  const [categoryResult, firstTransactionResult, walletResult] =
+    await Promise.all([
+      supabase
+        .from("categories")
+        .select("id, slug, name, color_hex, sort_order, is_active")
+        .order("sort_order", { ascending: true }),
+      supabase
+        .from("transactions")
+        .select(
+          "id, category_id, wallet_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
+          { count: "exact" },
+        )
+        .eq("user_id", userId)
+        .order("transaction_date", { ascending: false })
+        .order("created_at", { ascending: false })
+        .range(0, exportBatchSize - 1),
+      supabase
+        .from("wallets")
+        .select("id, name, wallet_type, created_at, updated_at")
+        .eq("user_id", userId),
+    ]);
 
-  if (categoryResult.error || firstTransactionResult.error) {
+  if (
+    categoryResult.error ||
+    firstTransactionResult.error ||
+    walletResult.error
+  ) {
     reportDatabaseError(
       "Gagal menyiapkan data export transaksi.",
-      categoryResult.error ?? firstTransactionResult.error,
+      categoryResult.error ??
+        firstTransactionResult.error ??
+        walletResult.error,
     );
     throw new TransactionDataError("database", {
-      cause: categoryResult.error ?? firstTransactionResult.error,
+      cause:
+        categoryResult.error ??
+        firstTransactionResult.error ??
+        walletResult.error,
     });
   }
 
@@ -280,7 +325,7 @@ export async function listOwnedTransactionsForExport(userId: string) {
     const { data, error } = await supabase
       .from("transactions")
       .select(
-        "id, category_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
+        "id, category_id, wallet_id, amount_idr, transaction_date, merchant, notes, source, created_at, updated_at",
       )
       .eq("user_id", userId)
       .order("transaction_date", { ascending: false })
@@ -297,8 +342,9 @@ export async function listOwnedTransactionsForExport(userId: string) {
 
   try {
     const categories = parseCategories(categoryResult.data);
+    const wallets = parseWallets(walletResult.data);
 
-    return parseTransactions(rows, categories);
+    return parseTransactions(rows, categories, wallets);
   } catch (error) {
     reportDatabaseError("Respons data export transaksi tidak valid.", error);
     throw new TransactionDataError("database", { cause: error });
@@ -310,11 +356,11 @@ export async function getTransactionEditorData(
   transactionId: string,
 ): Promise<TransactionEditorData> {
   const supabase = await createClient();
-  const [transactionResult, categoryResult] = await Promise.all([
+  const [transactionResult, categoryResult, walletResult] = await Promise.all([
     supabase
       .from("transactions")
       .select(
-        "id, category_id, amount_idr, transaction_date, merchant, notes, source, receipt_object_key, receipt_items, created_at, updated_at",
+        "id, category_id, wallet_id, amount_idr, transaction_date, merchant, notes, source, receipt_object_key, receipt_items, created_at, updated_at",
       )
       .eq("id", transactionId)
       .eq("user_id", userId)
@@ -323,15 +369,21 @@ export async function getTransactionEditorData(
       .from("categories")
       .select("id, slug, name, color_hex, sort_order, is_active")
       .order("sort_order", { ascending: true }),
+    supabase
+      .from("wallets")
+      .select("id, name, wallet_type, created_at, updated_at")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: true }),
   ]);
 
-  if (transactionResult.error || categoryResult.error) {
+  if (transactionResult.error || categoryResult.error || walletResult.error) {
     reportDatabaseError(
       "Gagal memuat detail transaksi.",
-      transactionResult.error ?? categoryResult.error,
+      transactionResult.error ?? categoryResult.error ?? walletResult.error,
     );
     throw new TransactionDataError("database", {
-      cause: transactionResult.error ?? categoryResult.error,
+      cause:
+        transactionResult.error ?? categoryResult.error ?? walletResult.error,
     });
   }
 
@@ -341,9 +393,11 @@ export async function getTransactionEditorData(
 
   try {
     const categories = parseCategories(categoryResult.data);
+    const wallets = parseWallets(walletResult.data);
     const [transaction] = parseTransactions(
       [transactionResult.data],
       categories,
+      wallets,
     );
     const selectableCategories = categories.filter(
       (category) => category.isActive || category.id === transaction.categoryId,
@@ -352,6 +406,7 @@ export async function getTransactionEditorData(
     return {
       categories: selectableCategories,
       transaction,
+      wallets,
     };
   } catch (error) {
     reportDatabaseError("Respons detail transaksi tidak valid.", error);
@@ -390,6 +445,14 @@ export async function createManualTransaction(
   input: ParsedTransactionInput,
 ) {
   await assertCategoryAvailable(input.categoryId);
+  try {
+    await assertOwnedWallet(userId, input.walletId);
+  } catch (error) {
+    if (error instanceof WalletDataError && error.code === "not_found") {
+      throw new TransactionDataError("wallet_unavailable");
+    }
+    throw error;
+  }
   const supabase = await createClient();
   const { error } = await supabase.from("transactions").insert({
     amount_idr: input.amountIdr,
@@ -398,6 +461,7 @@ export async function createManualTransaction(
     source: "manual",
     transaction_date: input.transactionDate,
     user_id: userId,
+    wallet_id: input.walletId,
   });
 
   if (error) {
@@ -414,7 +478,7 @@ export async function updateOwnedTransaction(
   const supabase = await createClient();
   const { data: currentTransaction, error: currentError } = await supabase
     .from("transactions")
-    .select("id, category_id")
+    .select("id, category_id, wallet_id")
     .eq("id", transactionId)
     .eq("user_id", userId)
     .maybeSingle();
@@ -435,6 +499,16 @@ export async function updateOwnedTransaction(
     input.categoryId,
     currentTransaction.category_id,
   );
+  if (input.walletId !== currentTransaction.wallet_id) {
+    try {
+      await assertOwnedWallet(userId, input.walletId);
+    } catch (error) {
+      if (error instanceof WalletDataError && error.code === "not_found") {
+        throw new TransactionDataError("wallet_unavailable");
+      }
+      throw error;
+    }
+  }
 
   const { data, error } = await supabase
     .from("transactions")
@@ -443,6 +517,7 @@ export async function updateOwnedTransaction(
       category_id: input.categoryId,
       notes: input.notes,
       transaction_date: input.transactionDate,
+      wallet_id: input.walletId,
     })
     .eq("id", transactionId)
     .eq("user_id", userId)

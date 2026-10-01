@@ -12,6 +12,8 @@ import type {
 } from "../domain";
 import { createInitialActionState } from "../state";
 import { AmountInput } from "./amount-input";
+import type { WalletRecord } from "@/features/wallets/domain";
+import { getWalletOptionLabel } from "@/features/wallets/scope-query";
 
 type TransactionFormProps = Readonly<{
   categories: readonly TransactionCategory[];
@@ -19,6 +21,7 @@ type TransactionFormProps = Readonly<{
   maximumDate: string;
   mode: "create" | "update";
   transactionId?: string;
+  wallets: readonly WalletRecord[];
 }>;
 
 function FieldError({
@@ -61,6 +64,7 @@ export function TransactionForm({
   maximumDate,
   mode,
   transactionId,
+  wallets,
 }: TransactionFormProps) {
   const action =
     mode === "create"
@@ -81,6 +85,9 @@ export function TransactionForm({
     ? "transactionDate-error"
     : undefined;
   const notesErrorId = state.fieldErrors.notes ? "notes-error" : undefined;
+  const walletErrorId = state.fieldErrors.walletId
+    ? "walletId-error"
+    : undefined;
 
   return (
     <form action={formAction} className="min-w-0" noValidate>
@@ -176,6 +183,47 @@ export function TransactionForm({
               message={state.fieldErrors.categoryId}
             />
           </div>
+        </div>
+
+        <div className="min-w-0">
+          <label
+            className="mb-2 block font-body text-sm font-medium text-ink-secondary"
+            htmlFor="walletId"
+          >
+            Dompet tujuan
+          </label>
+          <select
+            aria-describedby={walletErrorId ?? "walletId-help"}
+            aria-invalid={Boolean(state.fieldErrors.walletId)}
+            className={[
+              "min-h-12 w-full min-w-0 rounded-md border bg-surface px-4 py-3 font-body text-base text-ink outline-none transition-colors",
+              state.fieldErrors.walletId
+                ? "border-error focus:border-error"
+                : "border-border focus:border-primary",
+            ].join(" ")}
+            defaultValue={state.values.walletId}
+            id="walletId"
+            name="walletId"
+            required
+          >
+            <option value="">Pilih dompet</option>
+            {wallets.map((wallet) => (
+              <option key={wallet.id} value={wallet.id}>
+                {getWalletOptionLabel(wallet)}
+              </option>
+            ))}
+          </select>
+          <p
+            className="mt-2 font-body text-xs leading-5 text-ink-secondary"
+            id="walletId-help"
+          >
+            Pilih sumber pembayaran transaksi ini, misalnya BCA, GoPay, atau
+            Tunai.
+          </p>
+          <FieldError
+            id="walletId-error"
+            message={state.fieldErrors.walletId}
+          />
         </div>
 
         <div className="min-w-0">

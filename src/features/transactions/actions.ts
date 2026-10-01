@@ -51,6 +51,18 @@ function createMutationError(
       };
     }
 
+    if (error.code === "wallet_unavailable") {
+      return {
+        ...state,
+        fieldErrors: {
+          ...state.fieldErrors,
+          walletId: "Dompet ini sudah tidak tersedia. Pilih dompet lain.",
+        },
+        formError: "Tujuan dompet perlu diperbarui.",
+        status: "error",
+      };
+    }
+
     if (error.code === "not_found") {
       return {
         ...state,
@@ -107,7 +119,12 @@ export async function createTransactionAction(
   }
 
   revalidatePath("/transactions");
-  redirect("/transactions?status=created");
+  redirect(
+    `/transactions?${new URLSearchParams({
+      status: "created",
+      wallet: parsed.data.walletId,
+    })}`,
+  );
 }
 
 export async function updateTransactionAction(

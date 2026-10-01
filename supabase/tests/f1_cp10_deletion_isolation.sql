@@ -12,8 +12,13 @@ from (values (current_setting('fintrack.cp10_a')), (current_setting('fintrack.cp
 insert into auth.sessions (id, user_id, created_at, updated_at) values
   (current_setting('fintrack.cp10_sa')::uuid, current_setting('fintrack.cp10_a')::uuid, now(), now()),
   (current_setting('fintrack.cp10_sb')::uuid, current_setting('fintrack.cp10_b')::uuid, now(), now());
-insert into public.transactions (user_id, category_id, amount_idr, transaction_date, notes)
-select id::uuid, (select id from public.categories where slug = 'food-drink'), 1000, '2026-08-18', 'CP10 rollback-only fixture'
+insert into public.wallets (user_id, name, wallet_type)
+select id::uuid, 'CP10 synthetic wallet', 'other'
+from (values (current_setting('fintrack.cp10_a')), (current_setting('fintrack.cp10_b'))) as fixture(id);
+insert into public.transactions (user_id, category_id, wallet_id, amount_idr, transaction_date, notes)
+select id::uuid, (select id from public.categories where slug = 'food-drink'),
+  (select wallet.id from public.wallets as wallet where wallet.user_id = fixture.id::uuid),
+  1000, '2026-08-18', 'CP10 rollback-only fixture'
 from (values (current_setting('fintrack.cp10_a')), (current_setting('fintrack.cp10_b'))) as fixture(id);
 insert into public.weekly_insights (user_id, week_start, summary, model_name)
 values (current_setting('fintrack.cp10_a')::uuid, '2026-08-17', 'CP10 rollback fixture', 'test');
@@ -59,8 +64,10 @@ begin
     raise exception 'CP10: new copy permitted after acceptance';
   exception when sqlstate 'P0010' then null; end;
   begin
-    insert into public.transactions (user_id, category_id, amount_idr, transaction_date)
-    values (repeated.user_id, (select id from public.categories where slug = 'food-drink'), 2000, '2026-08-18');
+    insert into public.transactions (user_id, category_id, wallet_id, amount_idr, transaction_date)
+    values (repeated.user_id, (select id from public.categories where slug = 'food-drink'),
+      (select wallet.id from public.wallets as wallet where wallet.user_id = repeated.user_id),
+      2000, '2026-08-18');
     raise exception 'CP10: service write bypassed deletion barrier';
   exception when sqlstate 'P0010' then null; end;
   if exists (select 1 from public.get_weekly_insight_candidates('2026-08-17') where user_id = repeated.user_id) then raise exception 'CP10: deleting account remains an insight candidate'; end if;
@@ -74,8 +81,10 @@ begin
   if public.get_account_access_state() <> 'deleting' then raise exception 'CP10: expected pending state'; end if;
   if exists (select 1 from public.transactions) or exists (select 1 from public.weekly_insights) or exists (select 1 from public.ai_request_events) then raise exception 'CP10: pending account still reads private data'; end if;
   begin
-    insert into public.transactions (user_id, category_id, amount_idr, transaction_date)
-    values (auth.uid(), (select id from public.categories where slug = 'food-drink'), 2000, '2026-08-18');
+    insert into public.transactions (user_id, category_id, wallet_id, amount_idr, transaction_date)
+    values (auth.uid(), (select id from public.categories where slug = 'food-drink'),
+      (select wallet.id from public.wallets as wallet where wallet.user_id = auth.uid()),
+      2000, '2026-08-18');
     raise exception 'CP10: pending account still writes';
   exception when insufficient_privilege or sqlstate 'P0010' then null; end;
 end;

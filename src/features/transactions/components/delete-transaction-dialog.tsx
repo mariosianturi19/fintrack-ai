@@ -46,6 +46,7 @@ export function DeleteTransactionDialog({
       categoryId: "",
       notes: "",
       transactionDate: "",
+      walletId: "",
     }),
   );
 

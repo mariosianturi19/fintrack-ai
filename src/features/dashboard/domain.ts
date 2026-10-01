@@ -24,6 +24,7 @@ export type DashboardCategoryBreakdown = Readonly<{
 export type DashboardSnapshot = Readonly<{
   budgetOverview: BudgetOverview;
   categories: readonly DashboardCategoryBreakdown[];
+  exportAvailable: boolean;
   period: DashboardPeriod;
   recentTransactions: readonly TransactionRecord[];
   monthlyInsightState: MonthlyInsightState;

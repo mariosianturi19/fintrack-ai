@@ -51,8 +51,26 @@ Phase 2 extends the same owner-controlled workspace with:
 - natural-language questions over a bounded, aggregate-only view of the
   authenticated user's transactions.
 
+Phase 3 organizes expenses across multiple wallets without modeling account
+balances:
+
+- wallets are named, typed, and created by the user as payment sources such as
+  BCA (`Bank`), GoPay (`E-wallet`), or physical money (`Tunai`); new accounts
+  receive no system wallet;
+- Dashboard, Transactions, and Q&A default to `Semua dompet` and can be narrowed
+  through an explicit `?wallet=<id>` scope;
+- manual and receipt-created transactions require an explicit wallet selection
+  and can be reassigned during editing;
+- budgets remain one account-wide limit per category and month, calculated from
+  transactions across every wallet;
+- deleting a wallet permanently deletes its transactions, receipt objects, and
+  stale persisted insights after explicit confirmation without deleting the
+  account-wide budgets; and
+- exports remain account-wide and add the wallet name as a column.
+
 Social features, bank synchronization, payments, investment tracking, and
-automated financial advice are outside the current scope.
+automated financial advice are outside the current scope. Wallets are record
+groupings, not bank accounts: Phase 3 does not add balances, income, or transfers.
 
 ## Product principles
 
@@ -86,10 +104,14 @@ usable across mobile, desktop, keyboard navigation, and high zoom.
 ### Record a transaction manually
 
 1. The user opens the transaction form.
-2. The application validates amount, category, date, merchant, and optional
-   notes.
-3. The server derives ownership from the authenticated session.
-4. The saved transaction appears in the list and dashboard aggregates.
+2. If no wallet exists, the application directs the user to create one first.
+3. The user explicitly selects one wallet; the application never preselects a
+   system or preferred destination.
+4. The application validates amount, category, wallet, date, merchant, and
+   optional notes.
+5. The server derives ownership from the authenticated session and confirms
+   that the wallet is owned by the same account.
+6. The saved transaction appears in the list and scoped dashboard aggregates.
 
 ### Create a transaction from a receipt
 
@@ -99,36 +121,62 @@ usable across mobile, desktop, keyboard navigation, and high zoom.
 4. The server verifies the uploaded object before analysis.
 5. Gemini returns structured receipt fields through a server-only integration.
 6. The application validates the response and opens an editable review form.
-7. The transaction and permanent receipt reference are created only after user
+7. The user confirms a concrete destination wallet together with the extracted
+   fields.
+8. The transaction and permanent receipt reference are created only after user
    confirmation.
-8. Pending objects are removed after completion, cancellation, or cleanup.
+9. Pending objects are removed after completion, cancellation, or cleanup.
 
 ### Review spending
 
-The dashboard summarizes the selected month, category distribution, recent
-transactions, and the latest completed weekly insight. Weekly generation uses
-Jakarta-aware date boundaries and a deterministic fallback when AI generation
-is unavailable.
+The dashboard summarizes the selected month, category distribution, and recent
+transactions for all wallets or one explicitly selected wallet. Weekly and
+monthly persisted insights remain account-wide, use Jakarta-aware boundaries,
+and retain deterministic fallback behavior; the interface discloses this when
+a wallet filter is active.
 
 ### Plan a monthly budget
 
 1. The user opens Budget from primary navigation.
-2. A rupiah limit can be set independently for each active category and month.
-3. Current spending is aggregated from owner-scoped transactions.
-4. The interface marks categories at or above 80% as near the limit and at or
+2. A rupiah limit can be set once for each active category and month.
+3. Current spending is aggregated from the owner's transactions across every
+   wallet.
+4. The Budget page has no wallet filter because the plan applies to the whole
+   account.
+5. The interface marks categories at or above 80% as near the limit and at or
    above 100% as exceeded.
-5. Warnings remain in-app and never block transaction entry.
+6. Warnings remain in-app and never block transaction entry.
 
 ### Ask about transactions
 
 1. The user chooses a bounded period of up to 366 days and writes a question.
-2. The server builds category, day, merchant, count, and total aggregates for
-   the authenticated owner only.
-3. Notes, receipt line items, receipt images, and raw object references are not
+2. The user may ask across all wallets or the wallet selected in the Dashboard
+   URL.
+3. The server builds category, day, merchant, count, and total aggregates for
+   the authenticated owner and requested wallet scope only.
+4. Notes, receipt line items, receipt images, and raw object references are not
    included in the AI context.
-4. Gemini receives the untrusted question separately from the financial facts.
-5. The answer is displayed without storing a chat history; insufficient data
+5. Gemini receives the untrusted question separately from the financial facts.
+6. The answer is displayed without storing a chat history; insufficient data
    produces an explicit limitation instead of an invented answer.
+
+### Organize expenses with wallets
+
+1. The account starts without a wallet; every wallet is created, named, and
+   classified as `Bank`, `E-wallet`, `Tunai`, or `Lainnya` by the user from
+   Profile.
+2. A wallet identifies the source used for an expense, such as BCA, GoPay, or
+   Tunai. Its type prepares consistent source handling without fetching or
+   maintaining a live balance.
+3. Dashboard and Transactions open in `Semua dompet`; choosing a wallet writes
+   the scope to the URL so refresh and navigation remain predictable. Q&A uses
+   that explicit reporting scope, while Budget remains account-wide.
+4. Transaction creation and receipt review always require an explicit wallet
+   selection.
+5. Deleting a wallet permanently deletes all transactions plus receipt metadata
+   and objects related to it, then clears stale persisted insights. Account-wide
+   budgets remain intact. The same rule applies to an empty wallet and to the
+   user's final wallet.
 
 ### Delete an account
 
@@ -161,6 +209,14 @@ is unavailable.
   retries, and orphan reconciliation.
 - Budget and monthly-insight rows use owner-scoped RLS and cascade with the Auth
   account.
+- Wallets and transactions use matching owner references enforced by composite
+  foreign keys and RLS. Every new wallet requires an explicit supported type,
+  while unclassified migration wallets use `Lainnya` until the owner corrects
+  them. New transactions require an explicitly selected owned wallet;
+  account-wide budgets remain protected by owner-scoped RLS.
+- Permanent wallet deletion uses database cascades for transactions, removes
+  private receipt objects first, preserves budgets, and invalidates persisted
+  insights.
 - Financial Q&A uses aggregate-only context, a one-year maximum range,
   per-account rate limits, and a global daily quota.
 
@@ -212,6 +268,23 @@ Phase 2 is successful when:
 - financial Q&A cannot access another account or receipt-detail content and
   refuses unsupported conclusions; and
 - all Phase 1 deletion and session barriers also cover Phase 2 records.
+
+Phase 3 is successful when:
+
+- existing records retain their totals in a migration wallet that has no
+  special status, uses the safe `Lainnya` type until reviewed, and can be
+  renamed, retyped, or deleted, while new accounts receive no automatic wallet;
+- `Semua dompet` preserves the existing default experience and an explicit URL
+  filter isolates Dashboard, Transactions, and Q&A correctly while Budget stays
+  account-wide;
+- manual and receipt transactions cannot be saved without an explicit owned
+  wallet, and an existing transaction can move to another owned wallet;
+- all-wallet exports include the source wallet without weakening spreadsheet
+  safety;
+- permanent wallet deletion removes its transactions, private receipt objects,
+  and invalidated persisted insights without removing account-wide budgets,
+  including when it is the final wallet; and
+- no wallet operation crosses an RLS owner boundary.
 
 Implementation and verification status are maintained in
 [PROGRESS.md](./PROGRESS.md). Visual rules are defined in

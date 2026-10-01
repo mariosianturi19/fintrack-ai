@@ -37,7 +37,7 @@ export default async function BudgetPage({ searchParams }: BudgetPageProps) {
   return (
     <>
       <PageHeader
-        description={`Atur batas pengeluaran per kategori untuk ${overview.monthLabel}`}
+        description={`Satu rencana untuk pengeluaran dari seluruh dompet · ${overview.monthLabel}`}
         eyebrow="Rencana bulanan"
         title="Budget"
       />

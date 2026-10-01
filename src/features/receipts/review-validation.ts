@@ -84,6 +84,7 @@ export const receiptReviewFormSchema = z.object({
     .string()
     .refine(isRealDate, "Pilih tanggal transaksi yang valid."),
   uploadId: z.string().uuid("Identitas foto tidak valid."),
+  walletId: z.string().uuid("Pilih dompet transaksi."),
 });
 
 export type ParsedReceiptReviewInput = z.infer<typeof receiptReviewFormSchema>;
@@ -94,7 +95,8 @@ export type ReceiptReviewField =
   | "items"
   | "merchant"
   | "notes"
-  | "transactionDate";
+  | "transactionDate"
+  | "walletId";
 
 export type ReceiptReviewActionState = Readonly<{
   fieldErrors: Partial<Record<ReceiptReviewField, string>>;
@@ -116,6 +118,7 @@ export function parseReceiptReviewForm(
     notes: formData.get("notes"),
     transactionDate: formData.get("transactionDate"),
     uploadId: formData.get("uploadId"),
+    walletId: formData.get("walletId"),
   });
 
   if (!result.success) {
@@ -130,6 +133,7 @@ export function parseReceiptReviewForm(
           merchant: flattened.merchant?.[0],
           notes: flattened.notes?.[0],
           transactionDate: flattened.transactionDate?.[0],
+          walletId: flattened.walletId?.[0],
         },
         formError: "Periksa kembali field yang ditandai.",
         status: "error",

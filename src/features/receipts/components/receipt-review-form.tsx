@@ -9,6 +9,8 @@ import { useFormStatus } from "react-dom";
 
 import { AmountInput } from "@/features/transactions/components/amount-input";
 import type { TransactionCategory } from "@/features/transactions/domain";
+import type { WalletRecord } from "@/features/wallets/domain";
+import { getWalletOptionLabel } from "@/features/wallets/scope-query";
 
 import { saveReceiptTransactionAction } from "../actions";
 import type { ReceiptAnalysisResult, ReceiptReviewItem } from "../domain";
@@ -27,6 +29,7 @@ type ReceiptReviewFormProps = Readonly<{
   maximumDate: string;
   onManualFallback: () => void;
   previewUrl: string;
+  wallets: readonly WalletRecord[];
 }>;
 
 const initialActionState: ReceiptReviewActionState = {
@@ -79,6 +82,7 @@ export function ReceiptReviewForm({
   maximumDate,
   onManualFallback,
   previewUrl,
+  wallets,
 }: ReceiptReviewFormProps) {
   const [state, formAction] = useActionState(
     saveReceiptTransactionAction,
@@ -276,6 +280,45 @@ export function ReceiptReviewForm({
                   message={state.fieldErrors.categoryId}
                 />
               </div>
+            </div>
+
+            <div className="min-w-0">
+              <label
+                className="mb-2 block font-body text-sm font-medium text-ink-secondary"
+                htmlFor="receipt-walletId"
+              >
+                Dompet tujuan
+              </label>
+              <select
+                aria-describedby={
+                  state.fieldErrors.walletId
+                    ? "receipt-wallet-error"
+                    : "receipt-wallet-help"
+                }
+                aria-invalid={Boolean(state.fieldErrors.walletId)}
+                className="min-h-12 w-full min-w-0 rounded-md border border-border bg-surface px-4 py-3 font-body text-base text-ink outline-none transition-colors focus:border-primary"
+                defaultValue=""
+                id="receipt-walletId"
+                name="walletId"
+                required
+              >
+                <option value="">Pilih dompet</option>
+                {wallets.map((wallet) => (
+                  <option key={wallet.id} value={wallet.id}>
+                    {getWalletOptionLabel(wallet)}
+                  </option>
+                ))}
+              </select>
+              <p
+                className="mt-2 font-body text-xs leading-5 text-ink-secondary"
+                id="receipt-wallet-help"
+              >
+                Pilih sumber pembayaran yang digunakan untuk transaksi ini.
+              </p>
+              <FieldError
+                id="receipt-wallet-error"
+                message={state.fieldErrors.walletId}
+              />
             </div>
 
             <div className="min-w-0">

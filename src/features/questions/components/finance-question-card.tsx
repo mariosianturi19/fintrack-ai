@@ -14,7 +14,13 @@ type AnswerState =
 
 export function FinanceQuestionCard({
   periods,
-}: Readonly<{ periods: readonly QuestionPeriodOption[] }>) {
+  scopeLabel,
+  walletId,
+}: Readonly<{
+  periods: readonly QuestionPeriodOption[];
+  scopeLabel: string;
+  walletId: string | null;
+}>) {
   const [question, setQuestion] = useState("");
   const [periodKey, setPeriodKey] = useState(periods[0]?.key ?? "month");
   const [answer, setAnswer] = useState<AnswerState>({ status: "idle" });
@@ -39,6 +45,7 @@ export function FinanceQuestionCard({
           question: normalizedQuestion,
           requestId: crypto.randomUUID(),
           startDate: period.startDate,
+          walletId,
         }),
         headers: { "Content-Type": "application/json" },
         method: "POST",
@@ -90,7 +97,7 @@ export function FinanceQuestionCard({
           </h2>
           <p className="mt-2 max-w-[720px] font-body text-sm leading-6 text-ink-secondary">
             Contoh: “Berapa pengeluaran makan bulan ini?” atau “Kategori apa
-            yang paling besar?”
+            yang paling besar?” Jawaban menggunakan ruang {scopeLabel}.
           </p>
         </div>
       </div>

@@ -62,6 +62,9 @@ export const transactionFormSchema = z.object({
       (value) => value <= getJakartaDateInputValue(),
       "Tanggal transaksi tidak boleh melewati hari ini.",
     ),
+  walletId: requiredText("Pilih dompet transaksi.").pipe(
+    z.string().uuid("Dompet tidak valid."),
+  ),
 });
 
 export const transactionIdSchema = z
@@ -84,6 +87,7 @@ export function getTransactionFormValues(
     categoryId: getFormValue(formData, "categoryId"),
     notes: getFormValue(formData, "notes"),
     transactionDate: getFormValue(formData, "transactionDate"),
+    walletId: getFormValue(formData, "walletId"),
   };
 }
 

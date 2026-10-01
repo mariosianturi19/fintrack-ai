@@ -15,6 +15,11 @@ import {
   getDashboardSnapshot,
 } from "@/features/dashboard/data";
 import { getAuthenticatedUserId } from "@/lib/auth/session";
+import { WalletScopeSelector } from "@/features/wallets/components/wallet-scope-selector";
+import { listWallets } from "@/features/wallets/data";
+import { resolveWalletScope } from "@/features/wallets/scope";
+import { createWalletScopeQuery } from "@/features/wallets/scope-query";
+import { parseRequestedWalletId } from "@/features/wallets/validation";
 
 export const dynamic = "force-dynamic";
 
@@ -60,17 +65,19 @@ function DashboardErrorState({ dataLimit }: Readonly<{ dataLimit: boolean }>) {
   );
 }
 
-async function DashboardContent() {
-  const userId = await getAuthenticatedUserId();
-
-  if (!userId) {
-    redirect("/login?next=%2F");
-  }
-
+async function DashboardContent({
+  scopeLabel,
+  userId,
+  walletId,
+}: Readonly<{
+  scopeLabel: string;
+  userId: string;
+  walletId: string | null;
+}>) {
   let snapshot;
 
   try {
-    snapshot = await getDashboardSnapshot(userId);
+    snapshot = await getDashboardSnapshot(userId, new Date(), walletId);
   } catch (error) {
     return (
       <DashboardErrorState
@@ -81,26 +88,63 @@ async function DashboardContent() {
     );
   }
 
-  return <DashboardView snapshot={snapshot} />;
+  return (
+    <DashboardView
+      scopeLabel={scopeLabel}
+      snapshot={snapshot}
+      walletId={walletId}
+    />
+  );
 }
 
-export default function DashboardPage() {
+type DashboardPageProps = Readonly<{
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}>;
+
+export default async function DashboardPage({
+  searchParams,
+}: DashboardPageProps) {
+  const [userId, parameters] = await Promise.all([
+    getAuthenticatedUserId(),
+    searchParams,
+  ]);
+  if (!userId) redirect("/login?next=%2F");
+  const wallets = await listWallets(userId);
+  const scope = resolveWalletScope(
+    wallets,
+    parseRequestedWalletId(parameters.wallet),
+  );
   const period = createDashboardPeriod();
 
   return (
     <>
       <PageHeader
         action={
-          <ActionLink href="/scan" icon={<Scan size={19} weight="bold" />}>
-            Scan struk
-          </ActionLink>
+          <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-end">
+            <WalletScopeSelector
+              currentQuery={createWalletScopeQuery(scope.walletId, parameters)}
+              pathname="/"
+              selectedWalletId={scope.walletId}
+              wallets={wallets}
+            />
+            <ActionLink
+              href={scope.walletId ? `/scan?wallet=${scope.walletId}` : "/scan"}
+              icon={<Scan size={19} weight="bold" />}
+            >
+              Scan struk
+            </ActionLink>
+          </div>
         }
-        description={`Ringkasan pengeluaran pribadi · ${period.label}`}
+        description={`Ringkasan ${scope.label.toLocaleLowerCase("id-ID")} · ${period.label}`}
         eyebrow="Periode aktif"
         title="Dashboard"
       />
-      <Suspense fallback={<DashboardSkeleton />}>
-        <DashboardContent />
+      <Suspense fallback={<DashboardSkeleton />} key={scope.walletId ?? "all"}>
+        <DashboardContent
+          scopeLabel={scope.label}
+          userId={userId}
+          walletId={scope.walletId}
+        />
       </Suspense>
     </>
   );

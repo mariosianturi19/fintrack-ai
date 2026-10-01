@@ -20,7 +20,9 @@ import { CategoryExpenseChart } from "./category-expense-chart";
 import { RecentTransactions } from "./recent-transactions";
 
 type DashboardViewProps = Readonly<{
+  scopeLabel: string;
   snapshot: DashboardSnapshot;
+  walletId: string | null;
 }>;
 
 function ExportLink({
@@ -59,15 +61,24 @@ function ExportLink({
   );
 }
 
-export function DashboardView({ snapshot }: DashboardViewProps) {
+export function DashboardView({
+  scopeLabel,
+  snapshot,
+  walletId,
+}: DashboardViewProps) {
   const largestCategory = snapshot.categories[0];
-  const hasTransactions = snapshot.recentTransactions.length > 0;
   const budgetWarningCount =
     snapshot.budgetOverview.exceededCount +
     snapshot.budgetOverview.nearLimitCount;
 
   return (
     <div className="mt-7 min-w-0">
+      {walletId ? (
+        <p className="mb-5 rounded-lg border border-primary bg-primary-soft p-4 font-body text-sm leading-6 text-ink-secondary">
+          Angka dashboard dan Q&amp;A mengikuti dompet {scopeLabel}. Budget
+          serta insight AI mingguan dan bulanan tetap merangkum Semua dompet.
+        </p>
+      ) : null}
       <section
         aria-label={`Ringkasan pengeluaran ${snapshot.period.label}`}
         className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.65fr)] lg:gap-6"
@@ -107,7 +118,11 @@ export function DashboardView({ snapshot }: DashboardViewProps) {
               </p>
               <div className="mt-5">
                 <ActionLink
-                  href="/transactions/new"
+                  href={
+                    walletId
+                      ? `/transactions/new?wallet=${walletId}`
+                      : "/transactions/new"
+                  }
                   icon={<Plus size={18} weight="bold" />}
                   variant="secondary"
                 >
@@ -204,7 +219,11 @@ export function DashboardView({ snapshot }: DashboardViewProps) {
       </section>
 
       <section className="mt-6">
-        <FinanceQuestionCard periods={createQuestionPeriodOptions()} />
+        <FinanceQuestionCard
+          periods={createQuestionPeriodOptions()}
+          scopeLabel={scopeLabel}
+          walletId={walletId}
+        />
       </section>
 
       <section
@@ -224,8 +243,8 @@ export function DashboardView({ snapshot }: DashboardViewProps) {
           </p>
         </div>
         <div className="flex min-w-0 flex-wrap gap-3">
-          <ExportLink disabled={!hasTransactions} format="csv" />
-          <ExportLink disabled={!hasTransactions} format="xlsx" />
+          <ExportLink disabled={!snapshot.exportAvailable} format="csv" />
+          <ExportLink disabled={!snapshot.exportAvailable} format="xlsx" />
         </div>
       </section>
     </div>

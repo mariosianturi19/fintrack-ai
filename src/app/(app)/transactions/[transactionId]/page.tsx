@@ -107,6 +107,7 @@ export default async function TransactionDetailPage({
           categories={editorData.categories}
           receiptPreviewUrl={receiptPreviewUrl}
           transaction={editorData.transaction}
+          wallets={editorData.wallets}
         />
       </div>
     </>

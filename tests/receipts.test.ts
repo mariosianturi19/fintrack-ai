@@ -213,6 +213,7 @@ describe("receipt AI review boundary", () => {
     formData.set("notes", "Bayar 4111 1111 1111 1111");
     formData.set("transactionDate", "2026-08-16");
     formData.set("uploadId", uploadId);
+    formData.set("walletId", "6d45ad1d-a780-4297-9d4e-a4ad61a7f90f");
 
     const result = parseReceiptReviewForm(formData, "2026-08-16");
 

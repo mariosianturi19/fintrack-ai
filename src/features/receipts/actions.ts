@@ -52,6 +52,19 @@ export async function saveReceiptTransactionAction(
       };
     }
 
+    if (
+      error instanceof ReceiptDataError &&
+      error.code === "wallet_unavailable"
+    ) {
+      return {
+        fieldErrors: {
+          walletId: "Dompet ini sudah tidak tersedia. Pilih dompet lain.",
+        },
+        formError: "Tujuan dompet perlu diperbarui.",
+        status: "error",
+      };
+    }
+
     const message =
       error instanceof ReceiptStorageError
         ? error.message
